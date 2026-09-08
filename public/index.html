@@ -1,0 +1,3158 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>La Brasa | Restaurante</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    header {
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #151515;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #e7a23b;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: #e7a23b;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,.65),
+          rgba(0,0,0,.65)
+        ),
+
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero h1 {
+      font-size: 70px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e7a23b;
+      color: #111;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 35px;
+    }
+
+    /* =========================
+       MENÚ
+       ========================= */
+
+    .menu {
+      display: grid;
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(220px, 1fr)
+        );
+      gap: 25px;
+    }
+
+    .card {
+      background: #1d1d1d;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .card h3 {
+      color: #e7a23b;
+      margin-bottom: 10px;
+    }
+
+    /* =========================
+       GALERÍA
+       ========================= */
+
+    #galeria {
+      background: #151515;
+    }
+
+    .galeria-grid {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap: 18px;
+    }
+
+    .foto {
+      height: 260px;
+
+      border-radius: 15px;
+
+      overflow: hidden;
+
+      background: #1d1d1d;
+
+      cursor: pointer;
+
+      position: relative;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform .4s ease,
+        filter .4s ease;
+    }
+
+    .foto:hover img {
+      transform: scale(1.08);
+      filter: brightness(.8);
+    }
+
+    /* =========================
+       VISOR DE FOTOS
+       ========================= */
+
+    .visor-foto {
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(0,0,0,.95);
+
+      z-index: 10000;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 30px;
+    }
+
+    .visor-foto img {
+      max-width: 90%;
+      max-height: 85vh;
+
+      object-fit: contain;
+
+      border-radius: 10px;
+    }
+
+    .cerrar-foto {
+      position: absolute;
+
+      top: 20px;
+      right: 30px;
+
+      background: transparent;
+
+      color: white;
+
+      font-size: 40px;
+
+      padding: 5px;
+
+      cursor: pointer;
+    }
+
+    /* =========================
+       RESEÑAS
+       ========================= */
+
+    #resenas {
+      background: #111;
+    }
+
+    .valoracion-general {
+      text-align: center;
+
+      margin-bottom: 40px;
+    }
+
+    .valoracion-numero {
+      font-size: 55px;
+
+      font-weight: bold;
+
+      color: #e7a23b;
+    }
+
+    .valoracion-estrellas {
+      color: #e7a23b;
+
+      font-size: 28px;
+
+      letter-spacing: 4px;
+
+      margin: 8px 0;
+    }
+
+    .valoracion-general p {
+      color: #999;
+    }
+
+    .resenas-grid {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(240px, 1fr)
+        );
+
+      gap: 20px;
+    }
+
+    .resena {
+      background: #1d1d1d;
+
+      padding: 25px;
+
+      border-radius: 15px;
+
+      border: 1px solid #292929;
+
+      transition:
+        transform .2s,
+        border-color .2s;
+    }
+
+    .resena:hover {
+      transform: translateY(-4px);
+
+      border-color: #e7a23b;
+    }
+
+    .estrellas {
+      color: #e7a23b;
+
+      font-size: 21px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 15px;
+    }
+
+    .resena p {
+      color: #ddd;
+
+      line-height: 1.6;
+
+      margin-bottom: 18px;
+    }
+
+    .resena strong {
+      color: #e7a23b;
+    }
+
+    /* =========================
+       RESERVAS
+       ========================= */
+
+    .reservation {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input,
+    select,
+    textarea {
+
+      width: 100%;
+
+      padding: 14px;
+
+      border-radius: 8px;
+
+      border: none;
+
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #e7a23b;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: .9;
+    }
+
+    #resultado {
+
+      margin-top: 20px;
+
+      padding: 15px;
+
+      border-radius: 8px;
+
+      display: none;
+
+      background: #1d1d1d;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 30px;
+
+      background: #151515;
+
+      color: #aaa;
+
+      position: relative;
+    }
+
+    /* =========================
+       BOTÓN ADMINISTRACIÓN
+       ========================= */
+
+    .admin-button {
+
+      position: absolute;
+
+      right: 20px;
+
+      bottom: 15px;
+
+      background: transparent;
+
+      color: #555;
+
+      border: none;
+
+      padding: 5px;
+
+      font-size: 14px;
+
+      cursor: pointer;
+    }
+
+    .admin-button:hover {
+      color: #e7a23b;
+    }
+
+    /* =========================
+       PANEL ADMINISTRACIÓN
+       ========================= */
+
+    .admin-overlay {
+
+      display: none;
+
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(0, 0, 0, .94);
+
+      z-index: 9999;
+
+      overflow-y: auto;
+
+      padding: 30px 20px;
+    }
+
+    .admin-container {
+
+      max-width: 1100px;
+
+      margin: auto;
+    }
+
+    /* =========================
+       CABECERA ADMIN
+       ========================= */
+
+    .admin-header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 30px;
+    }
+
+    .admin-header h2 {
+
+      color: #e7a23b;
+
+      font-size: 30px;
+    }
+
+    .admin-header p {
+
+      color: #999;
+
+      margin-top: 7px;
+    }
+
+    .close-admin {
+
+      background: #333;
+
+      color: white;
+
+      padding: 11px 18px;
+
+      font-size: 14px;
+    }
+
+    .close-admin:hover {
+      background: #444;
+    }
+
+    /* =========================
+       LOGIN
+       ========================= */
+
+    .login-box {
+
+      max-width: 400px;
+
+      margin: 100px auto;
+
+      background: #1d1d1d;
+
+      padding: 35px;
+
+      border-radius: 15px;
+
+      text-align: center;
+    }
+
+    .login-box h2 {
+
+      color: #e7a23b;
+
+      margin-bottom: 25px;
+    }
+
+    .login-box input {
+
+      margin-bottom: 15px;
+    }
+
+    .login-error {
+
+      color: #ff5c5c;
+
+      margin-top: 15px;
+
+      display: none;
+    }
+
+    /* =========================
+       NAVEGACIÓN ADMIN
+       ========================= */
+
+    .admin-nav {
+
+      display: flex;
+
+      gap: 10px;
+
+      margin-bottom: 30px;
+
+      border-bottom: 1px solid #333;
+
+      padding-bottom: 15px;
+
+      flex-wrap: wrap;
+    }
+
+    .admin-nav button {
+
+      background: #222;
+
+      color: #aaa;
+
+      padding: 12px 18px;
+
+      font-size: 15px;
+    }
+
+    .admin-nav button:hover,
+    .admin-nav button.active {
+
+      background: #e7a23b;
+
+      color: #111;
+    }
+
+    /* =========================
+       APARTADOS
+       ========================= */
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .section-title {
+
+      font-size: 25px;
+
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       RESUMEN
+       ========================= */
+
+    .stats {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(200px, 1fr)
+        );
+
+      gap: 20px;
+    }
+
+    .stat-card {
+
+      background: #1d1d1d;
+
+      padding: 25px;
+
+      border-radius: 15px;
+    }
+
+    .stat-card h3 {
+
+      color: #999;
+
+      font-size: 15px;
+
+      margin-bottom: 12px;
+    }
+
+    .stat-number {
+
+      font-size: 35px;
+
+      font-weight: bold;
+
+      color: #e7a23b;
+    }
+
+    /* =========================
+       PANELES DE RESERVAS
+       ========================= */
+
+    .panel-reservas {
+
+      margin-bottom: 45px;
+    }
+
+    .panel-titulo {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+      padding-bottom: 12px;
+
+      border-bottom: 1px solid #333;
+    }
+
+    .panel-titulo h3 {
+
+      font-size: 22px;
+    }
+
+    .panel-titulo span {
+
+      background: #333;
+
+      color: #aaa;
+
+      padding: 5px 10px;
+
+      border-radius: 20px;
+
+      font-size: 13px;
+    }
+
+    .pendientes-titulo h3 {
+      color: #e7a23b;
+    }
+
+    .aceptadas-titulo h3 {
+      color: #4bc477;
+    }
+
+    .rechazadas-titulo h3 {
+      color: #ff5c5c;
+    }
+
+    .reservas-grid {
+
+      display: grid;
+
+      gap: 20px;
+    }
+
+    .reserva {
+
+      background: #1d1d1d;
+
+      border-radius: 15px;
+
+      padding: 25px;
+
+      border-left: 5px solid #e7a23b;
+    }
+
+    .reserva.aceptada {
+      border-left-color: #258a4a;
+    }
+
+    .reserva.rechazada {
+      border-left-color: #a52e2e;
+    }
+
+    .reserva h3 {
+
+      margin-bottom: 15px;
+
+      color: #e7a23b;
+    }
+
+    .reserva.aceptada h3 {
+      color: #4bc477;
+    }
+
+    .reserva.rechazada h3 {
+      color: #ff5c5c;
+    }
+
+    .reserva p {
+
+      margin: 7px 0;
+
+      color: #ddd;
+    }
+
+    .estado {
+
+      display: inline-block;
+
+      padding: 6px 12px;
+
+      border-radius: 20px;
+
+      background: #9a741f;
+
+      color: white;
+
+      font-size: 13px;
+
+      margin-bottom: 15px;
+
+      text-transform: uppercase;
+    }
+
+    .estado.aceptada {
+      background: #258a4a;
+    }
+
+    .estado.rechazada {
+      background: #a52e2e;
+    }
+
+    .acciones {
+
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .aceptar {
+
+      background: #258a4a;
+
+      color: white;
+    }
+
+    .cancelar {
+
+      background: #a52e2e;
+
+      color: white;
+    }
+
+    .eliminar {
+
+      background: #555;
+
+      color: white;
+    }
+
+    .aceptar:hover {
+      background: #319f59;
+    }
+
+    .cancelar:hover {
+      background: #c03939;
+    }
+
+    .eliminar:hover {
+      background: #666;
+    }
+
+    .vacio {
+
+      background: #181818;
+
+      border: 1px dashed #444;
+
+      border-radius: 12px;
+
+      padding: 20px;
+
+      color: #777;
+
+      text-align: center;
+    }
+
+    /* =========================
+       CONFIGURACIÓN
+       ========================= */
+
+    .config-card {
+
+      background: #1d1d1d;
+
+      padding: 25px;
+
+      border-radius: 15px;
+    }
+
+    .config-card h3 {
+
+      color: #e7a23b;
+
+      margin-bottom: 15px;
+    }
+
+    .config-card p {
+
+      color: #aaa;
+
+      line-height: 1.6;
+    }
+
+    /* =========================
+       MÓVIL
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .galeria-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .foto {
+        height: 180px;
+      }
+
+      .admin-header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: flex-start;
+      }
+
+      .admin-nav {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .admin-nav button {
+
+        width: 100%;
+      }
+
+      .acciones {
+
+        flex-direction: column;
+      }
+
+      .acciones button {
+
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     CABECERA
+     ========================= -->
+
+<header>
+
+  <div class="logo">
+    LA BRASA
+  </div>
+
+  <nav>
+
+    <a href="#inicio">
+      Inicio
+    </a>
+
+    <a href="#menu">
+      Menú
+    </a>
+
+    <a href="#galeria">
+      Fotos
+    </a>
+
+    <a href="#resenas">
+      Reseñas
+    </a>
+
+    <a href="#reservas">
+      Reservas
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     INICIO
+     ========================= -->
+
+<section
+  class="hero"
+  id="inicio"
+>
+
+  <div>
+
+    <h1>
+      LA BRASA
+    </h1>
+
+    <p>
+      Cocina mediterránea · Sevilla
+    </p>
+
+    <a
+      class="btn"
+      href="#reservas"
+    >
+      Reservar mesa
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MENÚ
+     ========================= -->
+
+<section id="menu">
+
+  <h2 class="title">
+    Nuestro menú
+  </h2>
+
+  <div class="menu">
+
+    <div class="card">
+
+      <h3>
+        🥩 Carnes a la brasa
+      </h3>
+
+      <p>
+        Selección de carnes cocinadas
+        lentamente a la brasa.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>
+        🍤 Mariscos
+      </h3>
+
+      <p>
+        Productos frescos preparados
+        al momento.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>
+        🍕 Especialidades
+      </h3>
+
+      <p>
+        Platos caseros con un toque
+        moderno.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>
+        🍰 Postres
+      </h3>
+
+      <p>
+        Postres caseros para terminar
+        la comida.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     GALERÍA
+     ========================= -->
+
+<section id="galeria">
+
+  <h2 class="title">
+    📸 Descubre La Brasa
+  </h2>
+
+  <div class="galeria-grid">
+
+    <div
+      class="foto"
+      onclick="abrirFoto(this)"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85"
+        alt="Carne a la brasa"
+      >
+
+    </div>
+
+
+    <div
+      class="foto"
+      onclick="abrirFoto(this)"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=85"
+        alt="Carne preparada"
+      >
+
+    </div>
+
+
+    <div
+      class="foto"
+      onclick="abrirFoto(this)"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+        alt="Plato del restaurante"
+      >
+
+    </div>
+
+
+    <div
+      class="foto"
+      onclick="abrirFoto(this)"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+        alt="Interior del restaurante"
+      >
+
+    </div>
+
+
+    <div
+      class="foto"
+      onclick="abrirFoto(this)"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
+        alt="Mesa del restaurante"
+      >
+
+    </div>
+
+
+    <div
+      class="foto"
+      onclick="abrirFoto(this)"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
+        alt="Terraza del restaurante"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     VISOR FOTO
+     ========================= -->
+
+<div
+  class="visor-foto"
+  id="visorFoto"
+  onclick="cerrarFoto(event)"
+>
+
+  <button
+    class="cerrar-foto"
+    onclick="cerrarFoto()"
+  >
+    ×
+  </button>
+
+  <img
+    id="fotoGrande"
+    src=""
+    alt="Foto ampliada"
+  >
+
+</div>
+
+
+<!-- =========================
+     RESEÑAS
+     ========================= -->
+
+<section id="resenas">
+
+  <h2 class="title">
+    ⭐ Lo que dicen nuestros clientes
+  </h2>
+
+
+  <div class="valoracion-general">
+
+    <div class="valoracion-numero">
+      4,8
+    </div>
+
+    <div class="valoracion-estrellas">
+      ★★★★★
+    </div>
+
+    <p>
+      Basado en opiniones de nuestros clientes
+    </p>
+
+  </div>
+
+
+  <div class="resenas-grid">
+
+
+    <div class="resena">
+
+      <div class="estrellas">
+        ★★★★★
+      </div>
+
+      <p>
+        "La carne estaba espectacular y el
+        trato fue de 10. Sin duda volveremos."
+      </p>
+
+      <strong>
+        — María G.
+      </strong>
+
+    </div>
+
+
+    <div class="resena">
+
+      <div class="estrellas">
+        ★★★★★
+      </div>
+
+      <p>
+        "Un sitio increíble para comer con
+        amigos. Todo estaba buenísimo."
+      </p>
+
+      <strong>
+        — Carlos R.
+      </strong>
+
+    </div>
+
+
+    <div class="resena">
+
+      <div class="estrellas">
+        ★★★★☆
+      </div>
+
+      <p>
+        "Muy buena comida, ambiente agradable
+        y el servicio muy rápido."
+      </p>
+
+      <strong>
+        — Laura M.
+      </strong>
+
+    </div>
+
+
+    <div class="resena">
+
+      <div class="estrellas">
+        ★★★★★
+      </div>
+
+      <p>
+        "La relación calidad-precio es genial.
+        Los postres caseros están increíbles."
+      </p>
+
+      <strong>
+        — Daniel P.
+      </strong>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     RESERVAS CLIENTE
+     ========================= -->
+
+<section id="reservas">
+
+  <div class="reservation">
+
+    <h2 class="title">
+      Reserva tu mesa
+    </h2>
+
+    <form id="formReserva">
+
+      <input
+        type="text"
+        id="nombre"
+        placeholder="Nombre"
+        required
+      >
+
+      <input
+        type="tel"
+        id="telefono"
+        placeholder="Teléfono"
+        required
+      >
+
+      <input
+        type="date"
+        id="fecha"
+        required
+      >
+
+      <input
+        type="time"
+        id="hora"
+        required
+      >
+
+      <select
+        id="personas"
+        required
+      >
+
+        <option value="">
+          Número de personas
+        </option>
+
+        <option value="1">
+          1 persona
+        </option>
+
+        <option value="2">
+          2 personas
+        </option>
+
+        <option value="3">
+          3 personas
+        </option>
+
+        <option value="4">
+          4 personas
+        </option>
+
+        <option value="5">
+          5 personas
+        </option>
+
+        <option value="6">
+          6 personas
+        </option>
+
+        <option value="7">
+          7 personas
+        </option>
+
+        <option value="8">
+          8 personas
+        </option>
+
+        <option value="9">
+          9 personas
+        </option>
+
+        <option value="10">
+          10 personas
+        </option>
+
+        <option value="11">
+          11 personas
+        </option>
+
+        <option value="12">
+          12 personas
+        </option>
+
+      </select>
+
+      <textarea
+        id="comentarios"
+        placeholder="Comentarios (opcional)"
+      ></textarea>
+
+      <button type="submit">
+        Confirmar reserva
+      </button>
+
+    </form>
+
+    <div id="resultado"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+  © 2026 La Brasa · Sevilla
+
+  <button
+    class="admin-button"
+    onclick="abrirAdmin()"
+    title="Administración"
+  >
+    ⚙️
+  </button>
+
+</footer>
+
+
+<!-- =========================
+     PANEL ADMINISTRACIÓN
+     ========================= -->
+
+<div
+  class="admin-overlay"
+  id="adminOverlay"
+>
+
+  <!-- LOGIN -->
+
+  <div
+    class="login-box"
+    id="loginBox"
+  >
+
+    <h2>
+      🔐 Acceso restaurante
+    </h2>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Contraseña"
+    >
+
+    <button
+      onclick="iniciarSesion()"
+    >
+      Entrar
+    </button>
+
+    <p
+      class="login-error"
+      id="loginError"
+    >
+      Contraseña incorrecta
+    </p>
+
+    <button
+      class="close-admin"
+      onclick="cerrarAdmin()"
+      style="margin-top:20px;"
+    >
+      Volver
+    </button>
+
+  </div>
+
+
+  <!-- PANEL -->
+
+  <div
+    id="adminPanel"
+    style="display:none;"
+  >
+
+    <div class="admin-container">
+
+      <!-- CABECERA -->
+
+      <div class="admin-header">
+
+        <div>
+
+          <h2>
+            Panel de administración
+          </h2>
+
+          <p>
+            Gestión de La Brasa
+          </p>
+
+        </div>
+
+        <button
+          class="close-admin"
+          onclick="cerrarAdmin()"
+        >
+          🚪 Cerrar sesión
+        </button>
+
+      </div>
+
+
+      <!-- NAVEGACIÓN -->
+
+      <div class="admin-nav">
+
+        <button
+          class="active"
+          onclick="
+            mostrarApartado(
+              'resumen',
+              this
+            )
+          "
+        >
+          🏠 Resumen
+        </button>
+
+        <button
+          onclick="
+            mostrarApartado(
+              'reservasAdmin',
+              this
+            )
+          "
+        >
+          📅 Reservas
+        </button>
+
+        <button
+          onclick="
+            mostrarApartado(
+              'configuracion',
+              this
+            )
+          "
+        >
+          ⚙️ Configuración
+        </button>
+
+      </div>
+
+
+      <!-- RESUMEN -->
+
+      <div
+        class="admin-section active"
+        id="resumen"
+      >
+
+        <h2 class="section-title">
+          Resumen
+        </h2>
+
+        <div class="stats">
+
+          <div class="stat-card">
+
+            <h3>
+              Reservas pendientes
+            </h3>
+
+            <div
+              class="stat-number"
+              id="contadorPendientes"
+            >
+              0
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <h3>
+              Reservas aceptadas
+            </h3>
+
+            <div
+              class="stat-number"
+              id="contadorAceptadas"
+            >
+              0
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <h3>
+              Reservas rechazadas
+            </h3>
+
+            <div
+              class="stat-number"
+              id="contadorCanceladas"
+            >
+              0
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RESERVAS -->
+
+      <div
+        class="admin-section"
+        id="reservasAdmin"
+      >
+
+        <h2 class="section-title">
+          📅 Gestión de reservas
+        </h2>
+
+
+        <!-- PENDIENTES -->
+
+        <div class="panel-reservas">
+
+          <div class="panel-titulo pendientes-titulo">
+
+            <h3>
+              🟠 Pendientes
+            </h3>
+
+            <span id="numeroPendientes">
+              0
+            </span>
+
+          </div>
+
+          <div
+            class="reservas-grid"
+            id="listaPendientes"
+          >
+
+          </div>
+
+        </div>
+
+
+        <!-- ACEPTADAS -->
+
+        <div class="panel-reservas">
+
+          <div class="panel-titulo aceptadas-titulo">
+
+            <h3>
+              🟢 Aceptadas
+            </h3>
+
+            <span id="numeroAceptadas">
+              0
+            </span>
+
+          </div>
+
+          <div
+            class="reservas-grid"
+            id="listaAceptadas"
+          >
+
+          </div>
+
+        </div>
+
+
+        <!-- RECHAZADAS -->
+
+        <div class="panel-reservas">
+
+          <div class="panel-titulo rechazadas-titulo">
+
+            <h3>
+              🔴 Rechazadas
+            </h3>
+
+            <span id="numeroRechazadas">
+              0
+            </span>
+
+          </div>
+
+          <div
+            class="reservas-grid"
+            id="listaRechazadas"
+          >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONFIGURACIÓN -->
+
+      <div
+        class="admin-section"
+        id="configuracion"
+      >
+
+        <h2 class="section-title">
+          ⚙️ Configuración
+        </h2>
+
+        <div class="config-card">
+
+          <h3>
+            Información del restaurante
+          </h3>
+
+          <p>
+            Desde este apartado podremos
+            configurar diferentes opciones
+            del restaurante en el futuro.
+          </p>
+
+          <br>
+
+          <p>
+            🔒 La contraseña de administrador
+            no se puede modificar desde esta página.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+
+// ======================================================
+// ELEMENTOS
+// ======================================================
+
+const form =
+  document.getElementById(
+    "formReserva"
+  );
+
+const resultado =
+  document.getElementById(
+    "resultado"
+  );
+
+const campoFecha =
+  document.getElementById(
+    "fecha"
+  );
+
+const campoHora =
+  document.getElementById(
+    "hora"
+  );
+
+
+// ======================================================
+// GALERÍA
+// ======================================================
+
+function abrirFoto(elemento) {
+
+  const imagen =
+    elemento.querySelector("img");
+
+  const visor =
+    document.getElementById(
+      "visorFoto"
+    );
+
+  const fotoGrande =
+    document.getElementById(
+      "fotoGrande"
+    );
+
+  fotoGrande.src =
+    imagen.src;
+
+  fotoGrande.alt =
+    imagen.alt;
+
+  visor.style.display =
+    "flex";
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+function cerrarFoto(event) {
+
+  if (
+    event &&
+    event.target &&
+    event.target.id === "fotoGrande"
+  ) {
+
+    return;
+
+  }
+
+  document
+    .getElementById(
+      "visorFoto"
+    )
+    .style.display =
+      "none";
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      cerrarFoto();
+
+    }
+
+  }
+);
+
+
+// ======================================================
+// OBTENER FECHA DE HOY
+// ======================================================
+
+function obtenerFechaHoy() {
+
+  const hoy =
+    new Date();
+
+  const año =
+    hoy.getFullYear();
+
+  const mes =
+    String(
+      hoy.getMonth() + 1
+    ).padStart(
+      2,
+      "0"
+    );
+
+  const dia =
+    String(
+      hoy.getDate()
+    ).padStart(
+      2,
+      "0"
+    );
+
+  return (
+    `${año}-${mes}-${dia}`
+  );
+
+}
+
+
+// ======================================================
+// FECHA MÍNIMA
+// ======================================================
+
+campoFecha.min =
+  obtenerFechaHoy();
+
+
+// ======================================================
+// COMPROBAR HORA
+// ======================================================
+
+campoFecha.addEventListener(
+  "change",
+  comprobarHora
+);
+
+
+function comprobarHora() {
+
+  if (
+    campoFecha.value ===
+    obtenerFechaHoy()
+  ) {
+
+    const ahora =
+      new Date();
+
+    const horas =
+      String(
+        ahora.getHours()
+      ).padStart(
+        2,
+        "0"
+      );
+
+    const minutos =
+      String(
+        ahora.getMinutes()
+      ).padStart(
+        2,
+        "0"
+      );
+
+    campoHora.min =
+      `${horas}:${minutos}`;
+
+  }
+
+  else {
+
+    campoHora.removeAttribute(
+      "min"
+    );
+
+  }
+
+}
+
+
+// ======================================================
+// ENVIAR RESERVA
+// ======================================================
+
+form.addEventListener(
+  "submit",
+  async function(event) {
+
+    event.preventDefault();
+
+    resultado.style.display =
+      "block";
+
+    resultado.innerHTML =
+      "⏳ Enviando reserva...";
+
+    const datos = {
+
+      nombre:
+        document.getElementById(
+          "nombre"
+        ).value.trim(),
+
+      telefono:
+        document.getElementById(
+          "telefono"
+        ).value.trim(),
+
+      fecha:
+        campoFecha.value,
+
+      hora:
+        campoHora.value,
+
+      personas:
+        document.getElementById(
+          "personas"
+        ).value,
+
+      comentarios:
+        document.getElementById(
+          "comentarios"
+        ).value.trim()
+
+    };
+
+
+    try {
+
+      const respuesta =
+        await fetch(
+          "/reservar",
+          {
+
+            method: "POST",
+
+            headers: {
+
+              "Content-Type":
+                "application/json"
+
+            },
+
+            body:
+              JSON.stringify(
+                datos
+              )
+
+          }
+        );
+
+
+      const resultadoServidor =
+        await respuesta.json();
+
+
+      if (
+        !respuesta.ok
+      ) {
+
+        throw new Error(
+          resultadoServidor.error ||
+          "Error al hacer la reserva."
+        );
+
+      }
+
+
+      resultado.innerHTML =
+        `
+        ✅ <strong>
+          Reserva recibida correctamente.
+        </strong>
+
+        <br><br>
+
+        Número de reserva:
+        <strong>
+          #${resultadoServidor.id}
+        </strong>
+
+        <br><br>
+
+        Te esperamos en La Brasa.
+        `;
+
+
+      form.reset();
+
+      campoFecha.min =
+        obtenerFechaHoy();
+
+      campoHora.removeAttribute(
+        "min"
+      );
+
+
+    }
+
+    catch (error) {
+
+      resultado.innerHTML =
+        `
+        ❌ <strong>
+          No se pudo realizar la reserva.
+        </strong>
+
+        <br><br>
+
+        ${escaparHTML(
+          error.message
+        )}
+        `;
+
+    }
+
+  }
+);
+
+
+// ======================================================
+// ABRIR ADMIN
+// ======================================================
+
+function abrirAdmin() {
+
+  document
+    .getElementById(
+      "adminOverlay"
+    )
+    .style.display =
+      "block";
+
+  document
+    .getElementById(
+      "loginBox"
+    )
+    .style.display =
+      "block";
+
+  document
+    .getElementById(
+      "adminPanel"
+    )
+    .style.display =
+      "none";
+
+  document
+    .getElementById(
+      "adminPassword"
+    )
+    .value =
+      "";
+
+  document
+    .getElementById(
+      "loginError"
+    )
+    .style.display =
+      "none";
+
+}
+
+
+// ======================================================
+// CERRAR ADMIN
+// ======================================================
+
+function cerrarAdmin() {
+
+  document
+    .getElementById(
+      "adminOverlay"
+    )
+    .style.display =
+      "none";
+
+}
+
+
+// ======================================================
+// LOGIN
+// ======================================================
+
+function iniciarSesion() {
+
+  const password =
+    document
+      .getElementById(
+        "adminPassword"
+      )
+      .value;
+
+  if (
+    password === "1234"
+  ) {
+
+    document
+      .getElementById(
+        "loginBox"
+      )
+      .style.display =
+        "none";
+
+    document
+      .getElementById(
+        "adminPanel"
+      )
+      .style.display =
+        "block";
+
+    cargarReservas();
+
+  }
+
+  else {
+
+    document
+      .getElementById(
+        "loginError"
+      )
+      .style.display =
+        "block";
+
+  }
+
+}
+
+
+// ======================================================
+// CAMBIAR APARTADO
+// ======================================================
+
+function mostrarApartado(
+  nombre,
+  boton
+) {
+
+  const apartados =
+    document.querySelectorAll(
+      ".admin-section"
+    );
+
+  apartados.forEach(
+    apartado => {
+
+      apartado.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+
+  const seccion =
+    document.getElementById(
+      nombre
+    );
+
+
+  if (seccion) {
+
+    seccion.classList.add(
+      "active"
+    );
+
+  }
+
+
+  const botones =
+    document.querySelectorAll(
+      ".admin-nav button"
+    );
+
+
+  botones.forEach(
+    btn => {
+
+      btn.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+
+  if (boton) {
+
+    boton.classList.add(
+      "active"
+    );
+
+  }
+
+
+  if (
+    nombre ===
+    "reservasAdmin"
+  ) {
+
+    cargarReservas();
+
+  }
+
+}
+
+
+// ======================================================
+// CARGAR RESERVAS
+// ======================================================
+
+async function cargarReservas() {
+
+  const listas = [
+
+    "listaPendientes",
+
+    "listaAceptadas",
+
+    "listaRechazadas"
+
+  ];
+
+
+  listas.forEach(
+    id => {
+
+      const lista =
+        document.getElementById(
+          id
+        );
+
+      lista.innerHTML =
+        `
+        <div class="vacio">
+          ⏳ Cargando reservas...
+        </div>
+        `;
+
+    }
+  );
+
+
+  try {
+
+    const respuesta =
+      await fetch(
+        "/reservas"
+      );
+
+
+    if (
+      !respuesta.ok
+    ) {
+
+      throw new Error(
+        "No se pudieron cargar las reservas."
+      );
+
+    }
+
+
+    const reservas =
+      await respuesta.json();
+
+
+    mostrarReservas(
+      reservas
+    );
+
+
+    actualizarContadores(
+      reservas
+    );
+
+
+  }
+
+  catch (error) {
+
+    listas.forEach(
+      id => {
+
+        const lista =
+          document.getElementById(
+            id
+          );
+
+        lista.innerHTML =
+          `
+          <div class="vacio">
+
+            ❌
+            ${escaparHTML(
+              error.message
+            )}
+
+          </div>
+          `;
+
+      }
+    );
+
+  }
+
+}
+
+
+// ======================================================
+// ORDENAR RESERVAS
+// ======================================================
+
+function ordenarReservas(
+  reservas
+) {
+
+  return [...reservas].sort(
+    (a, b) => {
+
+      const fechaA =
+        new Date(
+          `${a.fecha}T${a.hora}`
+        );
+
+      const fechaB =
+        new Date(
+          `${b.fecha}T${b.hora}`
+        );
+
+      const diferencia =
+        fechaA - fechaB;
+
+
+      if (
+        diferencia !== 0
+      ) {
+
+        return diferencia;
+
+      }
+
+
+      const creadaA =
+        new Date(
+          a.creadaEn || 0
+        );
+
+      const creadaB =
+        new Date(
+          b.creadaEn || 0
+        );
+
+
+      return creadaA - creadaB;
+
+    }
+  );
+
+}
+
+
+// ======================================================
+// MOSTRAR RESERVAS
+// ======================================================
+
+function mostrarReservas(
+  reservas
+) {
+
+  const pendientes =
+    ordenarReservas(
+      reservas.filter(
+        reserva =>
+          reserva.estado ===
+          "pendiente"
+      )
+    );
+
+
+  const aceptadas =
+    ordenarReservas(
+      reservas.filter(
+        reserva =>
+          reserva.estado ===
+          "aceptada"
+      )
+    );
+
+
+  const rechazadas =
+    ordenarReservas(
+      reservas.filter(
+        reserva =>
+          reserva.estado ===
+          "rechazada"
+      )
+    );
+
+
+  mostrarGrupo(
+    pendientes,
+    "listaPendientes",
+    "pendiente"
+  );
+
+
+  mostrarGrupo(
+    aceptadas,
+    "listaAceptadas",
+    "aceptada"
+  );
+
+
+  mostrarGrupo(
+    rechazadas,
+    "listaRechazadas",
+    "rechazada"
+  );
+
+}
+
+
+// ======================================================
+// MOSTRAR GRUPO
+// ======================================================
+
+function mostrarGrupo(
+  reservas,
+  idLista,
+  tipo
+) {
+
+  const lista =
+    document.getElementById(
+      idLista
+    );
+
+
+  if (
+    reservas.length === 0
+  ) {
+
+    let mensaje =
+      "No hay reservas pendientes.";
+
+
+    if (
+      tipo === "aceptada"
+    ) {
+
+      mensaje =
+        "No hay reservas aceptadas.";
+
+    }
+
+
+    if (
+      tipo === "rechazada"
+    ) {
+
+      mensaje =
+        "No hay reservas rechazadas.";
+
+    }
+
+
+    lista.innerHTML =
+      `
+      <div class="vacio">
+
+        ${mensaje}
+
+      </div>
+      `;
+
+
+    return;
+
+  }
+
+
+  lista.innerHTML = "";
+
+
+  reservas.forEach(
+    reserva => {
+
+      const tarjeta =
+        document.createElement(
+          "div"
+        );
+
+
+      tarjeta.className =
+        `reserva ${tipo}`;
+
+
+      let textoEstado =
+        "Pendiente";
+
+
+      if (
+        tipo === "aceptada"
+      ) {
+
+        textoEstado =
+          "Aceptada";
+
+      }
+
+
+      if (
+        tipo === "rechazada"
+      ) {
+
+        textoEstado =
+          "Rechazada";
+
+      }
+
+
+      let claseEstado =
+        "";
+
+
+      if (
+        tipo === "aceptada"
+      ) {
+
+        claseEstado =
+          "aceptada";
+
+      }
+
+
+      if (
+        tipo === "rechazada"
+      ) {
+
+        claseEstado =
+          "rechazada";
+
+      }
+
+
+      tarjeta.innerHTML =
+        `
+
+        <span class="estado ${claseEstado}">
+
+          ${textoEstado}
+
+        </span>
+
+
+        <h3>
+
+          Reserva #${reserva.id}
+
+        </h3>
+
+
+        <p>
+
+          👤
+          <strong>
+            Nombre:
+          </strong>
+
+          ${escaparHTML(
+            reserva.nombre
+          )}
+
+        </p>
+
+
+        <p>
+
+          📞
+          <strong>
+            Teléfono:
+          </strong>
+
+          ${escaparHTML(
+            reserva.telefono
+          )}
+
+        </p>
+
+
+        <p>
+
+          📅
+          <strong>
+            Fecha:
+          </strong>
+
+          ${formatearFecha(
+            reserva.fecha
+          )}
+
+        </p>
+
+
+        <p>
+
+          🕐
+          <strong>
+            Hora:
+          </strong>
+
+          ${escaparHTML(
+            reserva.hora
+          )}
+
+        </p>
+
+
+        <p>
+
+          👥
+          <strong>
+            Personas:
+          </strong>
+
+          ${Number(
+            reserva.personas
+          )}
+
+        </p>
+
+
+        <p>
+
+          💬
+          <strong>
+            Comentarios:
+          </strong>
+
+          ${
+            reserva.comentarios
+
+              ? escaparHTML(
+                  reserva.comentarios
+                )
+
+              : "Sin comentarios"
+          }
+
+        </p>
+
+
+        <div class="acciones">
+
+
+          ${
+            tipo === "pendiente"
+
+              ? `
+
+                <button
+                  class="aceptar"
+                  onclick="
+                    cambiarEstado(
+                      ${reserva.id},
+                      'aceptada'
+                    )
+                  "
+                >
+
+                  ✅ Aceptar
+
+                </button>
+
+
+                <button
+                  class="cancelar"
+                  onclick="
+                    cambiarEstado(
+                      ${reserva.id},
+                      'rechazada'
+                    )
+                  "
+                >
+
+                  ❌ Rechazar
+
+                </button>
+
+              `
+
+              : ""
+
+          }
+
+
+          <button
+            class="eliminar"
+            onclick="
+              eliminarReserva(
+                ${reserva.id}
+              )
+            "
+          >
+
+            🗑️ Eliminar
+
+          </button>
+
+
+        </div>
+
+        `;
+
+
+      lista.appendChild(
+        tarjeta
+      );
+
+    }
+  );
+
+}
+
+
+// ======================================================
+// CAMBIAR ESTADO
+// ======================================================
+
+async function cambiarEstado(
+  id,
+  estado
+) {
+
+  const texto =
+    estado === "aceptada"
+      ? "aceptar"
+      : "rechazar";
+
+
+  const confirmar =
+    confirm(
+      `¿Seguro que quieres ${texto} la reserva #${id}?`
+    );
+
+
+  if (!confirmar) {
+
+    return;
+
+  }
+
+
+  try {
+
+    const respuesta =
+      await fetch(
+        `/reservas/${id}`,
+        {
+
+          method: "PATCH",
+
+          headers: {
+
+            "Content-Type":
+              "application/json"
+
+          },
+
+          body:
+            JSON.stringify({
+              estado: estado
+            })
+
+        }
+      );
+
+
+    const resultadoServidor =
+      await respuesta.json();
+
+
+    if (
+      !respuesta.ok
+    ) {
+
+      throw new Error(
+        resultadoServidor.error ||
+        "No se pudo modificar la reserva."
+      );
+
+    }
+
+
+    await cargarReservas();
+
+  }
+
+  catch (error) {
+
+    alert(
+      "❌ " +
+      error.message
+    );
+
+  }
+
+}
+
+
+// ======================================================
+// ELIMINAR RESERVA
+// ======================================================
+
+async function eliminarReserva(
+  id
+) {
+
+  const confirmar =
+    confirm(
+      `¿Seguro que quieres eliminar la reserva #${id}? Esta acción no se puede deshacer.`
+    );
+
+
+  if (!confirmar) {
+
+    return;
+
+  }
+
+
+  try {
+
+    const respuesta =
+      await fetch(
+        `/reservas/${id}`,
+        {
+
+          method: "DELETE"
+
+        }
+      );
+
+
+    const resultadoServidor =
+      await respuesta.json();
+
+
+    if (
+      !respuesta.ok
+    ) {
+
+      throw new Error(
+        resultadoServidor.error ||
+        "No se pudo eliminar la reserva."
+      );
+
+    }
+
+
+    await cargarReservas();
+
+  }
+
+  catch (error) {
+
+    alert(
+      "❌ " +
+      error.message
+    );
+
+  }
+
+}
+
+
+// ======================================================
+// ACTUALIZAR CONTADORES
+// ======================================================
+
+function actualizarContadores(
+  reservas
+) {
+
+  const pendientes =
+    reservas.filter(
+      reserva =>
+        reserva.estado ===
+        "pendiente"
+    ).length;
+
+
+  const aceptadas =
+    reservas.filter(
+      reserva =>
+        reserva.estado ===
+        "aceptada"
+    ).length;
+
+
+  const rechazadas =
+    reservas.filter(
+      reserva =>
+        reserva.estado ===
+        "rechazada"
+    ).length;
+
+
+  const contadorPendientes =
+    document.getElementById(
+      "contadorPendientes"
+    );
+
+
+  const contadorAceptadas =
+    document.getElementById(
+      "contadorAceptadas"
+    );
+
+
+  const contadorCanceladas =
+    document.getElementById(
+      "contadorCanceladas"
+    );
+
+
+  const numeroPendientes =
+    document.getElementById(
+      "numeroPendientes"
+    );
+
+
+  const numeroAceptadas =
+    document.getElementById(
+      "numeroAceptadas"
+    );
+
+
+  const numeroRechazadas =
+    document.getElementById(
+      "numeroRechazadas"
+    );
+
+
+  if (
+    contadorPendientes
+  ) {
+
+    contadorPendientes.textContent =
+      pendientes;
+
+  }
+
+
+  if (
+    contadorAceptadas
+  ) {
+
+    contadorAceptadas.textContent =
+      aceptadas;
+
+  }
+
+
+  if (
+    contadorCanceladas
+  ) {
+
+    contadorCanceladas.textContent =
+      rechazadas;
+
+  }
+
+
+  if (
+    numeroPendientes
+  ) {
+
+    numeroPendientes.textContent =
+      pendientes;
+
+  }
+
+
+  if (
+    numeroAceptadas
+  ) {
+
+    numeroAceptadas.textContent =
+      aceptadas;
+
+  }
+
+
+  if (
+    numeroRechazadas
+  ) {
+
+    numeroRechazadas.textContent =
+      rechazadas;
+
+  }
+
+}
+
+
+// ======================================================
+// FORMATEAR FECHA
+// ======================================================
+
+function formatearFecha(
+  fecha
+) {
+
+  const partes =
+    fecha.split("-");
+
+
+  if (
+    partes.length !== 3
+  ) {
+
+    return fecha;
+
+  }
+
+
+  return (
+
+    partes[2] +
+    "/" +
+    partes[1] +
+    "/" +
+    partes[0]
+
+  );
+
+}
+
+
+// ======================================================
+// PROTEGER HTML
+// ======================================================
+
+function escaparHTML(
+  texto
+) {
+
+  const div =
+    document.createElement(
+      "div"
+    );
+
+
+  div.textContent =
+    texto ?? "";
+
+
+  return div.innerHTML;
+
+}
+
+
+// ======================================================
+// AL CARGAR
+// ======================================================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    campoFecha.min =
+      obtenerFechaHoy();
+
+    comprobarHora();
+
+  }
+);
+
+
+</script>
+
+</body>
+
+</html>
+```
