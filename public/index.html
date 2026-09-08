@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -1452,6 +1452,11 @@
       type="password"
       id="adminPassword"
       placeholder="Contraseña"
+      onkeydown="
+        if(event.key === 'Enter') {
+          iniciarSesion();
+        }
+      "
     >
 
     <button
@@ -1778,6 +1783,13 @@ const campoHora =
   document.getElementById(
     "hora"
   );
+
+
+// ======================================================
+// CONTROL DE ACTUALIZACIÓN
+// ======================================================
+
+let cargandoReservas = false;
 
 
 // ======================================================
@@ -2281,7 +2293,16 @@ function mostrarApartado(
 // CARGAR RESERVAS
 // ======================================================
 
-async function cargarReservas() {
+async function cargarReservas(
+  silencioso = false
+) {
+
+  if (cargandoReservas) {
+    return;
+  }
+
+  cargandoReservas = true;
+
 
   const listas = [
 
@@ -2294,30 +2315,41 @@ async function cargarReservas() {
   ];
 
 
-  listas.forEach(
-    id => {
+  if (!silencioso) {
 
-      const lista =
-        document.getElementById(
-          id
-        );
+    listas.forEach(
+      id => {
 
-      lista.innerHTML =
-        `
-        <div class="vacio">
-          ⏳ Cargando reservas...
-        </div>
-        `;
+        const lista =
+          document.getElementById(
+            id
+          );
 
-    }
-  );
+        if (lista) {
+
+          lista.innerHTML =
+            `
+            <div class="vacio">
+              ⏳ Cargando reservas...
+            </div>
+            `;
+
+        }
+
+      }
+    );
+
+  }
 
 
   try {
 
     const respuesta =
       await fetch(
-        "/reservas"
+        "/reservas",
+        {
+          cache: "no-store"
+        }
       );
 
 
@@ -2350,28 +2382,42 @@ async function cargarReservas() {
 
   catch (error) {
 
-    listas.forEach(
-      id => {
+    if (!silencioso) {
 
-        const lista =
-          document.getElementById(
-            id
-          );
+      listas.forEach(
+        id => {
 
-        lista.innerHTML =
-          `
-          <div class="vacio">
+          const lista =
+            document.getElementById(
+              id
+            );
 
-            ❌
-            ${escaparHTML(
-              error.message
-            )}
+          if (lista) {
 
-          </div>
-          `;
+            lista.innerHTML =
+              `
+              <div class="vacio">
 
-      }
-    );
+                ❌
+                ${escaparHTML(
+                  error.message
+                )}
+
+              </div>
+              `;
+
+          }
+
+        }
+      );
+
+    }
+
+  }
+
+  finally {
+
+    cargandoReservas = false;
 
   }
 
@@ -2506,6 +2552,11 @@ function mostrarGrupo(
     document.getElementById(
       idLista
     );
+
+
+  if (!lista) {
+    return;
+  }
 
 
   if (
@@ -3131,6 +3182,40 @@ function escaparHTML(
   return div.innerHTML;
 
 }
+
+
+// ======================================================
+// ACTUALIZAR RESERVAS AUTOMÁTICAMENTE
+// ======================================================
+
+setInterval(
+  function() {
+
+    const panel =
+      document.getElementById(
+        "adminPanel"
+      );
+
+    const overlay =
+      document.getElementById(
+        "adminOverlay"
+      );
+
+
+    if (
+      panel &&
+      overlay &&
+      overlay.style.display === "block" &&
+      panel.style.display === "block"
+    ) {
+
+      cargarReservas(true);
+
+    }
+
+  },
+  5000
+);
 
 
 // ======================================================
