@@ -1506,39 +1506,1879 @@
                 <p data-i18n="dish2desc">Secreto ibérico a la brasa con patatas.</p>
               </div>
               <div class="menu-price">18,50 €</div>
+            </div><!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="google-site-verification"
+    content="cYldDjl4DDAWEZUGfyHIT2P0K_P9EmeTlKU41hZ3D90">
+
+  <title>La Brasa | Restaurante en Sevilla · Cocina Mediterránea</title>
+
+  <meta
+    name="description"
+    content="La Brasa, restaurante en Sevilla especializado en cocina mediterránea y carnes a la brasa. Consulta nuestra carta y reserva tu mesa.">
+
+  <meta
+    name="keywords"
+    content="restaurante Sevilla, restaurante en Sevilla, restaurante Tomares, comida mediterránea Sevilla, carnes a la brasa Sevilla, restaurante con reservas, restaurante sin gluten Sevilla, desayunos Sevilla">
+
+  <meta
+    name="author"
+    content="La Brasa">
+
+  <meta
+    name="robots"
+    content="index, follow">
+
+  <meta
+    name="theme-color"
+    content="#111111">
+
+  <meta
+    property="og:title"
+    content="La Brasa | Restaurante en Sevilla">
+
+  <meta
+    property="og:description"
+    content="Cocina mediterránea, producto de calidad y auténtico sabor a la brasa.">
+
+  <meta
+    property="og:type"
+    content="restaurant">
+
+  <meta
+    property="og:url"
+    content="https://labrasarestaurante.es/">
+
+  <link
+    rel="canonical"
+    href="https://labrasarestaurante.es/">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Brasa",
+    "description": "Restaurante de cocina mediterránea especializado en carnes a la brasa en Sevilla.",
+    "servesCuisine": [
+      "Mediterranean",
+      "Spanish"
+    ],
+    "telephone": "+34 954 000 000",
+    "email": "hola@labrasarestaurante.es",
+    "url": "https://labrasarestaurante.es/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle del Azahar 18",
+      "postalCode": "41012",
+      "addressLocality": "Sevilla",
+      "addressRegion": "Andalucía",
+      "addressCountry": "ES"
+    },
+    "openingHours": [
+      "Mo-Th 08:00-23:30",
+      "Fr-Sa 08:00-00:30",
+      "Su 09:00-23:00"
+    ],
+    "priceRange": "€€",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "250"
+    }
+  }
+  </script>
+
+
+  <style>
+
+    :root {
+      --gold: #e7a23b;
+      --gold-light: #fff1d2;
+      --dark: #111;
+      --dark-2: #181818;
+      --dark-3: #222;
+      --text: #222;
+      --muted: #777;
+      --light: #f7f5f1;
+      --white: #fff;
+      --danger: #d9534f;
+      --success: #4caf50;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(17,17,17,.97);
+      backdrop-filter: blur(10px);
+      color: white;
+      border-bottom: 1px solid rgba(231,162,59,.15);
+    }
+
+    .header-inner {
+      width: min(1200px, 94%);
+      margin: auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+    }
+
+    nav a {
+      transition: .2s;
+      color: #eee;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language {
+      display: flex;
+      border: 1px solid #444;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .language button {
+      border: 0;
+      background: transparent;
+      color: #aaa;
+      padding: 6px 9px;
+      font-size: 11px;
+    }
+
+    .language button.active {
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 700px;
+      background:
+        linear-gradient(
+          rgba(0,0,0,.58),
+          rgba(0,0,0,.62)
+        ),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-content {
+      width: min(1150px, 92%);
+      margin: auto;
+      padding: 80px 0;
+    }
+
+    .hero-small {
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 9vw, 105px);
+      line-height: .95;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #ddd;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: var(--gold);
+      color: #111;
+      padding: 13px 22px;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 45px;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 5vw, 55px);
+      line-height: 1.1;
+      margin: 10px 0 15px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       INFO
+    ========================= */
+
+    .info-section {
+      background: var(--light);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 28px 22px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      transition: .2s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.07);
+    }
+
+    .info-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .info-card h3 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 500px;
+      border-radius: 10px;
+      overflow: hidden;
+      background:
+        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .about-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 10px 0 20px;
+    }
+
+    .about-content p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .about-stat {
+      background: var(--light);
+      padding: 20px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .about-stat strong {
+      display: block;
+      font-size: 27px;
+      font-family: "Playfair Display", serif;
+    }
+
+    .about-stat span {
+      font-size: 12px;
+      color: #777;
+    }
+
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu-section {
+      background: #111;
+      color: white;
+    }
+
+    .menu-section .section-title p {
+      color: #aaa;
+    }
+
+    .menu-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .menu-tab {
+      background: #1e1e1e;
+      color: #bbb;
+      border: 1px solid #333;
+      padding: 17px 10px;
+      border-radius: 6px;
+      transition: .2s;
+    }
+
+    .menu-tab strong {
+      display: block;
+      color: white;
+    }
+
+    .menu-tab small {
+      color: #777;
+      font-size: 10px;
+    }
+
+    .menu-tab.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #111;
+    }
+
+    .menu-tab.active strong,
+    .menu-tab.active small {
+      color: #111;
+    }
+
+    .menu-panel {
+      display: none;
+    }
+
+    .menu-panel.active {
+      display: block;
+    }
+
+    .menu-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px;
+      background: #191919;
+      border: 1px solid #292929;
+      border-radius: 6px;
+    }
+
+    .menu-item h3 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 4px;
+    }
+
+    .menu-item p {
+      color: #999;
+      font-size: 13px;
+    }
+
+    .menu-price {
+      color: var(--gold);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .gallery-item {
+      height: 270px;
+      overflow: hidden;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .visor {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.94);
+      z-index: 5000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .visor.active {
+      display: flex;
+    }
+
+    .visor img {
+      max-width: 95%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    .visor-close {
+      position: absolute;
+      right: 25px;
+      top: 10px;
+      color: white;
+      font-size: 45px;
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       REVIEWS
+    ========================= */
+
+    .reviews {
+      background: var(--light);
+    }
+
+    .rating-summary {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .rating-number {
+      font-size: 60px;
+      font-family: "Playfair Display", serif;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 20px;
+    }
+
+    .rating-summary p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .review {
+      background: white;
+      border: 1px solid #eee;
+      padding: 25px;
+      border-radius: 7px;
+    }
+
+    .review-name {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .review .stars {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .review p {
+      font-size: 13px;
+      color: #666;
+    }
+
+
+    /* =========================
+       RESERVAS
+    ========================= */
+
+    .reservation-section {
+      background:
+        linear-gradient(
+          rgba(17,17,17,.94),
+          rgba(17,17,17,.94)
+        ),
+        url("https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      color: white;
+    }
+
+    .reservation-section .section-title p {
+      color: #aaa;
+    }
+
+    .reservation-box {
+      width: min(850px, 100%);
+      margin: auto;
+      background: #191919;
+      border: 1px solid #2c2c2c;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .reservation-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: #111;
+      color: white;
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 12px;
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .reservation-form .btn {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+
+    .reservation-message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 13px;
+      display: none;
+    }
+
+    .reservation-message.success {
+      display: block;
+      background: rgba(76,175,80,.15);
+      color: #8ee58e;
+    }
+
+    .reservation-message.error {
+      display: block;
+      background: rgba(217,83,79,.15);
+      color: #ff8e89;
+    }
+
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location-section {
+      background: #f7f5f1;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .location-card {
+      background: white;
+      border: 1px solid #eee;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .location-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .location-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .location-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      background: #111;
+      color: white;
+      font-size: 12px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 70px 5% 20px;
+    }
+
+    .footer-grid {
+      width: min(1200px, 100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 45px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand svg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .footer-brand h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+    }
+
+    .footer-column > p {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .footer-column h4 {
+      color: var(--gold);
+      margin-bottom: 17px;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    .footer-column > a {
+      display: block;
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 9px;
+      transition: .2s;
+    }
+
+    .footer-column > a:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       REDES SOCIALES
+    ========================= */
+
+    .social-title {
+      margin-top: 25px;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .social-button {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      background: #202020;
+      border: 1px solid #333;
+      color: white !important;
+      font-weight: 700;
+      font-size: 14px !important;
+      margin: 0 !important;
+      transition: .25s;
+    }
+
+    .social-button:hover {
+      background: var(--gold);
+      color: #111 !important;
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .social-button.tiktok {
+      font-size: 17px !important;
+    }
+
+    .footer-bottom {
+      width: min(1200px, 100%);
+      margin: 50px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #2b2b2b;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #777;
+      font-size: 11px;
+    }
+
+
+    /* =========================
+       ADMIN
+    ========================= */
+
+    .admin-trigger {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 3000;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid #444;
+      background: #111;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    }
+
+    .admin-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.86);
+      z-index: 4000;
+      display: none;
+      overflow-y: auto;
+      padding: 30px 15px;
+    }
+
+    .admin-overlay.active {
+      display: block;
+    }
+
+    .admin-container {
+      width: min(1100px, 100%);
+      margin: auto;
+      background: #151515;
+      color: white;
+      border: 1px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .admin-header {
+      padding: 18px 22px;
+      background: #111;
+      border-bottom: 1px solid #292929;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .admin-header h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--gold);
+    }
+
+    .admin-close {
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 30px;
+    }
+
+    .admin-login {
+      width: min(400px, 90%);
+      margin: 80px auto;
+      text-align: center;
+    }
+
+    .admin-login h2 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 20px;
+    }
+
+    .admin-login input {
+      width: 100%;
+      padding: 13px;
+      background: #222;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 5px;
+      margin-bottom: 12px;
+    }
+
+    .admin-login .btn {
+      width: 100%;
+    }
+
+    .admin-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .admin-nav {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #292929;
+      padding-bottom: 12px;
+    }
+
+    .admin-nav button {
+      background: #222;
+      color: #aaa;
+      border: 1px solid #333;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .admin-nav button.active {
+      background: var(--gold);
+      color: #111;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .admin-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .stat {
+      background: #202020;
+      border: 1px solid #303030;
+      padding: 20px;
+      border-radius: 7px;
+    }
+
+    .stat span {
+      display: block;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 32px;
+      color: var(--gold);
+    }
+
+
+    /* =========================
+       ZONAS RESERVAS
+    ========================= */
+
+    .reservation-zone {
+      margin-bottom: 30px;
+    }
+
+    .reservation-zone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 13px 15px;
+      border-radius: 7px 7px 0 0;
+      margin-bottom: 10px;
+    }
+
+    .reservation-zone-header h3 {
+      font-family: "Playfair Display", serif;
+    }
+
+    .reservation-zone-header span {
+      background: rgba(0,0,0,.2);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .pending-zone .reservation-zone-header {
+      background: #6d4c22;
+    }
+
+    .accepted-zone .reservation-zone-header {
+      background: #24552c;
+    }
+
+    .rejected-zone .reservation-zone-header {
+      background: #612523;
+    }
+
+    .reservation-zone-empty {
+      padding: 18px;
+      background: #1b1b1b;
+      border: 1px solid #292929;
+      border-radius: 5px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .reservation-admin {
+      background: #1c1c1c;
+      border: 1px solid #303030;
+      border-radius: 7px;
+      padding: 18px;
+      margin-bottom: 10px;
+    }
+
+    .reservation-admin-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    .reservation-admin-top strong {
+      font-size: 16px;
+    }
+
+    .status {
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .status.pendiente {
+      background: #6d4c22;
+      color: #ffd995;
+    }
+
+    .status.aceptada {
+      background: #24552c;
+      color: #9bf0a5;
+    }
+
+    .status.rechazada {
+      background: #612523;
+      color: #ff9e99;
+    }
+
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .admin-actions button {
+      border: 0;
+      border-radius: 4px;
+      padding: 8px 12px;
+      color: white;
+      font-size: 11px;
+    }
+
+    .admin-actions .accept {
+      background: #31783c;
+    }
+
+    .admin-actions .reject {
+      background: #8a302d;
+    }
+
+    .admin-actions .delete {
+      background: #333;
+      color: #bbb;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .info-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      section {
+        padding: 65px 0;
+      }
+
+      .header-inner {
+        min-height: 65px;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .header-actions {
+        margin-left: auto;
+      }
+
+      .info-grid,
+      .about-grid,
+      .location-grid,
+      .reviews-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 350px;
+      }
+
+      .about-content h2 {
+        font-size: 38px;
+      }
+
+      .menu-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-item {
+        height: 180px;
+      }
+
+      .reservation-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full,
+      .reservation-form .btn {
+        grid-column: auto;
+      }
+
+      .admin-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-nav {
+        overflow-x: auto;
+      }
+
+      .admin-nav button {
+        white-space: nowrap;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+    @media (max-width: 420px) {
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .brand svg {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .menu-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reservation-box {
+        padding: 20px;
+      }
+
+      .social-buttons {
+        gap: 7px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header>
+
+    <div class="header-inner">
+
+      <a href="#inicio" class="brand">
+
+        <svg viewBox="0 0 100 100">
+
+          <circle
+            cx="50"
+            cy="50"
+            r="46"
+            fill="#111"
+            stroke="#e7a23b"
+            stroke-width="4"/>
+
+          <path
+            d="M50 77
+            C30 77 28 61 36 51
+            C42 43 49 39 47 24
+            C60 33 69 43 66 53
+            C75 50 78 59 75 66
+            C71 74 62 77 50 77Z"
+            fill="#e7a23b"/>
+
+          <path
+            d="M50 69
+            C42 69 40 62 44 57
+            C47 53 51 50 51 44
+            C58 49 61 55 59 60
+            C64 58 66 63 63 67
+            C60 70 56 69 50 69Z"
+            fill="#fff1d2"/>
+
+        </svg>
+
+        LA <span>BRASA</span>
+
+      </a>
+
+
+      <nav>
+
+        <a href="#inicio" data-i18n="navHome">Inicio</a>
+
+        <a href="#sobre-nosotros" data-i18n="navAbout">
+          Sobre nosotros
+        </a>
+
+        <a href="#cartas" data-i18n="navMenu">
+          Cartas
+        </a>
+
+        <a href="#fotos" data-i18n="navPhotos">
+          Fotos
+        </a>
+
+        <a href="#resenas" data-i18n="navReviews">
+          Reseñas
+        </a>
+
+        <a href="#reservas" data-i18n="navBooking">
+          Reservas
+        </a>
+
+      </nav>
+
+
+      <div class="header-actions">
+
+        <div class="language">
+
+          <button
+            id="esBtn"
+            class="active"
+            onclick="setLanguage('es')">
+            ES
+          </button>
+
+          <button
+            id="enBtn"
+            onclick="setLanguage('en')">
+            EN
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main id="inicio">
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div
+          class="hero-small"
+          data-i18n="heroSmall">
+          Cocina mediterránea · Sevilla
+        </div>
+
+        <h1>
+          LA<br>
+          BRASA
+        </h1>
+
+        <p data-i18n="heroText">
+          Sabor, tradición y producto de calidad en cada plato.
+        </p>
+
+        <a
+          class="btn"
+          href="#reservas"
+          data-i18n="heroButton">
+          Reservar mesa
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         INFO
+    ========================= -->
+
+    <section class="info-section">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="infoSmall">
+            TODO PENSADO PARA TI
+          </span>
+
+          <h2 data-i18n="infoTitle">
+            Información para nuestros clientes
+          </h2>
+
+          <p data-i18n="infoText">
+            Descubre nuestras opciones y disfruta de una experiencia gastronómica adaptada a ti.
+          </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+          <div class="info-card">
+
+            <div class="info-icon">🥬</div>
+
+            <h3 data-i18n="allergensTitle">
+              Alérgenos
+            </h3>
+
+            <p data-i18n="allergensText">
+              Pregunta a nuestro equipo por los ingredientes y alérgenos de cada plato.
+            </p>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <div class="info-icon">⭐</div>
+
+            <h3 data-i18n="recommendedTitle">
+              Lo más recomendado
+            </h3>
+
+            <p data-i18n="recommendedText">
+              Descubre nuestros platos favoritos de nuestros clientes.
+            </p>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <div class="info-icon">🔥</div>
+
+            <h3 data-i18n="specialtyTitle">
+              Especialidad de la casa
+            </h3>
+
+            <p data-i18n="specialtyText">
+              Carnes y productos cocinados a la brasa para conseguir todo su sabor.
+            </p>
+
+          </div>
+
+
+          <div class="info-card">
+
+            <div class="info-icon">🌱</div>
+
+            <h3 data-i18n="specialOptionsTitle">
+              Opciones especiales
+            </h3>
+
+            <p data-i18n="specialOptionsText">
+              Opciones vegetarianas y platos adaptados a diferentes necesidades.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE NOSOTROS
+    ========================= -->
+
+    <section id="sobre-nosotros">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image"></div>
+
+
+          <div class="about-content">
+
+            <span
+              style="color:#e7a23b;font-size:11px;letter-spacing:3px;font-weight:700;"
+              data-i18n="aboutSmall">
+              NUESTRA HISTORIA
+            </span>
+
+            <h2 data-i18n="aboutTitle">
+              Sobre nosotros
+            </h2>
+
+            <p data-i18n="aboutText1">
+              La Brasa nace de una idea sencilla: reunir buena cocina, producto de calidad y un ambiente en el que nuestros clientes quieran volver.
+            </p>
+
+            <p data-i18n="aboutText2">
+              Nuestra cocina combina recetas mediterráneas con el sabor tradicional de la brasa. Trabajamos cada plato cuidando los pequeños detalles.
+            </p>
+
+            <p data-i18n="aboutText3">
+              Ya sea para desayunar, comer con la familia, disfrutar de una cena o simplemente tomar algo, queremos que La Brasa sea uno de esos lugares que se sienten como propios.
+            </p>
+
+
+            <div class="about-stats">
+
+              <div class="about-stat">
+
+                <strong>2018</strong>
+
+                <span data-i18n="aboutSince">
+                  El año en el que abrimos nuestras puertas con la ilusión de crear un restaurante diferente.
+                </span>
+
+              </div>
+
+
+              <div class="about-stat">
+
+                <strong>+10.000</strong>
+
+                <span data-i18n="aboutCustomers">
+                  Clientes que han compartido mesa con nosotros.
+                </span>
+
+              </div>
+
             </div>
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="dish3">Pollo de corral a la brasa</h3>
-                <p data-i18n="dish3desc">Marinado con hierbas y especias de la casa.</p>
-              </div>
-              <div class="menu-price">15,90 €</div>
-            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARTAS
+    ========================= -->
+
+    <section
+      class="menu-section"
+      id="cartas">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="menuSmall">
+            NUESTRAS CARTAS
+          </span>
+
+          <h2 data-i18n="menuTitle">
+            Elige tu carta
+          </h2>
+
+          <p data-i18n="menuText">
+            Consulta nuestra selección de platos, desayunos, bebidas y opciones sin gluten.
+          </p>
+
+        </div>
+
+
+        <div class="menu-tabs">
+
+          <button
+            class="menu-tab active"
+            onclick="showMenu('normal', this)">
+
+            <strong data-i18n="normalCard">
+              Carta normal
+            </strong>
+
+            <small data-i18n="normalCardSmall">
+              Nuestra carta principal
+            </small>
+
+          </button>
+
+
+          <button
+            class="menu-tab"
+            onclick="showMenu('gluten', this)">
+
+            <strong data-i18n="glutenCard">
+              Sin gluten
+            </strong>
+
+            <small data-i18n="glutenCardSmall">
+              Opciones adaptadas
+            </small>
+
+          </button>
+
+
+          <button
+            class="menu-tab"
+            onclick="showMenu('breakfast', this)">
+
+            <strong data-i18n="breakfastCard">
+              Desayunos
+            </strong>
+
+            <small data-i18n="breakfastCardSmall">
+              Empieza bien el día
+            </small>
+
+          </button>
+
+
+          <button
+            class="menu-tab"
+            onclick="showMenu('drinks', this)">
+
+            <strong data-i18n="drinksCard">
+              Bebidas y postres
+            </strong>
+
+            <small data-i18n="drinksCardSmall">
+              Para terminar
+            </small>
+
+          </button>
+
+        </div>
+
+
+        <!-- CARTA NORMAL -->
+
+        <div
+          class="menu-panel active"
+          id="menu-normal">
+
+          <div class="menu-list">
+
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="dish4">Ensalada mediterránea</h3>
-                <p data-i18n="dish4desc">Tomate, queso, aceitunas, cebolla y vinagreta.</p>
+
+                <h3 data-i18n="dish1">
+                  Entrecot de ternera a la brasa
+                </h3>
+
+                <p data-i18n="dish1desc">
+                  Con patatas rústicas y pimientos asados.
+                </p>
+
               </div>
-              <div class="menu-price">11,50 €</div>
+
+              <div class="menu-price">
+                22,90 €
+              </div>
+
             </div>
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="dish5">Croquetas caseras</h3>
-                <p data-i18n="dish5desc">Ración de croquetas cremosas de la casa.</p>
-              </div>
-              <div class="menu-price">9,90 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="dish6">Hamburguesa La Brasa</h3>
-                <p data-i18n="dish6desc">Carne de vacuno, queso, cebolla y salsa de la casa.</p>
+
+                <h3 data-i18n="dish2">
+                  Secreto ibérico
+                </h3>
+
+                <p data-i18n="dish2desc">
+                  Secreto ibérico a la brasa con patatas.
+                </p>
+
               </div>
-              <div class="menu-price">14,90 €</div>
+
+              <div class="menu-price">
+                18,50 €
+              </div>
+
             </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dish3">
+                  Pollo de corral a la brasa
+                </h3>
+
+                <p data-i18n="dish3desc">
+                  Marinado con hierbas y especias de la casa.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                15,90 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dish4">
+                  Ensalada mediterránea
+                </h3>
+
+                <p data-i18n="dish4desc">
+                  Tomate, queso, aceitunas, cebolla y vinagreta.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                11,50 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dish5">
+                  Croquetas caseras
+                </h3>
+
+                <p data-i18n="dish5desc">
+                  Ración de croquetas cremosas de la casa.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                9,90 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dish6">
+                  Hamburguesa La Brasa
+                </h3>
+
+                <p data-i18n="dish6desc">
+                  Carne de vacuno, queso, cebolla y salsa de la casa.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                14,90 €
+              </div>
+
+            </div>
+
 
           </div>
 
@@ -1547,47 +3387,106 @@
 
         <!-- SIN GLUTEN -->
 
-        <div class="menu-panel" id="menu-gluten">
+        <div
+          class="menu-panel"
+          id="menu-gluten">
 
           <div class="menu-list">
 
-            <div class="menu-item">
-              <div>
-                <h3>Entrecot a la brasa</h3>
-                <p data-i18n="gluten1">Con patatas y pimientos. Consultar contaminación cruzada.</p>
-              </div>
-              <div class="menu-price">22,90 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3>Secreto ibérico</h3>
-                <p data-i18n="gluten2">Carne a la brasa con guarnición apta.</p>
+
+                <h3>
+                  Entrecot a la brasa
+                </h3>
+
+                <p data-i18n="gluten1">
+                  Con patatas y pimientos. Consultar contaminación cruzada.
+                </p>
+
               </div>
-              <div class="menu-price">18,50 €</div>
+
+              <div class="menu-price">
+                22,90 €
+              </div>
+
             </div>
 
-            <div class="menu-item">
-              <div>
-                <h3>Ensalada mediterránea</h3>
-                <p data-i18n="gluten3">Tomate, queso, aceitunas y vinagreta.</p>
-              </div>
-              <div class="menu-price">11,50 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3>Pollo a la brasa</h3>
-                <p data-i18n="gluten4">Pollo marinado con guarnición.</p>
+
+                <h3>
+                  Secreto ibérico
+                </h3>
+
+                <p data-i18n="gluten2">
+                  Carne a la brasa con guarnición apta.
+                </p>
+
               </div>
-              <div class="menu-price">15,90 €</div>
+
+              <div class="menu-price">
+                18,50 €
+              </div>
+
             </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3>
+                  Ensalada mediterránea
+                </h3>
+
+                <p data-i18n="gluten3">
+                  Tomate, queso, aceitunas y vinagreta.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                11,50 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3>
+                  Pollo a la brasa
+                </h3>
+
+                <p data-i18n="gluten4">
+                  Pollo marinado con guarnición.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                15,90 €
+              </div>
+
+            </div>
+
 
           </div>
 
-          <p style="color:#888;font-size:11px;margin-top:20px;text-align:center;"
-             data-i18n="glutenWarning">
+
+          <p
+            style="color:#888;font-size:11px;margin-top:20px;text-align:center;"
+            data-i18n="glutenWarning">
+
             * Consulta siempre a nuestro personal sobre alérgenos y posibles contaminaciones cruzadas.
+
           </p>
 
         </div>
@@ -1595,41 +3494,96 @@
 
         <!-- DESAYUNOS -->
 
-        <div class="menu-panel" id="menu-breakfast">
+        <div
+          class="menu-panel"
+          id="menu-breakfast">
 
           <div class="menu-list">
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="break1">Tostada con tomate y aceite</h3>
-                <p data-i18n="break1desc">Pan crujiente, tomate natural y aceite de oliva.</p>
-              </div>
-              <div class="menu-price">3,50 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="break2">Tostada con jamón ibérico</h3>
-                <p data-i18n="break2desc">Jamón ibérico, tomate y aceite de oliva.</p>
+
+                <h3 data-i18n="break1">
+                  Tostada con tomate y aceite
+                </h3>
+
+                <p data-i18n="break1desc">
+                  Pan crujiente, tomate natural y aceite de oliva.
+                </p>
+
               </div>
-              <div class="menu-price">5,90 €</div>
+
+              <div class="menu-price">
+                3,50 €
+              </div>
+
             </div>
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="break3">Desayuno completo</h3>
-                <p data-i18n="break3desc">Tostada, café y zumo natural.</p>
-              </div>
-              <div class="menu-price">6,50 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="break4">Croissant artesanal</h3>
-                <p data-i18n="break4desc">Croissant recién horneado.</p>
+
+                <h3 data-i18n="break2">
+                  Tostada con jamón ibérico
+                </h3>
+
+                <p data-i18n="break2desc">
+                  Jamón ibérico, tomate y aceite de oliva.
+                </p>
+
               </div>
-              <div class="menu-price">2,50 €</div>
+
+              <div class="menu-price">
+                5,90 €
+              </div>
+
             </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="break3">
+                  Desayuno completo
+                </h3>
+
+                <p data-i18n="break3desc">
+                  Tostada, café y zumo natural.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                6,50 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="break4">
+                  Croissant artesanal
+                </h3>
+
+                <p data-i18n="break4desc">
+                  Croissant recién horneado.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                2,50 €
+              </div>
+
+            </div>
+
 
           </div>
 
@@ -1638,57 +3592,138 @@
 
         <!-- BEBIDAS Y POSTRES -->
 
-        <div class="menu-panel" id="menu-drinks">
+        <div
+          class="menu-panel"
+          id="menu-drinks">
 
           <div class="menu-list">
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="drink1">Cerveza</h3>
-                <p data-i18n="drink1desc">Caña o botella.</p>
-              </div>
-              <div class="menu-price">2,50 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="drink2">Vino de la casa</h3>
-                <p data-i18n="drink2desc">Copa de vino tinto o blanco.</p>
+
+                <h3 data-i18n="drink1">
+                  Cerveza
+                </h3>
+
+                <p data-i18n="drink1desc">
+                  Caña o botella.
+                </p>
+
               </div>
-              <div class="menu-price">3,20 €</div>
+
+              <div class="menu-price">
+                2,50 €
+              </div>
+
             </div>
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="dessert1">Tarta de queso</h3>
-                <p data-i18n="dessert1desc">Cremosa tarta de queso estilo casero.</p>
-              </div>
-              <div class="menu-price">6,00 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="dessert2">Brownie con helado</h3>
-                <p data-i18n="dessert2desc">Brownie de chocolate con helado de vainilla.</p>
+
+                <h3 data-i18n="drink2">
+                  Vino de la casa
+                </h3>
+
+                <p data-i18n="drink2desc">
+                  Copa de vino tinto o blanco.
+                </p>
+
               </div>
-              <div class="menu-price">6,50 €</div>
+
+              <div class="menu-price">
+                3,20 €
+              </div>
+
             </div>
 
-            <div class="menu-item">
-              <div>
-                <h3 data-i18n="dessert3">Café</h3>
-                <p data-i18n="dessert3desc">Espresso, cortado o con leche.</p>
-              </div>
-              <div class="menu-price">1,80 €</div>
-            </div>
 
             <div class="menu-item">
+
               <div>
-                <h3 data-i18n="dessert4">Refresco</h3>
-                <p data-i18n="dessert4desc">Diferentes opciones disponibles.</p>
+
+                <h3 data-i18n="dessert1">
+                  Tarta de queso
+                </h3>
+
+                <p data-i18n="dessert1desc">
+                  Cremosa tarta de queso estilo casero.
+                </p>
+
               </div>
-              <div class="menu-price">2,50 €</div>
+
+              <div class="menu-price">
+                6,00 €
+              </div>
+
             </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dessert2">
+                  Brownie con helado
+                </h3>
+
+                <p data-i18n="dessert2desc">
+                  Brownie de chocolate con helado de vainilla.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                6,50 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dessert3">
+                  Café
+                </h3>
+
+                <p data-i18n="dessert3desc">
+                  Espresso, cortado o con leche.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                1,80 €
+              </div>
+
+            </div>
+
+
+            <div class="menu-item">
+
+              <div>
+
+                <h3 data-i18n="dessert4">
+                  Refresco
+                </h3>
+
+                <p data-i18n="dessert4desc">
+                  Diferentes opciones disponibles.
+                </p>
+
+              </div>
+
+              <div class="menu-price">
+                2,50 €
+              </div>
+
+            </div>
+
 
           </div>
 
@@ -1723,10 +3758,13 @@
 
         </div>
 
+
         <div class="gallery-grid">
 
           <div class="gallery-item">
-            <img src="img/foto.png" alt="Restaurante La Brasa">
+            <img
+              src="img/foto.png"
+              alt="Restaurante La Brasa">
           </div>
 
           <div class="gallery-item">
@@ -1768,11 +3806,20 @@
 
     <!-- VISOR -->
 
-    <div class="visor" id="visorFoto">
+    <div
+      class="visor"
+      id="visorFoto">
 
-      <span class="visor-close" onclick="cerrarFoto()">×</span>
+      <span
+        class="visor-close"
+        onclick="cerrarFoto()">
+        ×
+      </span>
 
-      <img id="visorImagen" src="" alt="Imagen ampliada">
+      <img
+        id="visorImagen"
+        src=""
+        alt="Imagen ampliada">
 
     </div>
 
@@ -1781,7 +3828,9 @@
          RESEÑAS
     ========================= -->
 
-    <section class="reviews" id="resenas">
+    <section
+      class="reviews"
+      id="resenas">
 
       <div class="container">
 
@@ -1797,11 +3846,16 @@
 
         </div>
 
+
         <div class="rating-summary">
 
-          <div class="rating-number">4,8</div>
+          <div class="rating-number">
+            4,8
+          </div>
 
-          <div class="stars">★★★★★</div>
+          <div class="stars">
+            ★★★★★
+          </div>
 
           <p data-i18n="reviewsBased">
             Basado en más de 250 opiniones
@@ -1809,13 +3863,19 @@
 
         </div>
 
+
         <div class="reviews-grid">
+
 
           <div class="review">
 
-            <div class="review-name">María G.</div>
+            <div class="review-name">
+              María G.
+            </div>
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p data-i18n="review1">
               "La comida estaba espectacular y el servicio fue muy atento. Volveremos seguro."
@@ -1823,11 +3883,16 @@
 
           </div>
 
+
           <div class="review">
 
-            <div class="review-name">Carlos R.</div>
+            <div class="review-name">
+              Carlos R.
+            </div>
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p data-i18n="review2">
               "Muy buen sitio para comer con amigos. La carne a la brasa estaba increíble."
@@ -1835,11 +3900,16 @@
 
           </div>
 
+
           <div class="review">
 
-            <div class="review-name">Laura M.</div>
+            <div class="review-name">
+              Laura M.
+            </div>
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p data-i18n="review3">
               "Nos atendieron genial y tenían opciones para personas con intolerancias."
@@ -1847,17 +3917,23 @@
 
           </div>
 
+
           <div class="review">
 
-            <div class="review-name">David P.</div>
+            <div class="review-name">
+              David P.
+            </div>
 
-            <div class="stars">★★★★★</div>
+            <div class="stars">
+              ★★★★★
+            </div>
 
             <p data-i18n="review4">
               "Ambiente muy agradable, comida casera y precios bastante buenos."
             </p>
 
           </div>
+
 
         </div>
 
@@ -1870,7 +3946,9 @@
          RESERVAS
     ========================= -->
 
-    <section class="reservation-section" id="reservas">
+    <section
+      class="reservation-section"
+      id="reservas">
 
       <div class="container">
 
@@ -1890,13 +3968,19 @@
 
         </div>
 
+
         <div class="reservation-box">
 
-          <form class="reservation-form" id="reservationForm">
+          <form
+            class="reservation-form"
+            id="reservationForm">
+
 
             <div class="form-group">
 
-              <label for="nombre" data-i18n="nameLabel">
+              <label
+                for="nombre"
+                data-i18n="nameLabel">
                 Nombre
               </label>
 
@@ -1908,9 +3992,12 @@
 
             </div>
 
+
             <div class="form-group">
 
-              <label for="telefono" data-i18n="phoneLabel">
+              <label
+                for="telefono"
+                data-i18n="phoneLabel">
                 Teléfono
               </label>
 
@@ -1923,9 +4010,12 @@
 
             </div>
 
+
             <div class="form-group">
 
-              <label for="fecha" data-i18n="dateLabel">
+              <label
+                for="fecha"
+                data-i18n="dateLabel">
                 Fecha
               </label>
 
@@ -1937,9 +4027,12 @@
 
             </div>
 
+
             <div class="form-group">
 
-              <label for="hora" data-i18n="timeLabel">
+              <label
+                for="hora"
+                data-i18n="timeLabel">
                 Hora
               </label>
 
@@ -1951,13 +4044,18 @@
 
             </div>
 
+
             <div class="form-group">
 
-              <label for="personas" data-i18n="peopleLabel">
+              <label
+                for="personas"
+                data-i18n="peopleLabel">
                 Personas
               </label>
 
-              <select id="personas" name="personas">
+              <select
+                id="personas"
+                name="personas">
 
                 <option value="1">1</option>
                 <option value="2" selected>2</option>
@@ -1976,9 +4074,12 @@
 
             </div>
 
+
             <div class="form-group full">
 
-              <label for="comentarios" data-i18n="commentsLabel">
+              <label
+                for="comentarios"
+                data-i18n="commentsLabel">
                 Comentarios
               </label>
 
@@ -1989,13 +4090,23 @@
 
             </div>
 
-            <button class="btn" type="submit" data-i18n="reservationButton">
+
+            <button
+              class="btn"
+              type="submit"
+              data-i18n="reservationButton">
+
               Solicitar reserva
+
             </button>
 
           </form>
 
-          <div id="reservationMessage" class="reservation-message"></div>
+
+          <div
+            id="reservationMessage"
+            class="reservation-message">
+          </div>
 
         </div>
 
@@ -2024,11 +4135,15 @@
 
         </div>
 
+
         <div class="location-grid">
+
 
           <div class="location-card">
 
-            <div class="location-icon">📍</div>
+            <div class="location-icon">
+              📍
+            </div>
 
             <h3 data-i18n="addressTitle">
               Nuestra ubicación
@@ -2045,7 +4160,9 @@
               target="_blank"
               rel="noopener">
 
-              🧭 <span data-i18n="directions">
+              🧭
+
+              <span data-i18n="directions">
                 Cómo llegar
               </span>
 
@@ -2056,34 +4173,61 @@
 
           <div class="location-card">
 
-            <div class="location-icon">🕐</div>
+            <div class="location-icon">
+              🕐
+            </div>
 
             <h3 data-i18n="hoursTitle">
               Horarios
             </h3>
 
             <div class="hours-row">
-              <span data-i18n="monThu">Lunes a Jueves</span>
-              <strong>08:00 - 23:30</strong>
+
+              <span data-i18n="monThu">
+                Lunes a Jueves
+              </span>
+
+              <strong>
+                08:00 - 23:30
+              </strong>
+
             </div>
 
-            <div class="hours-row">
-              <span data-i18n="friSat">Viernes y Sábado</span>
-              <strong>08:00 - 00:30</strong>
-            </div>
 
             <div class="hours-row">
-              <span data-i18n="sunday">Domingo</span>
-              <strong>09:00 - 23:00</strong>
+
+              <span data-i18n="friSat">
+                Viernes y Sábado
+              </span>
+
+              <strong>
+                08:00 - 00:30
+              </strong>
+
+            </div>
+
+
+            <div class="hours-row">
+
+              <span data-i18n="sunday">
+                Domingo
+              </span>
+
+              <strong>
+                09:00 - 23:00
+              </strong>
+
             </div>
 
           </div>
+
 
         </div>
 
       </div>
 
     </section>
+
 
   </main>
 
@@ -2094,7 +4238,9 @@
 
   <footer>
 
+
     <div class="footer-grid">
+
 
       <div class="footer-column">
 
@@ -2130,15 +4276,92 @@
 
           </svg>
 
+
           <h3>
             LA <span>BRASA</span>
           </h3>
 
         </div>
 
+
         <p data-i18n="footerDescription">
           Cocina mediterránea, producto de calidad y el auténtico sabor de la brasa en Sevilla.
         </p>
+
+
+        <!-- REDES SOCIALES -->
+
+        <h4
+          class="social-title"
+          data-i18n="socialTitle">
+          Síguenos
+        </h4>
+
+
+        <div class="social-buttons">
+
+
+          <!-- INSTAGRAM -->
+
+          <a
+            class="social-button"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Instagram">
+
+            ◎
+
+          </a>
+
+
+          <!-- FACEBOOK -->
+
+          <a
+            class="social-button"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            title="Facebook">
+
+            f
+
+          </a>
+
+
+          <!-- TIKTOK -->
+
+          <a
+            class="social-button tiktok"
+            href="https://www.tiktok.com/@jacoboglm?_r=1&_t=ZN-99brzbo0Ph8"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            title="TikTok">
+
+            ♪
+
+          </a>
+
+
+          <!-- YOUTUBE -->
+
+          <a
+            class="social-button"
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            title="YouTube">
+
+            ▶
+
+          </a>
+
+
+        </div>
 
       </div>
 
@@ -2149,23 +4372,39 @@
           Enlaces rápidos
         </h4>
 
-        <a href="#inicio" data-i18n="navHome">
+        <a
+          href="#inicio"
+          data-i18n="navHome">
           Inicio
         </a>
 
-        <a href="#sobre-nosotros" data-i18n="navAbout">
+        <a
+          href="#sobre-nosotros"
+          data-i18n="navAbout">
           Sobre nosotros
         </a>
 
-        <a href="#cartas" data-i18n="navMenu">
+        <a
+          href="#cartas"
+          data-i18n="navMenu">
           Cartas
         </a>
 
-        <a href="#resenas" data-i18n="navReviews">
+        <a
+          href="#fotos"
+          data-i18n="navPhotos">
+          Fotos
+        </a>
+
+        <a
+          href="#resenas"
+          data-i18n="navReviews">
           Reseñas
         </a>
 
-        <a href="#reservas" data-i18n="navBooking">
+        <a
+          href="#reservas"
+          data-i18n="navBooking">
           Reservas
         </a>
 
@@ -2178,10 +4417,21 @@
           Contacto
         </h4>
 
-        <p>📍 Calle del Azahar 18</p>
-        <p>📍 41012 Sevilla</p>
-        <p>📞 +34 954 000 000</p>
-        <p>✉️ hola@labrasarestaurante.es</p>
+        <p>
+          📍 Calle del Azahar 18
+        </p>
+
+        <p>
+          📍 41012 Sevilla
+        </p>
+
+        <p>
+          📞 +34 954 000 000
+        </p>
+
+        <p>
+          ✉️ hola@labrasarestaurante.es
+        </p>
 
       </div>
 
@@ -2192,20 +4442,45 @@
           Horarios
         </h4>
 
-        <p>🕐 <span data-i18n="monThu">Lunes a Jueves</span></p>
-        <p>08:00 - 23:30</p>
+        <p>
+          🕐
+          <span data-i18n="monThu">
+            Lunes a Jueves
+          </span>
+        </p>
+
+        <p>
+          08:00 - 23:30
+        </p>
 
         <br>
 
-        <p>🕐 <span data-i18n="friSat">Viernes y Sábado</span></p>
-        <p>08:00 - 00:30</p>
+        <p>
+          🕐
+          <span data-i18n="friSat">
+            Viernes y Sábado
+          </span>
+        </p>
+
+        <p>
+          08:00 - 00:30
+        </p>
 
         <br>
 
-        <p>🕐 <span data-i18n="sunday">Domingo</span></p>
-        <p>09:00 - 23:00</p>
+        <p>
+          🕐
+          <span data-i18n="sunday">
+            Domingo
+          </span>
+        </p>
+
+        <p>
+          09:00 - 23:00
+        </p>
 
       </div>
+
 
     </div>
 
@@ -2222,16 +4497,21 @@
 
     </div>
 
+
   </footer>
 
 
-  <!-- BOTON ADMIN -->
+  <!-- =========================
+       BOTON ADMIN
+  ========================= -->
 
   <button
     class="admin-trigger"
     onclick="abrirAdmin()"
     title="Administración">
+
     ⚙️
+
   </button>
 
 
@@ -2239,18 +4519,26 @@
        ADMIN
   ========================= -->
 
-  <div class="admin-overlay" id="adminOverlay">
+  <div
+    class="admin-overlay"
+    id="adminOverlay">
+
 
     <div class="admin-container">
 
+
       <div class="admin-header">
 
-        <h2>La Brasa · Administración</h2>
+        <h2>
+          La Brasa · Administración
+        </h2>
 
         <button
           class="admin-close"
           onclick="cerrarAdmin()">
+
           ×
+
         </button>
 
       </div>
@@ -2258,9 +4546,13 @@
 
       <!-- LOGIN -->
 
-      <div class="admin-login" id="adminLogin">
+      <div
+        class="admin-login"
+        id="adminLogin">
 
-        <h2>Acceso privado</h2>
+        <h2>
+          Acceso privado
+        </h2>
 
         <input
           type="password"
@@ -2270,7 +4562,9 @@
         <button
           class="btn"
           onclick="loginAdmin()">
+
           Entrar
+
         </button>
 
         <p
@@ -2283,24 +4577,33 @@
 
       <!-- PANEL -->
 
-      <div class="admin-content" id="adminContent">
+      <div
+        class="admin-content"
+        id="adminContent">
+
 
         <div class="admin-nav">
 
           <button
             class="active"
             onclick="showAdminSection('resumen', this)">
+
             Resumen
+
           </button>
 
           <button
             onclick="showAdminSection('reservasAdmin', this)">
+
             Reservas
+
           </button>
 
           <button
             onclick="showAdminSection('configuracion', this)">
+
             Configuración
+
           </button>
 
         </div>
@@ -2312,28 +4615,59 @@
           class="admin-section active"
           id="admin-resumen">
 
+
           <div class="admin-stats">
 
-            <div class="stat">
-              <span>Pendientes</span>
-              <strong id="pendingCount">0</strong>
-            </div>
 
             <div class="stat">
-              <span>Aceptadas</span>
-              <strong id="acceptedCount">0</strong>
+
+              <span>
+                Pendientes
+              </span>
+
+              <strong id="pendingCount">
+                0
+              </strong>
+
             </div>
 
+
             <div class="stat">
-              <span>Rechazadas</span>
-              <strong id="rejectedCount">0</strong>
+
+              <span>
+                Aceptadas
+              </span>
+
+              <strong id="acceptedCount">
+                0
+              </strong>
+
             </div>
+
+
+            <div class="stat">
+
+              <span>
+                Rechazadas
+              </span>
+
+              <strong id="rejectedCount">
+                0
+              </strong>
+
+            </div>
+
 
           </div>
 
-          <p style="color:#888;font-size:12px;">
+
+          <p
+            style="color:#888;font-size:12px;">
+
             El panel se actualiza automáticamente.
+
           </p>
+
 
         </div>
 
@@ -2344,9 +4678,14 @@
           class="admin-section"
           id="admin-reservasAdmin">
 
-          <div id="adminReservationsList">
+
+          <div
+            id="adminReservationsList">
+
             Cargando reservas...
+
           </div>
+
 
         </div>
 
@@ -2357,17 +4696,26 @@
           class="admin-section"
           id="admin-configuracion">
 
-          <h3>Configuración</h3>
+          <h3>
+            Configuración
+          </h3>
 
-          <p style="color:#999;margin-top:10px;font-size:13px;">
+          <p
+            style="color:#999;margin-top:10px;font-size:13px;">
+
             Panel de administración de La Brasa.
+
           </p>
 
-          <p style="color:#777;margin-top:15px;font-size:12px;">
+          <p
+            style="color:#777;margin-top:15px;font-size:12px;">
+
             La contraseña actual se encuentra configurada en el código.
+
           </p>
 
         </div>
+
 
       </div>
 
@@ -2381,6 +4729,7 @@
   ========================= -->
 
   <script>
+
 
     /* =====================================
        TRADUCCIONES
@@ -2513,6 +4862,7 @@
 
         quickLinks: "Enlaces rápidos",
         contactTitle: "Contacto",
+        socialTitle: "Síguenos",
         footerDescription: "Cocina mediterránea, producto de calidad y el auténtico sabor de la brasa en Sevilla.",
         footerBottom: "Cocina mediterránea · Restaurante en Sevilla"
 
@@ -2644,6 +4994,7 @@
 
         quickLinks: "Quick links",
         contactTitle: "Contact",
+        socialTitle: "Follow us",
         footerDescription: "Mediterranean cuisine, quality ingredients and the authentic flavor of the grill in Seville.",
         footerBottom: "Mediterranean cuisine · Restaurant in Seville"
 
@@ -2661,36 +5012,61 @@
 
       document.documentElement.lang = language;
 
-      document.querySelectorAll("[data-i18n]").forEach(element => {
 
-        const key = element.getAttribute("data-i18n");
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
 
-        if (translations[language][key]) {
-          element.textContent = translations[language][key];
-        }
+          const key =
+            element.getAttribute("data-i18n");
 
-      });
+          if (
+            translations[language] &&
+            translations[language][key]
+          ) {
 
-      document.getElementById("esBtn").classList.toggle(
-        "active",
-        language === "es"
+            element.textContent =
+              translations[language][key];
+
+          }
+
+        });
+
+
+      document
+        .getElementById("esBtn")
+        .classList.toggle(
+          "active",
+          language === "es"
+        );
+
+
+      document
+        .getElementById("enBtn")
+        .classList.toggle(
+          "active",
+          language === "en"
+        );
+
+
+      localStorage.setItem(
+        "laBrasaLanguage",
+        language
       );
-
-      document.getElementById("enBtn").classList.toggle(
-        "active",
-        language === "en"
-      );
-
-      localStorage.setItem("laBrasaLanguage", language);
 
     }
 
 
     const savedLanguage =
-      localStorage.getItem("laBrasaLanguage");
+      localStorage.getItem(
+        "laBrasaLanguage"
+      );
+
 
     if (savedLanguage === "en") {
+
       setLanguage("en");
+
     }
 
 
@@ -2700,18 +5076,28 @@
 
     function showMenu(menu, button) {
 
-      document.querySelectorAll(".menu-panel")
+      document
+        .querySelectorAll(".menu-panel")
         .forEach(panel => {
+
           panel.classList.remove("active");
+
         });
 
-      document.querySelectorAll(".menu-tab")
+
+      document
+        .querySelectorAll(".menu-tab")
         .forEach(tab => {
+
           tab.classList.remove("active");
+
         });
 
-      document.getElementById("menu-" + menu)
+
+      document
+        .getElementById("menu-" + menu)
         .classList.add("active");
+
 
       button.classList.add("active");
 
@@ -2722,38 +5108,51 @@
        GALERIA
     ===================================== */
 
-    document.querySelectorAll(".gallery-item img")
+    document
+      .querySelectorAll(".gallery-item img")
       .forEach(img => {
 
-        img.addEventListener("click", function () {
+        img.addEventListener(
+          "click",
+          function() {
 
-          document.getElementById("visorImagen").src =
-            this.src;
+            document
+              .getElementById("visorImagen")
+              .src = this.src;
 
-          document.getElementById("visorFoto")
-            .classList.add("active");
+            document
+              .getElementById("visorFoto")
+              .classList.add("active");
 
-        });
+          }
+        );
 
       });
 
 
     function cerrarFoto() {
 
-      document.getElementById("visorFoto")
+      document
+        .getElementById("visorFoto")
         .classList.remove("active");
 
     }
 
 
-    document.getElementById("visorFoto")
-      .addEventListener("click", function(e) {
+    document
+      .getElementById("visorFoto")
+      .addEventListener(
+        "click",
+        function(e) {
 
-        if (e.target === this) {
-          cerrarFoto();
+          if (e.target === this) {
+
+            cerrarFoto();
+
+          }
+
         }
-
-      });
+      );
 
 
     /* =====================================
@@ -2763,15 +5162,25 @@
     const fechaInput =
       document.getElementById("fecha");
 
+
     const hoy = new Date();
 
-    const year = hoy.getFullYear();
+
+    const year =
+      hoy.getFullYear();
+
 
     const month =
-      String(hoy.getMonth() + 1).padStart(2, "0");
+      String(
+        hoy.getMonth() + 1
+      ).padStart(2, "0");
+
 
     const day =
-      String(hoy.getDate()).padStart(2, "0");
+      String(
+        hoy.getDate()
+      ).padStart(2, "0");
+
 
     fechaInput.min =
       `${year}-${month}-${day}`;
@@ -2781,72 +5190,102 @@
        RESERVAS
     ===================================== */
 
-    document.getElementById("reservationForm")
-      .addEventListener("submit", async function(e) {
+    document
+      .getElementById("reservationForm")
+      .addEventListener(
+        "submit",
+        async function(e) {
 
-        e.preventDefault();
+          e.preventDefault();
 
-        const message =
-          document.getElementById("reservationMessage");
 
-        const formData =
-          new FormData(this);
+          const message =
+            document.getElementById(
+              "reservationMessage"
+            );
 
-        const data =
-          Object.fromEntries(formData.entries());
 
-        message.className =
-          "reservation-message";
+          const formData =
+            new FormData(this);
 
-        message.textContent =
-          currentLanguage === "es"
-            ? "Enviando reserva..."
-            : "Sending reservation...";
 
-        message.classList.add("success");
+          const data =
+            Object.fromEntries(
+              formData.entries()
+            );
 
-        try {
-
-          const response =
-            await fetch("/reservar", {
-
-              method: "POST",
-
-              headers: {
-                "Content-Type": "application/json"
-              },
-
-              body: JSON.stringify(data)
-
-            });
-
-          if (!response.ok) {
-            throw new Error("Error");
-          }
-
-          const result =
-            await response.json();
-
-          message.textContent =
-            currentLanguage === "es"
-              ? `Reserva enviada correctamente. ID: ${result.id || "pendiente"}`
-              : `Reservation sent successfully. ID: ${result.id || "pending"}`;
-
-          this.reset();
-
-        } catch (error) {
 
           message.className =
-            "reservation-message error";
+            "reservation-message";
+
 
           message.textContent =
             currentLanguage === "es"
-              ? "No se ha podido enviar la reserva. Comprueba que el servidor está funcionando."
-              : "The reservation could not be sent. Please check that the server is running.";
+              ? "Enviando reserva..."
+              : "Sending reservation...";
+
+
+          message.classList.add("success");
+
+
+          try {
+
+            const response =
+              await fetch(
+                "/reservar",
+                {
+                  method: "POST",
+
+                  headers: {
+                    "Content-Type":
+                      "application/json"
+                  },
+
+                  body:
+                    JSON.stringify(data)
+                }
+              );
+
+
+            if (!response.ok) {
+
+              throw new Error("Error");
+
+            }
+
+
+            const result =
+              await response.json();
+
+
+            message.textContent =
+              currentLanguage === "es"
+                ? `Reserva enviada correctamente. ID: ${result.id || "pendiente"}`
+                : `Reservation sent successfully. ID: ${result.id || "pending"}`;
+
+
+            this.reset();
+
+
+            fechaInput.min =
+              `${year}-${month}-${day}`;
+
+
+          } catch (error) {
+
+            message.className =
+              "reservation-message error";
+
+
+            message.textContent =
+              currentLanguage === "es"
+                ? "No se ha podido enviar la reserva. Comprueba que el servidor está funcionando."
+                : "The reservation could not be sent. Please check that the server is running.";
+
+          }
 
         }
-
-      });
+      );
 
 
     /* =====================================
@@ -2855,7 +5294,8 @@
 
     function abrirAdmin() {
 
-      document.getElementById("adminOverlay")
+      document
+        .getElementById("adminOverlay")
         .classList.add("active");
 
     }
@@ -2863,7 +5303,8 @@
 
     function cerrarAdmin() {
 
-      document.getElementById("adminOverlay")
+      document
+        .getElementById("adminOverlay")
         .classList.remove("active");
 
     }
@@ -2872,20 +5313,30 @@
     function loginAdmin() {
 
       const password =
-        document.getElementById("adminPassword").value;
+        document
+          .getElementById("adminPassword")
+          .value;
+
 
       const error =
-        document.getElementById("adminLoginError");
+        document
+          .getElementById("adminLoginError");
+
 
       if (password === "1234") {
 
-        document.getElementById("adminLogin")
+        document
+          .getElementById("adminLogin")
           .style.display = "none";
 
-        document.getElementById("adminContent")
+
+        document
+          .getElementById("adminContent")
           .style.display = "block";
 
+
         cargarReservas();
+
 
       } else {
 
@@ -2897,26 +5348,51 @@
     }
 
 
-    document.getElementById("adminPassword")
-      .addEventListener("keydown", function(e) {
+    document
+      .getElementById("adminPassword")
+      .addEventListener(
+        "keydown",
+        function(e) {
 
-        if (e.key === "Enter") {
-          loginAdmin();
+          if (e.key === "Enter") {
+
+            loginAdmin();
+
+          }
+
         }
+      );
 
-      });
+
+    function showAdminSection(
+      section,
+      button
+    ) {
+
+      document
+        .querySelectorAll(".admin-section")
+        .forEach(s => {
+
+          s.classList.remove("active");
+
+        });
 
 
-    function showAdminSection(section, button) {
+      document
+        .querySelectorAll(".admin-nav button")
+        .forEach(b => {
 
-      document.querySelectorAll(".admin-section")
-        .forEach(s => s.classList.remove("active"));
+          b.classList.remove("active");
 
-      document.querySelectorAll(".admin-nav button")
-        .forEach(b => b.classList.remove("active"));
+        });
 
-      document.getElementById("admin-" + section)
+
+      document
+        .getElementById(
+          "admin-" + section
+        )
         .classList.add("active");
+
 
       button.classList.add("active");
 
@@ -2934,19 +5410,29 @@
         const response =
           await fetch("/reservas");
 
+
         if (!response.ok) {
+
           throw new Error();
+
         }
+
 
         const reservas =
           await response.json();
 
+
         renderReservas(reservas);
+
 
       } catch (error) {
 
-        document.getElementById("adminReservationsList")
+        document
+          .getElementById(
+            "adminReservationsList"
+          )
           .innerHTML =
+
           `<p style="color:#777;">
             No se han podido cargar las reservas.
           </p>`;
@@ -2956,62 +5442,199 @@
     }
 
 
+    /* =====================================
+       RENDER RESERVAS SEPARADAS
+    ===================================== */
+
     function renderReservas(reservas) {
 
-      const container =
-        document.getElementById("adminReservationsList");
-
-      let pending = 0;
-      let accepted = 0;
-      let rejected = 0;
-
       if (!Array.isArray(reservas)) {
+
         reservas = [];
+
       }
 
-      reservas.forEach(r => {
 
-        if (r.estado === "pendiente") pending++;
-        if (r.estado === "aceptada") accepted++;
-        if (r.estado === "rechazada") rejected++;
+      const pending =
+        reservas.filter(
+          r =>
+            (r.estado || "pendiente")
+              .toLowerCase() ===
+            "pendiente"
+        );
 
-      });
 
-      document.getElementById("pendingCount")
-        .textContent = pending;
+      const accepted =
+        reservas.filter(
+          r =>
+            (r.estado || "pendiente")
+              .toLowerCase() ===
+            "aceptada"
+        );
 
-      document.getElementById("acceptedCount")
-        .textContent = accepted;
 
-      document.getElementById("rejectedCount")
-        .textContent = rejected;
+      const rejected =
+        reservas.filter(
+          r =>
+            (r.estado || "pendiente")
+              .toLowerCase() ===
+            "rechazada"
+        );
 
+
+      document
+        .getElementById("pendingCount")
+        .textContent =
+        pending.length;
+
+
+      document
+        .getElementById("acceptedCount")
+        .textContent =
+        accepted.length;
+
+
+      document
+        .getElementById("rejectedCount")
+        .textContent =
+        rejected.length;
+
+
+      const container =
+        document
+          .getElementById(
+            "adminReservationsList"
+          );
+
+
+      container.innerHTML = `
+
+        <div class="reservation-zone pending-zone">
+
+          <div class="reservation-zone-header">
+
+            <h3>
+              🟠 Pendientes
+            </h3>
+
+            <span>
+              ${pending.length}
+            </span>
+
+          </div>
+
+          ${
+            renderZoneReservations(
+              pending,
+              "pending"
+            )
+          }
+
+        </div>
+
+
+        <div class="reservation-zone accepted-zone">
+
+          <div class="reservation-zone-header">
+
+            <h3>
+              🟢 Aceptadas
+            </h3>
+
+            <span>
+              ${accepted.length}
+            </span>
+
+          </div>
+
+          ${
+            renderZoneReservations(
+              accepted,
+              "accepted"
+            )
+          }
+
+        </div>
+
+
+        <div class="reservation-zone rejected-zone">
+
+          <div class="reservation-zone-header">
+
+            <h3>
+              🔴 Rechazadas
+            </h3>
+
+            <span>
+              ${rejected.length}
+            </span>
+
+          </div>
+
+          ${
+            renderZoneReservations(
+              rejected,
+              "rejected"
+            )
+          }
+
+        </div>
+
+      `;
+
+    }
+
+
+    function renderZoneReservations(
+      reservas,
+      zone
+    ) {
 
       if (!reservas.length) {
 
-        container.innerHTML =
-          `<p style="color:#777;">
-            No hay reservas todavía.
-          </p>`;
-
-        return;
+        return `
+          <div class="reservation-zone-empty">
+            ${
+              zone === "pending"
+                ? "No hay reservas pendientes."
+                : zone === "accepted"
+                ? "No hay reservas aceptadas."
+                : "No hay reservas rechazadas."
+            }
+          </div>
+        `;
 
       }
 
 
-      reservas.sort((a,b) => {
+      reservas.sort((a, b) => {
 
-        return new Date(b.fecha + " " + b.hora)
-          - new Date(a.fecha + " " + a.hora);
+        return new Date(
+          (b.fecha || "") +
+          " " +
+          (b.hora || "")
+        ) -
+
+        new Date(
+          (a.fecha || "") +
+          " " +
+          (a.hora || "")
+        );
 
       });
 
 
-      container.innerHTML =
-        reservas.map(reserva => {
+      return reservas
+        .map(reserva => {
 
           const estado =
-            reserva.estado || "pendiente";
+            reserva.estado ||
+            "pendiente";
+
+
+          let statusText =
+            estado;
+
 
           return `
 
@@ -3020,64 +5643,141 @@
               <div class="reservation-admin-top">
 
                 <strong>
-                  ${escapeHtml(reserva.nombre || "")}
+                  ${escapeHtml(
+                    reserva.nombre || ""
+                  )}
                 </strong>
 
-                <span class="status ${estado}">
-                  ${estado}
+                <span
+                  class="status ${escapeHtml(
+                    estado
+                  )}">
+
+                  ${escapeHtml(
+                    statusText
+                  )}
+
                 </span>
 
               </div>
 
-              <div style="color:#aaa;font-size:12px;">
 
-                📅 ${escapeHtml(reserva.fecha || "")}
+              <div
+                style="color:#aaa;font-size:12px;">
+
+                📅
+                ${escapeHtml(
+                  reserva.fecha || ""
+                )}
 
                 ·
 
-                🕐 ${escapeHtml(reserva.hora || "")}
+                🕐
+                ${escapeHtml(
+                  reserva.hora || ""
+                )}
 
                 ·
 
-                👥 ${escapeHtml(String(reserva.personas || ""))}
+                👥
+                ${escapeHtml(
+                  String(
+                    reserva.personas || ""
+                  )
+                )}
 
               </div>
 
-              <div style="color:#aaa;font-size:12px;margin-top:6px;">
 
-                📞 ${escapeHtml(reserva.telefono || "")}
+              <div
+                style="color:#aaa;font-size:12px;margin-top:6px;">
+
+                📞
+                ${escapeHtml(
+                  reserva.telefono || ""
+                )}
 
               </div>
+
 
               ${
                 reserva.comentarios
-                ? `
-                  <div style="color:#888;font-size:12px;margin-top:7px;">
-                    💬 ${escapeHtml(reserva.comentarios)}
-                  </div>
-                `
-                : ""
+                  ? `
+
+                    <div
+                      style="color:#888;font-size:12px;margin-top:7px;">
+
+                      💬
+                      ${escapeHtml(
+                        reserva.comentarios
+                      )}
+
+                    </div>
+
+                  `
+                  : ""
               }
+
 
               <div class="admin-actions">
 
-                <button
-                  class="accept"
-                  onclick="cambiarEstado('${reserva.id}','aceptada')">
-                  Aceptar
-                </button>
 
-                <button
-                  class="reject"
-                  onclick="cambiarEstado('${reserva.id}','rechazada')">
-                  Rechazar
-                </button>
+                ${
+                  estado !== "aceptada"
+                    ? `
+
+                      <button
+                        class="accept"
+                        onclick="cambiarEstado(
+                          '${escapeJs(
+                            reserva.id
+                          )}',
+                          'aceptada'
+                        )">
+
+                        Aceptar
+
+                      </button>
+
+                    `
+                    : ""
+                }
+
+
+                ${
+                  estado !== "rechazada"
+                    ? `
+
+                      <button
+                        class="reject"
+                        onclick="cambiarEstado(
+                          '${escapeJs(
+                            reserva.id
+                          )}',
+                          'rechazada'
+                        )">
+
+                        Rechazar
+
+                      </button>
+
+                    `
+                    : ""
+                }
+
 
                 <button
                   class="delete"
-                  onclick="eliminarReserva('${reserva.id}')">
+                  onclick="eliminarReserva(
+                    '${escapeJs(
+                      reserva.id
+                    )}'
+                  )">
+
                   Eliminar
+
                 </button>
+
 
               </div>
 
@@ -3085,7 +5785,8 @@
 
           `;
 
-        }).join("");
+        })
+        .join("");
 
     }
 
@@ -3094,34 +5795,49 @@
        CAMBIAR ESTADO
     ===================================== */
 
-    async function cambiarEstado(id, estado) {
+    async function cambiarEstado(
+      id,
+      estado
+    ) {
 
       try {
 
         const response =
-          await fetch(`/reservas/${id}`, {
+          await fetch(
+            `/reservas/${encodeURIComponent(id)}`,
+            {
 
-            method: "PATCH",
+              method: "PATCH",
 
-            headers: {
-              "Content-Type": "application/json"
-            },
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
 
-            body: JSON.stringify({
-              estado: estado
-            })
+              body:
+                JSON.stringify({
+                  estado: estado
+                })
 
-          });
+            }
+          );
+
 
         if (!response.ok) {
+
           throw new Error();
+
         }
+
 
         cargarReservas();
 
+
       } catch (error) {
 
-        alert("No se ha podido actualizar la reserva.");
+        alert(
+          "No se ha podido actualizar la reserva."
+        );
 
       }
 
@@ -3134,26 +5850,43 @@
 
     async function eliminarReserva(id) {
 
-      if (!confirm("¿Eliminar esta reserva?")) {
+      if (
+        !confirm(
+          "¿Eliminar esta reserva?"
+        )
+      ) {
+
         return;
+
       }
+
 
       try {
 
         const response =
-          await fetch(`/reservas/${id}`, {
-            method: "DELETE"
-          });
+          await fetch(
+            `/reservas/${encodeURIComponent(id)}`,
+            {
+              method: "DELETE"
+            }
+          );
+
 
         if (!response.ok) {
+
           throw new Error();
+
         }
+
 
         cargarReservas();
 
+
       } catch (error) {
 
-        alert("No se ha podido eliminar la reserva.");
+        alert(
+          "No se ha podido eliminar la reserva."
+        );
 
       }
 
@@ -3167,11 +5900,58 @@
     function escapeHtml(value) {
 
       return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+
+        .replaceAll(
+          "&",
+          "&amp;"
+        )
+
+        .replaceAll(
+          "<",
+          "&lt;"
+        )
+
+        .replaceAll(
+          ">",
+          "&gt;"
+        )
+
+        .replaceAll(
+          '"',
+          "&quot;"
+        )
+
+        .replaceAll(
+          "'",
+          "&#039;"
+        );
+
+    }
+
+
+    function escapeJs(value) {
+
+      return String(value)
+
+        .replaceAll(
+          "\\",
+          "\\\\"
+        )
+
+        .replaceAll(
+          "'",
+          "\\'"
+        )
+
+        .replaceAll(
+          "\n",
+          "\\n"
+        )
+
+        .replaceAll(
+          "\r",
+          "\\r"
+        );
 
     }
 
@@ -3180,26 +5960,42 @@
        AUTO REFRESH ADMIN
     ===================================== */
 
-    setInterval(() => {
+    setInterval(
+      () => {
 
-      const overlay =
-        document.getElementById("adminOverlay");
+        const overlay =
+          document.getElementById(
+            "adminOverlay"
+          );
 
-      const content =
-        document.getElementById("adminContent");
 
-      if (
-        overlay.classList.contains("active") &&
-        content.style.display === "block"
-      ) {
+        const content =
+          document.getElementById(
+            "adminContent"
+          );
 
-        cargarReservas();
 
-      }
+        if (
+          overlay.classList.contains(
+            "active"
+          ) &&
 
-    }, 5000);
+          content.style.display ===
+            "block"
+        ) {
+
+          cargarReservas();
+
+        }
+
+      },
+      5000
+    );
+
 
   </script>
 
+
 </body>
+
 </html>
