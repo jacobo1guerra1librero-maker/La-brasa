@@ -1,1759 +1,2370 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <meta name="google-site-verification" content="cYldDjl4DDAWEZUGfyHIT2P0K_P9EmeTlKU41hZ3D90" />
-
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>La Brasa | Restaurante</title>
+  <!-- GOOGLE SEARCH CONSOLE -->
+  <meta name="google-site-verification" content="cYldDjl4DDAWEZUGfyHIT2P0K_P9EmeTlKU41hZ3D90">
+
+  <!-- SEO -->
+  <title>La Brasa | Restaurante en Sevilla | Cocina Mediterránea</title>
+
+  <meta name="description"
+    content="La Brasa, restaurante en Sevilla especializado en cocina mediterránea, desayunos, carnes a la brasa, opciones sin gluten, bebidas y postres. Reserva tu mesa online.">
+
+  <meta name="keywords"
+    content="restaurante Sevilla, restaurante en Sevilla, La Brasa Sevilla, cocina mediterránea Sevilla, restaurante cerca de mí, desayunos Sevilla, comida sin gluten Sevilla, carnes a la brasa, cenas Sevilla, dónde comer en Sevilla, restaurante familiar Sevilla, reservas restaurante Sevilla">
+
+  <meta name="author" content="La Brasa Restaurante">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#111111">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="La Brasa | Restaurante en Sevilla">
+  <meta property="og:description"
+    content="Cocina mediterránea, desayunos, carnes a la brasa y opciones sin gluten en Sevilla.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://labrasarestaurante.es/">
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- DATOS ESTRUCTURADOS PARA GOOGLE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Brasa",
+    "description": "Restaurante de cocina mediterránea en Sevilla especializado en carnes a la brasa, desayunos, bebidas, postres y opciones sin gluten.",
+    "url": "https://labrasarestaurante.es/",
+    "telephone": "+34 954 000 000",
+    "priceRange": "€€",
+    "servesCuisine": [
+      "Mediterránea",
+      "Española",
+      "Carnes a la brasa"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle del Azahar 18",
+      "addressLocality": "Sevilla",
+      "addressRegion": "Andalucía",
+      "postalCode": "41012",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.3598,
+      "longitude": -5.9869
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday"
+        ],
+        "opens": "08:00",
+        "closes": "23:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "00:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "23:00"
+      }
+    ]
+  }
+  </script>
 
   <style>
 
+    :root {
+      --gold: #e7a23b;
+      --gold-light: #ffc86b;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1b1b1b;
+      --text: #f4f4f4;
+      --muted: #a9a9a9;
+      --border: rgba(255,255,255,0.09);
+      --green: #25d366;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
+      background: var(--dark);
+      color: var(--text);
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
-      padding: 25px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #151515;
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #e7a23b;
+    .header-inner {
+      max-width: 1250px;
+      margin: auto;
+      min-height: 78px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    /* LOGO */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .brand-name span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      transition: color .2s;
+      color: #ddd;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .25s;
     }
 
     nav a:hover {
-      color: #e7a23b;
+      color: var(--gold);
     }
 
+    .language-selector {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 5px;
+      background: #171717;
+    }
+
+    .language-selector button {
+      border: 0;
+      background: transparent;
+      color: #aaa;
+      padding: 7px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .language-selector button.active {
+      background: var(--gold);
+      color: #111;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      min-height: 80vh;
+      min-height: 650px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
-
+      position: relative;
       background:
-        linear-gradient(
-          rgba(0,0,0,.65),
-          rgba(0,0,0,.65)
-        ),
-
-        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=80")
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
         center/cover;
     }
 
+    .hero-content {
+      max-width: 900px;
+      padding: 40px 20px;
+    }
+
+    .hero-logo {
+      width: 95px;
+      height: 95px;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 5px 20px rgba(0,0,0,.6));
+    }
+
+    .hero small {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .hero h1 {
-      font-size: 70px;
-      margin-bottom: 15px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 9vw, 105px);
+      line-height: .95;
+      margin: 15px 0;
+      letter-spacing: 5px;
     }
 
     .hero p {
-      font-size: 20px;
+      color: #eee;
+      font-size: 18px;
       margin-bottom: 30px;
     }
 
     .btn {
-      display: inline-block;
-      background: #e7a23b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: var(--gold);
       color: #111;
-      padding: 15px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 14px 26px;
+      border-radius: 7px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .25s;
     }
+
+    .btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
 
     section {
-      padding: 70px 8%;
+      padding: 90px 20px;
     }
 
-    .title {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 35px;
-    }
-
-    /* =========================
-       MENÚ
-       ========================= */
-
-    .menu {
-      display: grid;
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(220px, 1fr)
-        );
-      gap: 25px;
-    }
-
-    .card {
-      background: #1d1d1d;
-      padding: 25px;
-      border-radius: 15px;
-    }
-
-    .card h3 {
-      color: #e7a23b;
-      margin-bottom: 10px;
-    }
-
-    /* =========================
-       GALERÍA
-       ========================= */
-
-    #galeria {
-      background: #151515;
-    }
-
-    .galeria-grid {
-      max-width: 1100px;
+    .container {
+      max-width: 1180px;
       margin: auto;
+    }
 
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+    }
+
+    .section-title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 43px;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 12px auto 0;
+    }
+
+    /* =========================
+       INFO
+    ========================= */
+
+    .info-section {
+      background: var(--dark2);
+    }
+
+    .info-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .foto {
-      height: 260px;
-
-      border-radius: 15px;
-
-      overflow: hidden;
-
-      background: #1d1d1d;
-
-      cursor: pointer;
-
-      position: relative;
+    .info-card {
+      background: #191919;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: .25s;
     }
 
-    .foto img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition:
-        transform .4s ease,
-        filter .4s ease;
+    .info-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(231,162,59,.4);
     }
 
-    .foto:hover img {
-      transform: scale(1.08);
-      filter: brightness(.8);
+    .info-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .info-card h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     /* =========================
-       VISOR DE FOTOS
-       ========================= */
+       SOBRE NOSOTROS
+    ========================= */
 
-    .visor-foto {
-      display: none;
+    .about {
+      background:
+        linear-gradient(rgba(12,12,12,.93), rgba(12,12,12,.93)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+    }
 
-      position: fixed;
-
-      inset: 0;
-
-      background: rgba(0,0,0,.95);
-
-      z-index: 10000;
-
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px;
       align-items: center;
+    }
 
+    .about-text h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span {
+      color: var(--gold);
+    }
+
+    .about-text p {
+      color: #c6c6c6;
+      margin-bottom: 17px;
+    }
+
+    .about-box {
+      border: 1px solid var(--gold);
+      padding: 35px;
+      border-radius: 15px;
+      background: rgba(0,0,0,.35);
+    }
+
+    .about-box strong {
+      display: block;
+      color: var(--gold);
+      font-size: 35px;
+      font-family: "Playfair Display", serif;
+    }
+
+    .about-box p {
+      color: #bbb;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       CARTAS
+    ========================= */
+
+    .menu-section {
+      background: var(--dark2);
+    }
+
+    .menu-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+
+    .menu-tab {
+      border: 1px solid var(--border);
+      background: #181818;
+      color: white;
+      padding: 20px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: .25s;
+    }
+
+    .menu-tab:hover,
+    .menu-tab.active {
+      background: var(--gold);
+      color: #111;
+      border-color: var(--gold);
+    }
+
+    .menu-tab .tab-icon {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .menu-tab strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .menu-tab small {
+      opacity: .7;
+      font-size: 11px;
+    }
+
+    .menu-panel {
+      display: none;
+      animation: fade .3s ease;
+    }
+
+    .menu-panel.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .menu-item {
+      background: #181818;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .menu-item h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .menu-item p {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .menu-price {
+      color: var(--gold);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       GALERIA
+    ========================= */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-item {
+      height: 260px;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    /* =========================
+       VISOR
+    ========================= */
+
+    .visor {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.95);
+      z-index: 3000;
+      align-items: center;
       justify-content: center;
-
       padding: 30px;
     }
 
-    .visor-foto img {
-      max-width: 90%;
-      max-height: 85vh;
-
-      object-fit: contain;
-
-      border-radius: 10px;
+    .visor.active {
+      display: flex;
     }
 
-    .cerrar-foto {
+    .visor img {
+      max-height: 90vh;
+      max-width: 95vw;
+      border-radius: 8px;
+    }
+
+    .visor-close {
       position: absolute;
-
       top: 20px;
-      right: 30px;
-
-      background: transparent;
-
+      right: 25px;
+      font-size: 38px;
       color: white;
-
-      font-size: 40px;
-
-      padding: 5px;
-
       cursor: pointer;
     }
 
     /* =========================
        RESEÑAS
-       ========================= */
+    ========================= */
 
-    #resenas {
-      background: #111;
+    .reviews {
+      background: var(--dark2);
     }
 
-    .valoracion-general {
+    .rating-summary {
       text-align: center;
-
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
-    .valoracion-numero {
-      font-size: 55px;
-
-      font-weight: bold;
-
-      color: #e7a23b;
+    .rating-number {
+      font-size: 58px;
+      font-family: "Playfair Display", serif;
     }
 
-    .valoracion-estrellas {
-      color: #e7a23b;
-
-      font-size: 28px;
-
-      letter-spacing: 4px;
-
-      margin: 8px 0;
-    }
-
-    .valoracion-general p {
-      color: #999;
-    }
-
-    .resenas-grid {
-      max-width: 1100px;
-
-      margin: auto;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(240px, 1fr)
-        );
-
-      gap: 20px;
-    }
-
-    .resena {
-      background: #1d1d1d;
-
-      padding: 25px;
-
-      border-radius: 15px;
-
-      border: 1px solid #292929;
-
-      transition:
-        transform .2s,
-        border-color .2s;
-    }
-
-    .resena:hover {
-      transform: translateY(-4px);
-
-      border-color: #e7a23b;
-    }
-
-    .estrellas {
-      color: #e7a23b;
-
-      font-size: 21px;
-
+    .stars {
+      color: var(--gold);
       letter-spacing: 3px;
-
-      margin-bottom: 15px;
+      font-size: 22px;
     }
 
-    .resena p {
-      color: #ddd;
-
-      line-height: 1.6;
-
-      margin-bottom: 18px;
+    .rating-summary p {
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .resena strong {
-      color: #e7a23b;
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .review {
+      background: #191919;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+    }
+
+    .review-name {
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .review .stars {
+      font-size: 14px;
+    }
+
+    .review p {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 12px;
     }
 
     /* =========================
        RESERVAS
-       ========================= */
+    ========================= */
 
-    .reservation {
-      max-width: 700px;
+    .reservation-section {
+      background:
+        linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.92)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .reservation-box {
+      max-width: 850px;
       margin: auto;
+      background: rgba(22,22,22,.95);
+      border: 1px solid var(--border);
+      padding: 35px;
+      border-radius: 15px;
     }
 
-    form {
+    .reservation-form {
       display: grid;
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
     }
 
-    input,
-    select,
-    textarea {
-
-      width: 100%;
-
-      padding: 14px;
-
-      border-radius: 8px;
-
-      border: none;
-
-      font-size: 16px;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
     }
 
-    textarea {
+    .form-group.full {
+      grid-column: 1/-1;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      color: #bbb;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: #101010;
+      color: white;
+      border: 1px solid #303030;
+      padding: 13px;
+      border-radius: 7px;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
       min-height: 100px;
       resize: vertical;
     }
 
-    button {
-
-      padding: 15px;
-
-      border: none;
-
-      border-radius: 8px;
-
-      background: #e7a23b;
-
-      font-size: 17px;
-
-      font-weight: bold;
-
-      cursor: pointer;
+    .reservation-form .btn {
+      grid-column: 1/-1;
+      margin-top: 5px;
     }
 
-    button:hover {
-      opacity: .9;
-    }
-
-    #resultado {
-
-      margin-top: 20px;
-
+    .reservation-message {
+      margin-top: 18px;
       padding: 15px;
-
       border-radius: 8px;
-
       display: none;
+    }
 
-      background: #1d1d1d;
+    .reservation-message.success {
+      display: block;
+      background: rgba(37,211,102,.12);
+      border: 1px solid rgba(37,211,102,.35);
+      color: #7affaa;
+    }
+
+    .reservation-message.error {
+      display: block;
+      background: rgba(255,70,70,.12);
+      border: 1px solid rgba(255,70,70,.3);
+      color: #ff8585;
+    }
+
+    /* =========================
+       UBICACION
+    ========================= */
+
+    .location-section {
+      background: #111;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .location-card {
+      background: #191919;
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 13px;
+    }
+
+    .location-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .location-card p {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .location-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .map-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #111;
+      padding: 12px 18px;
+      border-radius: 7px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    .hours-row strong {
+      color: white;
     }
 
     /* =========================
        FOOTER
-       ========================= */
+    ========================= */
 
     footer {
-
-      text-align: center;
-
-      padding: 30px;
-
-      background: #151515;
-
-      color: #aaa;
-
-      position: relative;
+      background: #080808;
+      border-top: 1px solid var(--border);
+      padding: 60px 20px 25px;
     }
 
-    /* =========================
-       BOTÓN ADMINISTRACIÓN
-       ========================= */
-
-    .admin-button {
-
-      position: absolute;
-
-      right: 20px;
-
-      bottom: 15px;
-
-      background: transparent;
-
-      color: #555;
-
-      border: none;
-
-      padding: 5px;
-
-      font-size: 14px;
-
-      cursor: pointer;
-    }
-
-    .admin-button:hover {
-      color: #e7a23b;
-    }
-
-    /* =========================
-       PANEL ADMINISTRACIÓN
-       ========================= */
-
-    .admin-overlay {
-
-      display: none;
-
-      position: fixed;
-
-      inset: 0;
-
-      background: rgba(0, 0, 0, .94);
-
-      z-index: 9999;
-
-      overflow-y: auto;
-
-      padding: 30px 20px;
-    }
-
-    .admin-container {
-
-      max-width: 1100px;
-
+    .footer-grid {
+      max-width: 1180px;
       margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
     }
 
-    /* =========================
-       CABECERA ADMIN
-       ========================= */
-
-    .admin-header {
-
+    .footer-brand {
       display: flex;
-
-      justify-content: space-between;
-
+      gap: 12px;
       align-items: center;
-
-      margin-bottom: 30px;
-    }
-
-    .admin-header h2 {
-
-      color: #e7a23b;
-
-      font-size: 30px;
-    }
-
-    .admin-header p {
-
-      color: #999;
-
-      margin-top: 7px;
-    }
-
-    .close-admin {
-
-      background: #333;
-
-      color: white;
-
-      padding: 11px 18px;
-
-      font-size: 14px;
-    }
-
-    .close-admin:hover {
-      background: #444;
-    }
-
-    /* =========================
-       LOGIN
-       ========================= */
-
-    .login-box {
-
-      max-width: 400px;
-
-      margin: 100px auto;
-
-      background: #1d1d1d;
-
-      padding: 35px;
-
-      border-radius: 15px;
-
-      text-align: center;
-    }
-
-    .login-box h2 {
-
-      color: #e7a23b;
-
-      margin-bottom: 25px;
-    }
-
-    .login-box input {
-
       margin-bottom: 15px;
     }
 
-    .login-error {
+    .footer-brand svg {
+      width: 43px;
+    }
 
-      color: #ff5c5c;
+    .footer-brand h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
 
-      margin-top: 15px;
+    .footer-brand span {
+      color: var(--gold);
+    }
 
-      display: none;
+    .footer-column h4 {
+      color: white;
+      margin-bottom: 17px;
+      font-size: 14px;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      color: #888;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 9px;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      max-width: 1180px;
+      margin: 45px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: #666;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     /* =========================
-       NAVEGACIÓN ADMIN
-       ========================= */
+       ADMIN
+    ========================= */
+
+    .admin-trigger {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #292929;
+      background: #111;
+      color: #555;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2000;
+      font-size: 13px;
+    }
+
+    .admin-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      z-index: 2500;
+      overflow-y: auto;
+      padding: 30px;
+    }
+
+    .admin-overlay.active {
+      display: block;
+    }
+
+    .admin-container {
+      max-width: 1100px;
+      margin: auto;
+      background: #151515;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .admin-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .admin-header h2 {
+      font-family: "Playfair Display", serif;
+    }
+
+    .admin-close {
+      background: transparent;
+      color: white;
+      border: 0;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .admin-login {
+      max-width: 400px;
+      margin: 120px auto;
+      background: #181818;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .admin-login h2 {
+      margin-bottom: 20px;
+    }
+
+    .admin-login input {
+      width: 100%;
+      padding: 13px;
+      background: #0d0d0d;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .admin-content {
+      display: none;
+    }
 
     .admin-nav {
-
       display: flex;
-
-      gap: 10px;
-
-      margin-bottom: 30px;
-
-      border-bottom: 1px solid #333;
-
-      padding-bottom: 15px;
-
-      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
     }
 
     .admin-nav button {
-
-      background: #222;
-
-      color: #aaa;
-
-      padding: 12px 18px;
-
-      font-size: 15px;
+      padding: 14px 20px;
+      border: 0;
+      background: transparent;
+      color: #999;
+      cursor: pointer;
     }
 
-    .admin-nav button:hover,
     .admin-nav button.active {
-
-      background: #e7a23b;
-
-      color: #111;
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
     }
-
-    /* =========================
-       APARTADOS
-       ========================= */
 
     .admin-section {
       display: none;
+      padding: 25px;
     }
 
     .admin-section.active {
       display: block;
     }
 
-    .section-title {
-
-      font-size: 25px;
-
-      margin-bottom: 20px;
-    }
-
-    /* =========================
-       RESUMEN
-       ========================= */
-
-    .stats {
-
+    .admin-stats {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(200px, 1fr)
-        );
-
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
     }
 
-    .stat-card {
-
+    .stat {
       background: #1d1d1d;
-
-      padding: 25px;
-
-      border-radius: 15px;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
 
-    .stat-card h3 {
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: var(--gold);
+    }
 
-      color: #999;
-
-      font-size: 15px;
-
+    .reservation-admin {
+      background: #1b1b1b;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
       margin-bottom: 12px;
     }
 
-    .stat-number {
-
-      font-size: 35px;
-
-      font-weight: bold;
-
-      color: #e7a23b;
-    }
-
-    /* =========================
-       PANELES DE RESERVAS
-       ========================= */
-
-    .panel-reservas {
-
-      margin-bottom: 45px;
-    }
-
-    .panel-titulo {
-
+    .reservation-admin-top {
       display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      margin-bottom: 20px;
-
-      padding-bottom: 12px;
-
-      border-bottom: 1px solid #333;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 8px;
     }
 
-    .panel-titulo h3 {
-
-      font-size: 22px;
-    }
-
-    .panel-titulo span {
-
+    .status {
+      font-size: 11px;
+      padding: 5px 9px;
+      border-radius: 20px;
       background: #333;
-
-      color: #aaa;
-
-      padding: 5px 10px;
-
-      border-radius: 20px;
-
-      font-size: 13px;
     }
 
-    .pendientes-titulo h3 {
-      color: #e7a23b;
+    .status.pending {
+      color: #ffc86b;
     }
 
-    .aceptadas-titulo h3 {
-      color: #4bc477;
+    .status.accepted {
+      color: #63ed9b;
     }
 
-    .rechazadas-titulo h3 {
-      color: #ff5c5c;
+    .status.rejected {
+      color: #ff7777;
     }
 
-    .reservas-grid {
-
-      display: grid;
-
-      gap: 20px;
-    }
-
-    .reserva {
-
-      background: #1d1d1d;
-
-      border-radius: 15px;
-
-      padding: 25px;
-
-      border-left: 5px solid #e7a23b;
-    }
-
-    .reserva.aceptada {
-      border-left-color: #258a4a;
-    }
-
-    .reserva.rechazada {
-      border-left-color: #a52e2e;
-    }
-
-    .reserva h3 {
-
-      margin-bottom: 15px;
-
-      color: #e7a23b;
-    }
-
-    .reserva.aceptada h3 {
-      color: #4bc477;
-    }
-
-    .reserva.rechazada h3 {
-      color: #ff5c5c;
-    }
-
-    .reserva p {
-
-      margin: 7px 0;
-
-      color: #ddd;
-    }
-
-    .estado {
-
-      display: inline-block;
-
-      padding: 6px 12px;
-
-      border-radius: 20px;
-
-      background: #9a741f;
-
-      color: white;
-
-      font-size: 13px;
-
-      margin-bottom: 15px;
-
-      text-transform: uppercase;
-    }
-
-    .estado.aceptada {
-      background: #258a4a;
-    }
-
-    .estado.rechazada {
-      background: #a52e2e;
-    }
-
-    .acciones {
-
+    .admin-actions {
+      margin-top: 12px;
       display: flex;
-
-      gap: 10px;
-
-      margin-top: 20px;
-
+      gap: 8px;
       flex-wrap: wrap;
     }
 
-    .aceptar {
+    .admin-actions button {
+      padding: 7px 11px;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+    }
 
-      background: #258a4a;
+    .accept {
+      background: #38d17a;
+      color: #111;
+    }
 
+    .reject {
+      background: #e55a5a;
       color: white;
     }
 
-    .cancelar {
-
-      background: #a52e2e;
-
+    .delete {
+      background: #333;
       color: white;
-    }
-
-    .eliminar {
-
-      background: #555;
-
-      color: white;
-    }
-
-    .aceptar:hover {
-      background: #319f59;
-    }
-
-    .cancelar:hover {
-      background: #c03939;
-    }
-
-    .eliminar:hover {
-      background: #666;
-    }
-
-    .vacio {
-
-      background: #181818;
-
-      border: 1px dashed #444;
-
-      border-radius: 12px;
-
-      padding: 20px;
-
-      color: #777;
-
-      text-align: center;
     }
 
     /* =========================
-       CONFIGURACIÓN
-       ========================= */
+       MOBILE
+    ========================= */
 
-    .config-card {
-
-      background: #1d1d1d;
-
-      padding: 25px;
-
-      border-radius: 15px;
-    }
-
-    .config-card h3 {
-
-      color: #e7a23b;
-
-      margin-bottom: 15px;
-    }
-
-    .config-card p {
-
-      color: #aaa;
-
-      line-height: 1.6;
-    }
-
-    /* =========================
-       MÓVIL
-       ========================= */
-
-    @media (max-width: 700px) {
-
-      .hero h1 {
-        font-size: 45px;
-      }
+    @media (max-width: 900px) {
 
       nav {
         display: none;
       }
 
-      .galeria-grid {
-        grid-template-columns: 1fr 1fr;
+      .info-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .foto {
-        height: 180px;
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .admin-header {
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
 
+    }
+
+    @media (max-width: 700px) {
+
+      .header-inner {
+        min-height: 68px;
+        padding: 0 14px;
+      }
+
+      .brand-logo {
+        width: 39px;
+        height: 39px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .language-selector button {
+        padding: 6px 8px;
+      }
+
+      .hero {
+        min-height: 590px;
+      }
+
+      section {
+        padding: 65px 15px;
+      }
+
+      .section-title h2 {
+        font-size: 35px;
+      }
+
+      .info-grid,
+      .reviews-grid,
+      .menu-tabs,
+      .menu-list,
+      .gallery-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        height: 230px;
+      }
+
+      .reservation-box {
+        padding: 20px;
+      }
+
+      .reservation-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full,
+      .reservation-form .btn {
+        grid-column: auto;
+      }
+
+      .about-text h2 {
+        font-size: 38px;
+      }
+
+      .footer-bottom {
         flex-direction: column;
-
-        gap: 20px;
-
-        align-items: flex-start;
-      }
-
-      .admin-nav {
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .admin-nav button {
-
-        width: 100%;
-      }
-
-      .acciones {
-
-        flex-direction: column;
-      }
-
-      .acciones button {
-
-        width: 100%;
       }
 
     }
 
   </style>
-
 </head>
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-<!-- =========================
-     CABECERA
-     ========================= -->
+  <header>
 
-<header>
+    <div class="header-inner">
 
-  <div class="logo">
-    LA BRASA
-  </div>
+      <a href="#inicio" class="brand">
 
-  <nav>
+        <!-- LOGO SVG INVENTADO -->
+        <svg class="brand-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
-    <a href="#inicio">
-      Inicio
-    </a>
+          <circle cx="50" cy="50" r="46"
+            fill="#111"
+            stroke="#e7a23b"
+            stroke-width="4"/>
 
-    <a href="#menu">
-      Menú
-    </a>
+          <!-- LLAMA -->
+          <path
+            d="M50 77
+            C30 77 28 61 36 51
+            C42 43 49 39 47 24
+            C60 33 69 43 66 53
+            C75 50 78 59 75 66
+            C71 74 62 77 50 77Z"
+            fill="#e7a23b"/>
 
-    <a href="#galeria">
-      Fotos
-    </a>
+          <path
+            d="M50 69
+            C42 69 40 62 44 57
+            C47 53 51 50 51 44
+            C58 49 61 55 59 60
+            C64 58 66 63 63 67
+            C60 70 56 69 50 69Z"
+            fill="#fff1d2"/>
 
-    <a href="#resenas">
-      Reseñas
-    </a>
+        </svg>
 
-    <a href="#reservas">
-      Reservas
-    </a>
+        <div class="brand-name">
+          LA <span>BRASA</span>
+        </div>
 
-  </nav>
+      </a>
 
-</header>
+      <nav>
+        <a href="#inicio" data-i18n="navHome">Inicio</a>
+        <a href="#sobre-nosotros" data-i18n="navAbout">Sobre nosotros</a>
+        <a href="#cartas" data-i18n="navMenu">Cartas</a>
+        <a href="#fotos" data-i18n="navPhotos">Fotos</a>
+        <a href="#resenas" data-i18n="navReviews">Reseñas</a>
+        <a href="#reservas" data-i18n="navBooking">Reservas</a>
+      </nav>
 
+      <div class="language-selector">
+        <button id="esBtn" class="active" onclick="setLanguage('es')">ES</button>
+        <button id="enBtn" onclick="setLanguage('en')">EN</button>
+      </div>
 
-<!-- =========================
-     INICIO
-     ========================= -->
+    </div>
 
-<section
-  class="hero"
-  id="inicio"
->
-
-  <div>
-
-    <h1>
-      LA BRASA
-    </h1>
-
-    <p>
-      Cocina mediterránea · Sevilla
-    </p>
-
-    <a
-      class="btn"
-      href="#reservas"
-    >
-      Reservar mesa
-    </a>
-
-  </div>
-
-</section>
+  </header>
 
 
-<!-- =========================
-     MENÚ
-     ========================= -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
-<section id="menu">
+  <main>
 
-  <h2 class="title">
-    Información para nuestros clientes
-  </h2>
+    <section class="hero" id="inicio">
 
-  <div class="menu">
+      <div class="hero-content">
 
-   
-<div class="card">
+        <svg class="hero-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 
-  <h3>
-    🌾 Alérgenos
-  </h3>
+          <circle cx="50" cy="50" r="46"
+            fill="#111"
+            stroke="#e7a23b"
+            stroke-width="4"/>
 
-  <p>
-    Consulta la información sobre gluten,
-    lactosa, frutos secos y otros alérgenos
-    presentes en nuestros platos.
-  </p>
+          <path
+            d="M50 77
+            C30 77 28 61 36 51
+            C42 43 49 39 47 24
+            C60 33 69 43 66 53
+            C75 50 78 59 75 66
+            C71 74 62 77 50 77Z"
+            fill="#e7a23b"/>
 
-</div>
+          <path
+            d="M50 69
+            C42 69 40 62 44 57
+            C47 53 51 50 51 44
+            C58 49 61 55 59 60
+            C64 58 66 63 63 67
+            C60 70 56 69 50 69Z"
+            fill="#fff1d2"/>
 
+        </svg>
 
-<div class="card">
+        <small data-i18n="heroSmall">
+          Cocina mediterránea · Sevilla
+        </small>
 
-  <h3>
-    ⭐ Lo más recomendado
-  </h3>
+        <h1>LA BRASA</h1>
 
-  <p>
-    Descubre los platos favoritos de
-    nuestros clientes y nuestras
-    recomendaciones.
-  </p>
+        <p data-i18n="heroText">
+          Sabor, tradición y producto de calidad en cada plato.
+        </p>
 
-</div>
+        <a href="#reservas" class="btn" data-i18n="heroButton">
+          Reservar mesa
+        </a>
 
+      </div>
 
-<div class="card">
-
-  <h3>
-    🔥 Especialidad de la casa
-  </h3>
-
-  <p>
-    Conoce nuestra especialidad y los
-    platos que hacen diferente a
-    La Brasa.
-  </p>
-
-</div>
+    </section>
 
 
-<div class="card">
+    <!-- =========================
+         INFORMACION
+    ========================= -->
 
-  <h3>
-    🥗 Opciones especiales
-  </h3>
+    <section class="info-section">
 
-  <p>
-    Pregunta por nuestras opciones
-    vegetarianas y otras alternativas
-    disponibles.
-  </p>
+      <div class="container">
 
-</div>
-   
+        <div class="section-title">
 
-  </div>
+          <span data-i18n="infoSmall">
+            Todo pensado para ti
+          </span>
 
-</section>
+          <h2 data-i18n="infoTitle">
+            Información para nuestros clientes
+          </h2>
+
+          <p data-i18n="infoText">
+            Descubre nuestras opciones y disfruta de una experiencia gastronómica adaptada a ti.
+          </p>
+
+        </div>
+
+        <div class="info-grid">
+
+          <div class="info-card">
+            <div class="info-icon">🌾</div>
+            <h3 data-i18n="allergensTitle">Alérgenos</h3>
+            <p data-i18n="allergensText">
+              Pregunta a nuestro equipo por los ingredientes y alérgenos de cada plato.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">⭐</div>
+            <h3 data-i18n="recommendedTitle">Lo más recomendado</h3>
+            <p data-i18n="recommendedText">
+              Descubre nuestros platos favoritos de nuestros clientes.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🔥</div>
+            <h3 data-i18n="specialtyTitle">Especialidad de la casa</h3>
+            <p data-i18n="specialtyText">
+              Carnes y productos cocinados a la brasa para conseguir todo su sabor.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">🥗</div>
+            <h3 data-i18n="specialOptionsTitle">Opciones especiales</h3>
+            <p data-i18n="specialOptionsText">
+              Opciones vegetarianas y platos adaptados a diferentes necesidades.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
-<!-- =========================
-     GALERÍA
-     ========================= -->
+    <!-- =========================
+         SOBRE NOSOTROS
+    ========================= -->
 
-<section id="galeria">
+    <section class="about" id="sobre-nosotros">
 
-  <h2 class="title">
-    📸 Descubre La Brasa
-  </h2>
+      <div class="container">
 
-  <div class="galeria-grid">
+        <div class="about-grid">
 
-    <div
-      class="foto"
-      onclick="abrirFoto(this)"
-    >
+          <div class="about-text">
 
-      <img
-        src="img/foto.png"
-        alt="Restaurante La Brasa"
-      >
+            <span style="color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:800;"
+              data-i18n="aboutSmall">
+              NUESTRA HISTORIA
+            </span>
+
+            <h2 data-i18n="aboutTitle">
+              Sobre <span>nosotros</span>
+            </h2>
+
+            <p data-i18n="aboutText1">
+              La Brasa nace de una idea sencilla: reunir buena cocina, producto de calidad y un ambiente en el que nuestros clientes quieran volver.
+            </p>
+
+            <p data-i18n="aboutText2">
+              Nuestra cocina combina recetas mediterráneas con el sabor tradicional de la brasa. Trabajamos cada plato cuidando los pequeños detalles.
+            </p>
+
+            <p data-i18n="aboutText3">
+              Ya sea para desayunar, comer con la familia, disfrutar de una cena o simplemente tomar algo, queremos que La Brasa sea uno de esos lugares que se sienten como propios.
+            </p>
+
+          </div>
+
+          <div class="about-box">
+
+            <strong>2018</strong>
+
+            <p data-i18n="aboutSince">
+              El año en el que abrimos nuestras puertas con la ilusión de crear un restaurante diferente.
+            </p>
+
+            <br>
+
+            <strong>+10.000</strong>
+
+            <p data-i18n="aboutCustomers">
+              Clientes que han compartido mesa con nosotros.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARTAS
+    ========================= -->
+
+    <section class="menu-section" id="cartas">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="menuSmall">
+            NUESTRAS CARTAS
+          </span>
+
+          <h2 data-i18n="menuTitle">
+            Elige tu carta
+          </h2>
+
+          <p data-i18n="menuText">
+            Consulta nuestra selección de platos, desayunos, bebidas y opciones sin gluten.
+          </p>
+
+        </div>
+
+
+        <div class="menu-tabs">
+
+          <button class="menu-tab active" onclick="showMenu('normal', this)">
+            <span class="tab-icon">🍽️</span>
+            <strong data-i18n="normalCard">Carta normal</strong>
+            <small data-i18n="normalCardSmall">Nuestra carta principal</small>
+          </button>
+
+          <button class="menu-tab" onclick="showMenu('gluten', this)">
+            <span class="tab-icon">🌾</span>
+            <strong data-i18n="glutenCard">Sin gluten</strong>
+            <small data-i18n="glutenCardSmall">Opciones adaptadas</small>
+          </button>
+
+          <button class="menu-tab" onclick="showMenu('breakfast', this)">
+            <span class="tab-icon">☕</span>
+            <strong data-i18n="breakfastCard">Desayunos</strong>
+            <small data-i18n="breakfastCardSmall">Empieza bien el día</small>
+          </button>
+
+          <button class="menu-tab" onclick="showMenu('drinks', this)">
+            <span class="tab-icon">🍷</span>
+            <strong data-i18n="drinksCard">Bebidas y postres</strong>
+            <small data-i18n="drinksCardSmall">Para terminar</small>
+          </button>
+
+        </div>
+
+
+        <!-- CARTA NORMAL -->
+
+        <div class="menu-panel active" id="menu-normal">
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dish1">Entrecot de ternera a la brasa</h3>
+                <p data-i18n="dish1desc">Con patatas rústicas y pimientos asados.</p>
+              </div>
+              <div class="menu-price">22,90 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dish2">Secreto ibérico</h3>
+                <p data-i18n="dish2desc">Secreto ibérico a la brasa con patatas.</p>
+              </div>
+              <div class="menu-price">18,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dish3">Pollo de corral a la brasa</h3>
+                <p data-i18n="dish3desc">Marinado con hierbas y especias de la casa.</p>
+              </div>
+              <div class="menu-price">15,90 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dish4">Ensalada mediterránea</h3>
+                <p data-i18n="dish4desc">Tomate, queso, aceitunas, cebolla y vinagreta.</p>
+              </div>
+              <div class="menu-price">11,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dish5">Croquetas caseras</h3>
+                <p data-i18n="dish5desc">Ración de croquetas cremosas de la casa.</p>
+              </div>
+              <div class="menu-price">9,90 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dish6">Hamburguesa La Brasa</h3>
+                <p data-i18n="dish6desc">Carne de vacuno, queso, cebolla y salsa de la casa.</p>
+              </div>
+              <div class="menu-price">14,90 €</div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SIN GLUTEN -->
+
+        <div class="menu-panel" id="menu-gluten">
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <h3>Entrecot a la brasa</h3>
+                <p data-i18n="gluten1">Con patatas y pimientos. Consultar contaminación cruzada.</p>
+              </div>
+              <div class="menu-price">22,90 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3>Secreto ibérico</h3>
+                <p data-i18n="gluten2">Carne a la brasa con guarnición apta.</p>
+              </div>
+              <div class="menu-price">18,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3>Ensalada mediterránea</h3>
+                <p data-i18n="gluten3">Tomate, queso, aceitunas y vinagreta.</p>
+              </div>
+              <div class="menu-price">11,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3>Pollo a la brasa</h3>
+                <p data-i18n="gluten4">Pollo marinado con guarnición.</p>
+              </div>
+              <div class="menu-price">15,90 €</div>
+            </div>
+
+          </div>
+
+          <p style="color:#888;font-size:11px;margin-top:20px;text-align:center;"
+             data-i18n="glutenWarning">
+            * Consulta siempre a nuestro personal sobre alérgenos y posibles contaminaciones cruzadas.
+          </p>
+
+        </div>
+
+
+        <!-- DESAYUNOS -->
+
+        <div class="menu-panel" id="menu-breakfast">
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="break1">Tostada con tomate y aceite</h3>
+                <p data-i18n="break1desc">Pan crujiente, tomate natural y aceite de oliva.</p>
+              </div>
+              <div class="menu-price">3,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="break2">Tostada con jamón ibérico</h3>
+                <p data-i18n="break2desc">Jamón ibérico, tomate y aceite de oliva.</p>
+              </div>
+              <div class="menu-price">5,90 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="break3">Desayuno completo</h3>
+                <p data-i18n="break3desc">Tostada, café y zumo natural.</p>
+              </div>
+              <div class="menu-price">6,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="break4">Croissant artesanal</h3>
+                <p data-i18n="break4desc">Croissant recién horneado.</p>
+              </div>
+              <div class="menu-price">2,50 €</div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- BEBIDAS Y POSTRES -->
+
+        <div class="menu-panel" id="menu-drinks">
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="drink1">Cerveza</h3>
+                <p data-i18n="drink1desc">Caña o botella.</p>
+              </div>
+              <div class="menu-price">2,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="drink2">Vino de la casa</h3>
+                <p data-i18n="drink2desc">Copa de vino tinto o blanco.</p>
+              </div>
+              <div class="menu-price">3,20 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dessert1">Tarta de queso</h3>
+                <p data-i18n="dessert1desc">Cremosa tarta de queso estilo casero.</p>
+              </div>
+              <div class="menu-price">6,00 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dessert2">Brownie con helado</h3>
+                <p data-i18n="dessert2desc">Brownie de chocolate con helado de vainilla.</p>
+              </div>
+              <div class="menu-price">6,50 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dessert3">Café</h3>
+                <p data-i18n="dessert3desc">Espresso, cortado o con leche.</p>
+              </div>
+              <div class="menu-price">1,80 €</div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <h3 data-i18n="dessert4">Refresco</h3>
+                <p data-i18n="dessert4desc">Diferentes opciones disponibles.</p>
+              </div>
+              <div class="menu-price">2,50 €</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERIA
+    ========================= -->
+
+    <section id="fotos">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="photosSmall">
+            NUESTRO RESTAURANTE
+          </span>
+
+          <h2 data-i18n="photosTitle">
+            Un vistazo a La Brasa
+          </h2>
+
+          <p data-i18n="photosText">
+            Un espacio pensado para disfrutar de buena comida y buenos momentos.
+          </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img src="img/foto.png" alt="Restaurante La Brasa">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=80"
+              alt="Restaurante La Brasa Sevilla">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1000&q=80"
+              alt="Comida mediterránea">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80"
+              alt="Carne a la brasa">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=1000&q=80"
+              alt="Plato del restaurante">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=80"
+              alt="Cocina mediterránea">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VISOR -->
+
+    <div class="visor" id="visorFoto">
+
+      <span class="visor-close" onclick="cerrarFoto()">×</span>
+
+      <img id="visorImagen" src="" alt="Imagen ampliada">
 
     </div>
 
 
-    <div
-      class="foto"
-      onclick="abrirFoto(this)"
-    >
+    <!-- =========================
+         RESEÑAS
+    ========================= -->
 
-      <img
-        src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=85"
-        alt="Carne preparada"
-      >
+    <section class="reviews" id="resenas">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="reviewsSmall">
+            OPINIONES
+          </span>
+
+          <h2 data-i18n="reviewsTitle">
+            Lo que dicen nuestros clientes
+          </h2>
+
+        </div>
+
+        <div class="rating-summary">
+
+          <div class="rating-number">4,8</div>
+
+          <div class="stars">★★★★★</div>
+
+          <p data-i18n="reviewsBased">
+            Basado en más de 250 opiniones
+          </p>
+
+        </div>
+
+        <div class="reviews-grid">
+
+          <div class="review">
+
+            <div class="review-name">María G.</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p data-i18n="review1">
+              "La comida estaba espectacular y el servicio fue muy atento. Volveremos seguro."
+            </p>
+
+          </div>
+
+          <div class="review">
+
+            <div class="review-name">Carlos R.</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p data-i18n="review2">
+              "Muy buen sitio para comer con amigos. La carne a la brasa estaba increíble."
+            </p>
+
+          </div>
+
+          <div class="review">
+
+            <div class="review-name">Laura M.</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p data-i18n="review3">
+              "Nos atendieron genial y tenían opciones para personas con intolerancias."
+            </p>
+
+          </div>
+
+          <div class="review">
+
+            <div class="review-name">David P.</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p data-i18n="review4">
+              "Ambiente muy agradable, comida casera y precios bastante buenos."
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESERVAS
+    ========================= -->
+
+    <section class="reservation-section" id="reservas">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="reservationSmall">
+            RESERVA TU MESA
+          </span>
+
+          <h2 data-i18n="reservationTitle">
+            ¿Comemos juntos?
+          </h2>
+
+          <p data-i18n="reservationText">
+            Completa el formulario y nos pondremos en contacto contigo para confirmar tu reserva.
+          </p>
+
+        </div>
+
+        <div class="reservation-box">
+
+          <form class="reservation-form" id="reservationForm">
+
+            <div class="form-group">
+
+              <label for="nombre" data-i18n="nameLabel">
+                Nombre
+              </label>
+
+              <input
+                id="nombre"
+                name="nombre"
+                required
+                placeholder="Tu nombre">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="telefono" data-i18n="phoneLabel">
+                Teléfono
+              </label>
+
+              <input
+                id="telefono"
+                name="telefono"
+                type="tel"
+                required
+                placeholder="600 000 000">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="fecha" data-i18n="dateLabel">
+                Fecha
+              </label>
+
+              <input
+                id="fecha"
+                name="fecha"
+                type="date"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="hora" data-i18n="timeLabel">
+                Hora
+              </label>
+
+              <input
+                id="hora"
+                name="hora"
+                type="time"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="personas" data-i18n="peopleLabel">
+                Personas
+              </label>
+
+              <select id="personas" name="personas">
+
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+
+              </select>
+
+            </div>
+
+            <div class="form-group full">
+
+              <label for="comentarios" data-i18n="commentsLabel">
+                Comentarios
+              </label>
+
+              <textarea
+                id="comentarios"
+                name="comentarios"
+                placeholder="¿Alguna petición especial?"></textarea>
+
+            </div>
+
+            <button class="btn" type="submit" data-i18n="reservationButton">
+              Solicitar reserva
+            </button>
+
+          </form>
+
+          <div id="reservationMessage" class="reservation-message"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         UBICACION
+    ========================= -->
+
+    <section class="location-section">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span data-i18n="locationSmall">
+            VEN A VISITARNOS
+          </span>
+
+          <h2 data-i18n="locationTitle">
+            Nuestra ubicación
+          </h2>
+
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-card">
+
+            <div class="location-icon">📍</div>
+
+            <h3 data-i18n="addressTitle">
+              Nuestra ubicación
+            </h3>
+
+            <p>
+              Calle del Azahar 18<br>
+              41012 Sevilla, Andalucía
+            </p>
+
+            <a
+              class="map-button"
+              href="https://www.google.com/maps/search/?api=1&query=Calle+del+Azahar+18+Sevilla"
+              target="_blank"
+              rel="noopener">
+
+              🧭 <span data-i18n="directions">
+                Cómo llegar
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <div class="location-card">
+
+            <div class="location-icon">🕐</div>
+
+            <h3 data-i18n="hoursTitle">
+              Horarios
+            </h3>
+
+            <div class="hours-row">
+              <span data-i18n="monThu">Lunes a Jueves</span>
+              <strong>08:00 - 23:30</strong>
+            </div>
+
+            <div class="hours-row">
+              <span data-i18n="friSat">Viernes y Sábado</span>
+              <strong>08:00 - 00:30</strong>
+            </div>
+
+            <div class="hours-row">
+              <span data-i18n="sunday">Domingo</span>
+              <strong>09:00 - 23:00</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-column">
+
+        <div class="footer-brand">
+
+          <svg viewBox="0 0 100 100">
+
+            <circle
+              cx="50"
+              cy="50"
+              r="46"
+              fill="#111"
+              stroke="#e7a23b"
+              stroke-width="4"/>
+
+            <path
+              d="M50 77
+              C30 77 28 61 36 51
+              C42 43 49 39 47 24
+              C60 33 69 43 66 53
+              C75 50 78 59 75 66
+              C71 74 62 77 50 77Z"
+              fill="#e7a23b"/>
+
+            <path
+              d="M50 69
+              C42 69 40 62 44 57
+              C47 53 51 50 51 44
+              C58 49 61 55 59 60
+              C64 58 66 63 63 67
+              C60 70 56 69 50 69Z"
+              fill="#fff1d2"/>
+
+          </svg>
+
+          <h3>
+            LA <span>BRASA</span>
+          </h3>
+
+        </div>
+
+        <p data-i18n="footerDescription">
+          Cocina mediterránea, producto de calidad y el auténtico sabor de la brasa en Sevilla.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4 data-i18n="quickLinks">
+          Enlaces rápidos
+        </h4>
+
+        <a href="#inicio" data-i18n="navHome">
+          Inicio
+        </a>
+
+        <a href="#sobre-nosotros" data-i18n="navAbout">
+          Sobre nosotros
+        </a>
+
+        <a href="#cartas" data-i18n="navMenu">
+          Cartas
+        </a>
+
+        <a href="#resenas" data-i18n="navReviews">
+          Reseñas
+        </a>
+
+        <a href="#reservas" data-i18n="navBooking">
+          Reservas
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4 data-i18n="contactTitle">
+          Contacto
+        </h4>
+
+        <p>📍 Calle del Azahar 18</p>
+        <p>📍 41012 Sevilla</p>
+        <p>📞 +34 954 000 000</p>
+        <p>✉️ hola@labrasarestaurante.es</p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4 data-i18n="hoursTitle">
+          Horarios
+        </h4>
+
+        <p>🕐 <span data-i18n="monThu">Lunes a Jueves</span></p>
+        <p>08:00 - 23:30</p>
+
+        <br>
+
+        <p>🕐 <span data-i18n="friSat">Viernes y Sábado</span></p>
+        <p>08:00 - 00:30</p>
+
+        <br>
+
+        <p>🕐 <span data-i18n="sunday">Domingo</span></p>
+        <p>09:00 - 23:00</p>
+
+      </div>
 
     </div>
 
 
-    <div
-      class="foto"
-      onclick="abrirFoto(this)"
-    >
+    <div class="footer-bottom">
 
-      <img
-        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
-        alt="Plato del restaurante"
-      >
+      <span>
+        © 2026 La Brasa · Sevilla
+      </span>
 
-    </div>
-
-
-    <div
-      class="foto"
-      onclick="abrirFoto(this)"
-    >
-
-      <img
-        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
-        alt="Interior del restaurante"
-      >
+      <span data-i18n="footerBottom">
+        Cocina mediterránea · Restaurante en Sevilla
+      </span>
 
     </div>
 
-
-    <div
-      class="foto"
-      onclick="abrirFoto(this)"
-    >
-
-      <img
-        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
-        alt="Mesa del restaurante"
-      >
-
-    </div>
+  </footer>
 
 
-    <div
-      class="foto"
-      onclick="abrirFoto(this)"
-    >
-
-      <img
-        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85"
-        alt="Terraza del restaurante"
-      >
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     VISOR FOTO
-     ========================= -->
-
-<div
-  class="visor-foto"
-  id="visorFoto"
-  onclick="cerrarFoto(event)"
->
+  <!-- BOTON ADMIN -->
 
   <button
-    class="cerrar-foto"
-    onclick="cerrarFoto()"
-  >
-    ×
-  </button>
-
-  <img
-    id="fotoGrande"
-    src=""
-    alt="Foto ampliada"
-  >
-
-</div>
-
-
-<!-- =========================
-     RESEÑAS
-     ========================= -->
-
-<section id="resenas">
-
-  <h2 class="title">
-    ⭐ Lo que dicen nuestros clientes
-  </h2>
-
-
-  <div class="valoracion-general">
-
-    <div class="valoracion-numero">
-      4,8
-    </div>
-
-    <div class="valoracion-estrellas">
-      ★★★★★
-    </div>
-
-    <p>
-      Basado en opiniones de nuestros clientes
-    </p>
-
-  </div>
-
-
-  <div class="resenas-grid">
-
-
-    <div class="resena">
-
-      <div class="estrellas">
-        ★★★★★
-      </div>
-
-      <p>
-        "La carne estaba espectacular y el
-        trato fue de 10. Sin duda volveremos."
-      </p>
-
-      <strong>
-        — María G.
-      </strong>
-
-    </div>
-
-
-    <div class="resena">
-
-      <div class="estrellas">
-        ★★★★★
-      </div>
-
-      <p>
-        "Un sitio increíble para comer con
-        amigos. Todo estaba buenísimo."
-      </p>
-
-      <strong>
-        — Carlos R.
-      </strong>
-
-    </div>
-
-
-    <div class="resena">
-
-      <div class="estrellas">
-        ★★★★☆
-      </div>
-
-      <p>
-        "Muy buena comida, ambiente agradable
-        y el servicio muy rápido."
-      </p>
-
-      <strong>
-        — Laura M.
-      </strong>
-
-    </div>
-
-
-    <div class="resena">
-
-      <div class="estrellas">
-        ★★★★★
-      </div>
-
-      <p>
-        "La relación calidad-precio es genial.
-        Los postres caseros están increíbles."
-      </p>
-
-      <strong>
-        — Daniel P.
-      </strong>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     RESERVAS CLIENTE
-     ========================= -->
-
-<section id="reservas">
-
-  <div class="reservation">
-
-    <h2 class="title">
-      Reserva tu mesa
-    </h2>
-
-    <form id="formReserva">
-
-      <input
-        type="text"
-        id="nombre"
-        placeholder="Nombre"
-        required
-      >
-
-      <input
-        type="tel"
-        id="telefono"
-        placeholder="Teléfono"
-        required
-      >
-
-      <input
-        type="date"
-        id="fecha"
-        required
-      >
-
-      <input
-        type="time"
-        id="hora"
-        required
-      >
-
-      <select
-        id="personas"
-        required
-      >
-
-        <option value="">
-          Número de personas
-        </option>
-
-        <option value="1">
-          1 persona
-        </option>
-
-        <option value="2">
-          2 personas
-        </option>
-
-        <option value="3">
-          3 personas
-        </option>
-
-        <option value="4">
-          4 personas
-        </option>
-
-        <option value="5">
-          5 personas
-        </option>
-
-        <option value="6">
-          6 personas
-        </option>
-
-        <option value="7">
-          7 personas
-        </option>
-
-        <option value="8">
-          8 personas
-        </option>
-
-        <option value="9">
-          9 personas
-        </option>
-
-        <option value="10">
-          10 personas
-        </option>
-
-        <option value="11">
-          11 personas
-        </option>
-
-        <option value="12">
-          12 personas
-        </option>
-
-      </select>
-
-      <textarea
-        id="comentarios"
-        placeholder="Comentarios (opcional)"
-      ></textarea>
-
-      <button type="submit">
-        Confirmar reserva
-      </button>
-
-    </form>
-
-    <div id="resultado"></div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-     ========================= -->
-
-<footer>
-
-  © 2026 La Brasa · Sevilla
-
-  <button
-    class="admin-button"
+    class="admin-trigger"
     onclick="abrirAdmin()"
-    title="Administración"
-  >
+    title="Administración">
     ⚙️
   </button>
 
-</footer>
 
+  <!-- =========================
+       ADMIN
+  ========================= -->
 
-<!-- =========================
-     PANEL ADMINISTRACIÓN
-     ========================= -->
-
-<div
-  class="admin-overlay"
-  id="adminOverlay"
->
-
-  <!-- LOGIN -->
-
-  <div
-    class="login-box"
-    id="loginBox"
-  >
-
-    <h2>
-      🔐 Acceso restaurante
-    </h2>
-
-    <input
-      type="password"
-      id="adminPassword"
-      placeholder="Contraseña"
-      onkeydown="
-        if(event.key === 'Enter') {
-          iniciarSesion();
-        }
-      "
-    >
-
-    <button
-      onclick="iniciarSesion()"
-    >
-      Entrar
-    </button>
-
-    <p
-      class="login-error"
-      id="loginError"
-    >
-      Contraseña incorrecta
-    </p>
-
-    <button
-      class="close-admin"
-      onclick="cerrarAdmin()"
-      style="margin-top:20px;"
-    >
-      Volver
-    </button>
-
-  </div>
-
-
-  <!-- PANEL -->
-
-  <div
-    id="adminPanel"
-    style="display:none;"
-  >
+  <div class="admin-overlay" id="adminOverlay">
 
     <div class="admin-container">
 
-      <!-- CABECERA -->
-
       <div class="admin-header">
 
-        <div>
+        <h2>La Brasa · Administración</h2>
 
-          <h2>
-            Panel de administración
-          </h2>
+        <button
+          class="admin-close"
+          onclick="cerrarAdmin()">
+          ×
+        </button>
 
-          <p>
-            Gestión de La Brasa
+      </div>
+
+
+      <!-- LOGIN -->
+
+      <div class="admin-login" id="adminLogin">
+
+        <h2>Acceso privado</h2>
+
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Contraseña">
+
+        <button
+          class="btn"
+          onclick="loginAdmin()">
+          Entrar
+        </button>
+
+        <p
+          id="adminLoginError"
+          style="color:#ff7777;font-size:12px;margin-top:10px;">
+        </p>
+
+      </div>
+
+
+      <!-- PANEL -->
+
+      <div class="admin-content" id="adminContent">
+
+        <div class="admin-nav">
+
+          <button
+            class="active"
+            onclick="showAdminSection('resumen', this)">
+            Resumen
+          </button>
+
+          <button
+            onclick="showAdminSection('reservasAdmin', this)">
+            Reservas
+          </button>
+
+          <button
+            onclick="showAdminSection('configuracion', this)">
+            Configuración
+          </button>
+
+        </div>
+
+
+        <!-- RESUMEN -->
+
+        <div
+          class="admin-section active"
+          id="admin-resumen">
+
+          <div class="admin-stats">
+
+            <div class="stat">
+              <span>Pendientes</span>
+              <strong id="pendingCount">0</strong>
+            </div>
+
+            <div class="stat">
+              <span>Aceptadas</span>
+              <strong id="acceptedCount">0</strong>
+            </div>
+
+            <div class="stat">
+              <span>Rechazadas</span>
+              <strong id="rejectedCount">0</strong>
+            </div>
+
+          </div>
+
+          <p style="color:#888;font-size:12px;">
+            El panel se actualiza automáticamente.
           </p>
 
         </div>
 
-        <button
-          class="close-admin"
-          onclick="cerrarAdmin()"
-        >
-          🚪 Cerrar sesión
-        </button>
 
-      </div>
+        <!-- RESERVAS -->
 
+        <div
+          class="admin-section"
+          id="admin-reservasAdmin">
 
-      <!-- NAVEGACIÓN -->
-
-      <div class="admin-nav">
-
-        <button
-          class="active"
-          onclick="
-            mostrarApartado(
-              'resumen',
-              this
-            )
-          "
-        >
-          🏠 Resumen
-        </button>
-
-        <button
-          onclick="
-            mostrarApartado(
-              'reservasAdmin',
-              this
-            )
-          "
-        >
-          📅 Reservas
-        </button>
-
-        <button
-          onclick="
-            mostrarApartado(
-              'configuracion',
-              this
-            )
-          "
-        >
-          ⚙️ Configuración
-        </button>
-
-      </div>
-
-
-      <!-- RESUMEN -->
-
-      <div
-        class="admin-section active"
-        id="resumen"
-      >
-
-        <h2 class="section-title">
-          Resumen
-        </h2>
-
-        <div class="stats">
-
-          <div class="stat-card">
-
-            <h3>
-              Reservas pendientes
-            </h3>
-
-            <div
-              class="stat-number"
-              id="contadorPendientes"
-            >
-              0
-            </div>
-
-          </div>
-
-
-          <div class="stat-card">
-
-            <h3>
-              Reservas aceptadas
-            </h3>
-
-            <div
-              class="stat-number"
-              id="contadorAceptadas"
-            >
-              0
-            </div>
-
-          </div>
-
-
-          <div class="stat-card">
-
-            <h3>
-              Reservas rechazadas
-            </h3>
-
-            <div
-              class="stat-number"
-              id="contadorCanceladas"
-            >
-              0
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- RESERVAS -->
-
-      <div
-        class="admin-section"
-        id="reservasAdmin"
-      >
-
-        <h2 class="section-title">
-          📅 Gestión de reservas
-        </h2>
-
-
-        <!-- PENDIENTES -->
-
-        <div class="panel-reservas">
-
-          <div class="panel-titulo pendientes-titulo">
-
-            <h3>
-              🟠 Pendientes
-            </h3>
-
-            <span id="numeroPendientes">
-              0
-            </span>
-
-          </div>
-
-          <div
-            class="reservas-grid"
-            id="listaPendientes"
-          >
-
+          <div id="adminReservationsList">
+            Cargando reservas...
           </div>
 
         </div>
 
 
-        <!-- ACEPTADAS -->
+        <!-- CONFIGURACION -->
 
-        <div class="panel-reservas">
+        <div
+          class="admin-section"
+          id="admin-configuracion">
 
-          <div class="panel-titulo aceptadas-titulo">
+          <h3>Configuración</h3>
 
-            <h3>
-              🟢 Aceptadas
-            </h3>
-
-            <span id="numeroAceptadas">
-              0
-            </span>
-
-          </div>
-
-          <div
-            class="reservas-grid"
-            id="listaAceptadas"
-          >
-
-          </div>
-
-        </div>
-
-
-        <!-- RECHAZADAS -->
-
-        <div class="panel-reservas">
-
-          <div class="panel-titulo rechazadas-titulo">
-
-            <h3>
-              🔴 Rechazadas
-            </h3>
-
-            <span id="numeroRechazadas">
-              0
-            </span>
-
-          </div>
-
-          <div
-            class="reservas-grid"
-            id="listaRechazadas"
-          >
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- CONFIGURACIÓN -->
-
-      <div
-        class="admin-section"
-        id="configuracion"
-      >
-
-        <h2 class="section-title">
-          ⚙️ Configuración
-        </h2>
-
-        <div class="config-card">
-
-          <h3>
-            Información del restaurante
-          </h3>
-
-          <p>
-            Desde este apartado podremos
-            configurar diferentes opciones
-            del restaurante en el futuro.
+          <p style="color:#999;margin-top:10px;font-size:13px;">
+            Panel de administración de La Brasa.
           </p>
 
-          <br>
-
-          <p>
-            🔒 La contraseña de administrador
-            no se puede modificar desde esta página.
+          <p style="color:#777;margin-top:15px;font-size:12px;">
+            La contraseña actual se encuentra configurada en el código.
           </p>
 
         </div>
@@ -1764,1490 +2375,831 @@
 
   </div>
 
-</div>
 
-
-<script>
-
-
-// ======================================================
-// ELEMENTOS
-// ======================================================
-
-const form =
-  document.getElementById(
-    "formReserva"
-  );
-
-const resultado =
-  document.getElementById(
-    "resultado"
-  );
-
-const campoFecha =
-  document.getElementById(
-    "fecha"
-  );
-
-const campoHora =
-  document.getElementById(
-    "hora"
-  );
-
-
-// ======================================================
-// CONTROL DE ACTUALIZACIÓN
-// ======================================================
-
-let cargandoReservas = false;
-
-
-// ======================================================
-// GALERÍA
-// ======================================================
-
-function abrirFoto(elemento) {
-
-  const imagen =
-    elemento.querySelector("img");
-
-  const visor =
-    document.getElementById(
-      "visorFoto"
-    );
-
-  const fotoGrande =
-    document.getElementById(
-      "fotoGrande"
-    );
-
-  fotoGrande.src =
-    imagen.src;
-
-  fotoGrande.alt =
-    imagen.alt;
-
-  visor.style.display =
-    "flex";
-
-  document.body.style.overflow =
-    "hidden";
-
-}
-
-
-function cerrarFoto(event) {
-
-  if (
-    event &&
-    event.target &&
-    event.target.id === "fotoGrande"
-  ) {
-
-    return;
-
-  }
-
-  document
-    .getElementById(
-      "visorFoto"
-    )
-    .style.display =
-      "none";
-
-  document.body.style.overflow =
-    "";
-
-}
-
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (
-      event.key === "Escape"
-    ) {
-
-      cerrarFoto();
-
-    }
-
-  }
-);
-
-
-// ======================================================
-// OBTENER FECHA DE HOY
-// ======================================================
-
-function obtenerFechaHoy() {
-
-  const hoy =
-    new Date();
-
-  const año =
-    hoy.getFullYear();
-
-  const mes =
-    String(
-      hoy.getMonth() + 1
-    ).padStart(
-      2,
-      "0"
-    );
-
-  const dia =
-    String(
-      hoy.getDate()
-    ).padStart(
-      2,
-      "0"
-    );
-
-  return (
-    `${año}-${mes}-${dia}`
-  );
-
-}
-
-
-// ======================================================
-// FECHA MÍNIMA
-// ======================================================
-
-campoFecha.min =
-  obtenerFechaHoy();
-
-
-// ======================================================
-// COMPROBAR HORA
-// ======================================================
-
-campoFecha.addEventListener(
-  "change",
-  comprobarHora
-);
-
-
-function comprobarHora() {
-
-  if (
-    campoFecha.value ===
-    obtenerFechaHoy()
-  ) {
-
-    const ahora =
-      new Date();
-
-    const horas =
-      String(
-        ahora.getHours()
-      ).padStart(
-        2,
-        "0"
-      );
-
-    const minutos =
-      String(
-        ahora.getMinutes()
-      ).padStart(
-        2,
-        "0"
-      );
-
-    campoHora.min =
-      `${horas}:${minutos}`;
-
-  }
-
-  else {
-
-    campoHora.removeAttribute(
-      "min"
-    );
-
-  }
-
-}
-
-
-// ======================================================
-// ENVIAR RESERVA
-// ======================================================
-
-form.addEventListener(
-  "submit",
-  async function(event) {
-
-    event.preventDefault();
-
-    resultado.style.display =
-      "block";
-
-    resultado.innerHTML =
-      "⏳ Enviando reserva...";
-
-    const datos = {
-
-      nombre:
-        document.getElementById(
-          "nombre"
-        ).value.trim(),
-
-      telefono:
-        document.getElementById(
-          "telefono"
-        ).value.trim(),
-
-      fecha:
-        campoFecha.value,
-
-      hora:
-        campoHora.value,
-
-      personas:
-        document.getElementById(
-          "personas"
-        ).value,
-
-      comentarios:
-        document.getElementById(
-          "comentarios"
-        ).value.trim()
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* =====================================
+       TRADUCCIONES
+    ===================================== */
+
+    const translations = {
+
+      es: {
+
+        navHome: "Inicio",
+        navAbout: "Sobre nosotros",
+        navMenu: "Cartas",
+        navPhotos: "Fotos",
+        navReviews: "Reseñas",
+        navBooking: "Reservas",
+
+        heroSmall: "Cocina mediterránea · Sevilla",
+        heroText: "Sabor, tradición y producto de calidad en cada plato.",
+        heroButton: "Reservar mesa",
+
+        infoSmall: "Todo pensado para ti",
+        infoTitle: "Información para nuestros clientes",
+        infoText: "Descubre nuestras opciones y disfruta de una experiencia gastronómica adaptada a ti.",
+
+        allergensTitle: "Alérgenos",
+        allergensText: "Pregunta a nuestro equipo por los ingredientes y alérgenos de cada plato.",
+
+        recommendedTitle: "Lo más recomendado",
+        recommendedText: "Descubre nuestros platos favoritos de nuestros clientes.",
+
+        specialtyTitle: "Especialidad de la casa",
+        specialtyText: "Carnes y productos cocinados a la brasa para conseguir todo su sabor.",
+
+        specialOptionsTitle: "Opciones especiales",
+        specialOptionsText: "Opciones vegetarianas y platos adaptados a diferentes necesidades.",
+
+        aboutSmall: "NUESTRA HISTORIA",
+        aboutTitle: "Sobre nosotros",
+        aboutText1: "La Brasa nace de una idea sencilla: reunir buena cocina, producto de calidad y un ambiente en el que nuestros clientes quieran volver.",
+        aboutText2: "Nuestra cocina combina recetas mediterráneas con el sabor tradicional de la brasa. Trabajamos cada plato cuidando los pequeños detalles.",
+        aboutText3: "Ya sea para desayunar, comer con la familia, disfrutar de una cena o simplemente tomar algo, queremos que La Brasa sea uno de esos lugares que se sienten como propios.",
+        aboutSince: "El año en el que abrimos nuestras puertas con la ilusión de crear un restaurante diferente.",
+        aboutCustomers: "Clientes que han compartido mesa con nosotros.",
+
+        menuSmall: "NUESTRAS CARTAS",
+        menuTitle: "Elige tu carta",
+        menuText: "Consulta nuestra selección de platos, desayunos, bebidas y opciones sin gluten.",
+
+        normalCard: "Carta normal",
+        normalCardSmall: "Nuestra carta principal",
+        glutenCard: "Sin gluten",
+        glutenCardSmall: "Opciones adaptadas",
+        breakfastCard: "Desayunos",
+        breakfastCardSmall: "Empieza bien el día",
+        drinksCard: "Bebidas y postres",
+        drinksCardSmall: "Para terminar",
+
+        dish1: "Entrecot de ternera a la brasa",
+        dish1desc: "Con patatas rústicas y pimientos asados.",
+        dish2: "Secreto ibérico",
+        dish2desc: "Secreto ibérico a la brasa con patatas.",
+        dish3: "Pollo de corral a la brasa",
+        dish3desc: "Marinado con hierbas y especias de la casa.",
+        dish4: "Ensalada mediterránea",
+        dish4desc: "Tomate, queso, aceitunas, cebolla y vinagreta.",
+        dish5: "Croquetas caseras",
+        dish5desc: "Ración de croquetas cremosas de la casa.",
+        dish6: "Hamburguesa La Brasa",
+        dish6desc: "Carne de vacuno, queso, cebolla y salsa de la casa.",
+
+        gluten1: "Con patatas y pimientos. Consultar contaminación cruzada.",
+        gluten2: "Carne a la brasa con guarnición apta.",
+        gluten3: "Tomate, queso, aceitunas y vinagreta.",
+        gluten4: "Pollo marinado con guarnición.",
+        glutenWarning: "* Consulta siempre a nuestro personal sobre alérgenos y posibles contaminaciones cruzadas.",
+
+        break1: "Tostada con tomate y aceite",
+        break1desc: "Pan crujiente, tomate natural y aceite de oliva.",
+        break2: "Tostada con jamón ibérico",
+        break2desc: "Jamón ibérico, tomate y aceite de oliva.",
+        break3: "Desayuno completo",
+        break3desc: "Tostada, café y zumo natural.",
+        break4: "Croissant artesanal",
+        break4desc: "Croissant recién horneado.",
+
+        drink1: "Cerveza",
+        drink1desc: "Caña o botella.",
+        drink2: "Vino de la casa",
+        drink2desc: "Copa de vino tinto o blanco.",
+        dessert1: "Tarta de queso",
+        dessert1desc: "Cremosa tarta de queso estilo casero.",
+        dessert2: "Brownie con helado",
+        dessert2desc: "Brownie de chocolate con helado de vainilla.",
+        dessert3: "Café",
+        dessert3desc: "Espresso, cortado o con leche.",
+        dessert4: "Refresco",
+        dessert4desc: "Diferentes opciones disponibles.",
+
+        photosSmall: "NUESTRO RESTAURANTE",
+        photosTitle: "Un vistazo a La Brasa",
+        photosText: "Un espacio pensado para disfrutar de buena comida y buenos momentos.",
+
+        reviewsSmall: "OPINIONES",
+        reviewsTitle: "Lo que dicen nuestros clientes",
+        reviewsBased: "Basado en más de 250 opiniones",
+        review1: "\"La comida estaba espectacular y el servicio fue muy atento. Volveremos seguro.\"",
+        review2: "\"Muy buen sitio para comer con amigos. La carne a la brasa estaba increíble.\"",
+        review3: "\"Nos atendieron genial y tenían opciones para personas con intolerancias.\"",
+        review4: "\"Ambiente muy agradable, comida casera y precios bastante buenos.\"",
+
+        reservationSmall: "RESERVA TU MESA",
+        reservationTitle: "¿Comemos juntos?",
+        reservationText: "Completa el formulario y nos pondremos en contacto contigo para confirmar tu reserva.",
+        nameLabel: "Nombre",
+        phoneLabel: "Teléfono",
+        dateLabel: "Fecha",
+        timeLabel: "Hora",
+        peopleLabel: "Personas",
+        commentsLabel: "Comentarios",
+        reservationButton: "Solicitar reserva",
+
+        locationSmall: "VEN A VISITARNOS",
+        locationTitle: "Nuestra ubicación",
+        addressTitle: "Nuestra ubicación",
+        directions: "Cómo llegar",
+        hoursTitle: "Horarios",
+        monThu: "Lunes a Jueves",
+        friSat: "Viernes y Sábado",
+        sunday: "Domingo",
+
+        quickLinks: "Enlaces rápidos",
+        contactTitle: "Contacto",
+        footerDescription: "Cocina mediterránea, producto de calidad y el auténtico sabor de la brasa en Sevilla.",
+        footerBottom: "Cocina mediterránea · Restaurante en Sevilla"
+
+      },
+
+
+      en: {
+
+        navHome: "Home",
+        navAbout: "About us",
+        navMenu: "Menus",
+        navPhotos: "Photos",
+        navReviews: "Reviews",
+        navBooking: "Reservations",
+
+        heroSmall: "Mediterranean cuisine · Seville",
+        heroText: "Taste, tradition and quality ingredients in every dish.",
+        heroButton: "Book a table",
+
+        infoSmall: "Everything for you",
+        infoTitle: "Information for our customers",
+        infoText: "Discover our options and enjoy a dining experience adapted to you.",
+
+        allergensTitle: "Allergens",
+        allergensText: "Ask our team about the ingredients and allergens in each dish.",
+
+        recommendedTitle: "Our recommendations",
+        recommendedText: "Discover our customers' favorite dishes.",
+
+        specialtyTitle: "House specialty",
+        specialtyText: "Meat and quality products cooked over the grill for maximum flavor.",
+
+        specialOptionsTitle: "Special options",
+        specialOptionsText: "Vegetarian options and dishes adapted to different needs.",
+
+        aboutSmall: "OUR STORY",
+        aboutTitle: "About us",
+        aboutText1: "La Brasa was born from a simple idea: bringing together great food, quality ingredients and an atmosphere our customers want to come back to.",
+        aboutText2: "Our kitchen combines Mediterranean recipes with the traditional flavor of the grill. We prepare every dish while paying attention to the smallest details.",
+        aboutText3: "Whether you come for breakfast, lunch with your family, dinner or simply a drink, we want La Brasa to feel like your own place.",
+        aboutSince: "The year we opened our doors with the dream of creating a different kind of restaurant.",
+        aboutCustomers: "Customers who have shared a table with us.",
+
+        menuSmall: "OUR MENUS",
+        menuTitle: "Choose your menu",
+        menuText: "Explore our dishes, breakfasts, drinks, desserts and gluten-free options.",
+
+        normalCard: "Main menu",
+        normalCardSmall: "Our main selection",
+        glutenCard: "Gluten-free",
+        glutenCardSmall: "Adapted options",
+        breakfastCard: "Breakfast",
+        breakfastCardSmall: "Start your day right",
+        drinksCard: "Drinks & desserts",
+        drinksCardSmall: "The perfect ending",
+
+        dish1: "Grilled beef entrecôte",
+        dish1desc: "With rustic potatoes and roasted peppers.",
+        dish2: "Iberian pork",
+        dish2desc: "Grilled Iberian pork with potatoes.",
+        dish3: "Grilled free-range chicken",
+        dish3desc: "Marinated with house herbs and spices.",
+        dish4: "Mediterranean salad",
+        dish4desc: "Tomato, cheese, olives, onion and vinaigrette.",
+        dish5: "Homemade croquettes",
+        dish5desc: "A portion of creamy homemade croquettes.",
+        dish6: "La Brasa Burger",
+        dish6desc: "Beef, cheese, onion and house sauce.",
+
+        gluten1: "With potatoes and peppers. Ask about cross-contamination.",
+        gluten2: "Grilled meat with suitable side dish.",
+        gluten3: "Tomato, cheese, olives and vinaigrette.",
+        gluten4: "Marinated chicken with side dish.",
+        glutenWarning: "* Always ask our staff about allergens and possible cross-contamination.",
+
+        break1: "Toast with tomato and olive oil",
+        break1desc: "Crispy bread, fresh tomato and olive oil.",
+        break2: "Toast with Iberian ham",
+        break2desc: "Iberian ham, tomato and olive oil.",
+        break3: "Full breakfast",
+        break3desc: "Toast, coffee and fresh juice.",
+        break4: "Artisan croissant",
+        break4desc: "Freshly baked croissant.",
+
+        drink1: "Beer",
+        drink1desc: "Draft or bottled.",
+        drink2: "House wine",
+        drink2desc: "Glass of red or white wine.",
+        dessert1: "Cheesecake",
+        dessert1desc: "Creamy homemade-style cheesecake.",
+        dessert2: "Brownie with ice cream",
+        dessert2desc: "Chocolate brownie with vanilla ice cream.",
+        dessert3: "Coffee",
+        dessert3desc: "Espresso, cortado or with milk.",
+        dessert4: "Soft drink",
+        dessert4desc: "Different options available.",
+
+        photosSmall: "OUR RESTAURANT",
+        photosTitle: "A look inside La Brasa",
+        photosText: "A space designed to enjoy great food and great moments.",
+
+        reviewsSmall: "REVIEWS",
+        reviewsTitle: "What our customers say",
+        reviewsBased: "Based on more than 250 reviews",
+        review1: "\"The food was amazing and the service was excellent. We will definitely come back.\"",
+        review2: "\"A great place to eat with friends. The grilled meat was incredible.\"",
+        review3: "\"Great service and they had options for people with intolerances.\"",
+        review4: "\"Very nice atmosphere, homemade food and good prices.\"",
+
+        reservationSmall: "BOOK YOUR TABLE",
+        reservationTitle: "Shall we eat together?",
+        reservationText: "Fill in the form and we will contact you to confirm your reservation.",
+        nameLabel: "Name",
+        phoneLabel: "Phone",
+        dateLabel: "Date",
+        timeLabel: "Time",
+        peopleLabel: "Guests",
+        commentsLabel: "Comments",
+        reservationButton: "Request reservation",
+
+        locationSmall: "COME VISIT US",
+        locationTitle: "Our location",
+        addressTitle: "Our location",
+        directions: "Get directions",
+        hoursTitle: "Opening hours",
+        monThu: "Monday to Thursday",
+        friSat: "Friday and Saturday",
+        sunday: "Sunday",
+
+        quickLinks: "Quick links",
+        contactTitle: "Contact",
+        footerDescription: "Mediterranean cuisine, quality ingredients and the authentic flavor of the grill in Seville.",
+        footerBottom: "Mediterranean cuisine · Restaurant in Seville"
+
+      }
 
     };
 
 
-    try {
+    let currentLanguage = "es";
 
-      const respuesta =
-        await fetch(
-          "/reservar",
-          {
 
-            method: "POST",
+    function setLanguage(language) {
 
-            headers: {
+      currentLanguage = language;
 
-              "Content-Type":
-                "application/json"
+      document.documentElement.lang = language;
 
-            },
+      document.querySelectorAll("[data-i18n]").forEach(element => {
 
-            body:
-              JSON.stringify(
-                datos
-              )
+        const key = element.getAttribute("data-i18n");
 
+        if (translations[language][key]) {
+          element.textContent = translations[language][key];
+        }
+
+      });
+
+      document.getElementById("esBtn").classList.toggle(
+        "active",
+        language === "es"
+      );
+
+      document.getElementById("enBtn").classList.toggle(
+        "active",
+        language === "en"
+      );
+
+      localStorage.setItem("laBrasaLanguage", language);
+
+    }
+
+
+    const savedLanguage =
+      localStorage.getItem("laBrasaLanguage");
+
+    if (savedLanguage === "en") {
+      setLanguage("en");
+    }
+
+
+    /* =====================================
+       CARTAS
+    ===================================== */
+
+    function showMenu(menu, button) {
+
+      document.querySelectorAll(".menu-panel")
+        .forEach(panel => {
+          panel.classList.remove("active");
+        });
+
+      document.querySelectorAll(".menu-tab")
+        .forEach(tab => {
+          tab.classList.remove("active");
+        });
+
+      document.getElementById("menu-" + menu)
+        .classList.add("active");
+
+      button.classList.add("active");
+
+    }
+
+
+    /* =====================================
+       GALERIA
+    ===================================== */
+
+    document.querySelectorAll(".gallery-item img")
+      .forEach(img => {
+
+        img.addEventListener("click", function () {
+
+          document.getElementById("visorImagen").src =
+            this.src;
+
+          document.getElementById("visorFoto")
+            .classList.add("active");
+
+        });
+
+      });
+
+
+    function cerrarFoto() {
+
+      document.getElementById("visorFoto")
+        .classList.remove("active");
+
+    }
+
+
+    document.getElementById("visorFoto")
+      .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+          cerrarFoto();
+        }
+
+      });
+
+
+    /* =====================================
+       FECHA MINIMA
+    ===================================== */
+
+    const fechaInput =
+      document.getElementById("fecha");
+
+    const hoy = new Date();
+
+    const year = hoy.getFullYear();
+
+    const month =
+      String(hoy.getMonth() + 1).padStart(2, "0");
+
+    const day =
+      String(hoy.getDate()).padStart(2, "0");
+
+    fechaInput.min =
+      `${year}-${month}-${day}`;
+
+
+    /* =====================================
+       RESERVAS
+    ===================================== */
+
+    document.getElementById("reservationForm")
+      .addEventListener("submit", async function(e) {
+
+        e.preventDefault();
+
+        const message =
+          document.getElementById("reservationMessage");
+
+        const formData =
+          new FormData(this);
+
+        const data =
+          Object.fromEntries(formData.entries());
+
+        message.className =
+          "reservation-message";
+
+        message.textContent =
+          currentLanguage === "es"
+            ? "Enviando reserva..."
+            : "Sending reservation...";
+
+        message.classList.add("success");
+
+        try {
+
+          const response =
+            await fetch("/reservar", {
+
+              method: "POST",
+
+              headers: {
+                "Content-Type": "application/json"
+              },
+
+              body: JSON.stringify(data)
+
+            });
+
+          if (!response.ok) {
+            throw new Error("Error");
           }
-        );
+
+          const result =
+            await response.json();
+
+          message.textContent =
+            currentLanguage === "es"
+              ? `Reserva enviada correctamente. ID: ${result.id || "pendiente"}`
+              : `Reservation sent successfully. ID: ${result.id || "pending"}`;
+
+          this.reset();
+
+        } catch (error) {
+
+          message.className =
+            "reservation-message error";
+
+          message.textContent =
+            currentLanguage === "es"
+              ? "No se ha podido enviar la reserva. Comprueba que el servidor está funcionando."
+              : "The reservation could not be sent. Please check that the server is running.";
+
+        }
+
+      });
 
 
-      const resultadoServidor =
-        await respuesta.json();
+    /* =====================================
+       ADMIN
+    ===================================== */
+
+    function abrirAdmin() {
+
+      document.getElementById("adminOverlay")
+        .classList.add("active");
+
+    }
 
 
-      if (
-        !respuesta.ok
-      ) {
+    function cerrarAdmin() {
 
-        throw new Error(
-          resultadoServidor.error ||
-          "Error al hacer la reserva."
-        );
+      document.getElementById("adminOverlay")
+        .classList.remove("active");
+
+    }
+
+
+    function loginAdmin() {
+
+      const password =
+        document.getElementById("adminPassword").value;
+
+      const error =
+        document.getElementById("adminLoginError");
+
+      if (password === "1234") {
+
+        document.getElementById("adminLogin")
+          .style.display = "none";
+
+        document.getElementById("adminContent")
+          .style.display = "block";
+
+        cargarReservas();
+
+      } else {
+
+        error.textContent =
+          "Contraseña incorrecta.";
+
+      }
+
+    }
+
+
+    document.getElementById("adminPassword")
+      .addEventListener("keydown", function(e) {
+
+        if (e.key === "Enter") {
+          loginAdmin();
+        }
+
+      });
+
+
+    function showAdminSection(section, button) {
+
+      document.querySelectorAll(".admin-section")
+        .forEach(s => s.classList.remove("active"));
+
+      document.querySelectorAll(".admin-nav button")
+        .forEach(b => b.classList.remove("active"));
+
+      document.getElementById("admin-" + section)
+        .classList.add("active");
+
+      button.classList.add("active");
+
+    }
+
+
+    /* =====================================
+       CARGAR RESERVAS
+    ===================================== */
+
+    async function cargarReservas() {
+
+      try {
+
+        const response =
+          await fetch("/reservas");
+
+        if (!response.ok) {
+          throw new Error();
+        }
+
+        const reservas =
+          await response.json();
+
+        renderReservas(reservas);
+
+      } catch (error) {
+
+        document.getElementById("adminReservationsList")
+          .innerHTML =
+          `<p style="color:#777;">
+            No se han podido cargar las reservas.
+          </p>`;
+
+      }
+
+    }
+
+
+    function renderReservas(reservas) {
+
+      const container =
+        document.getElementById("adminReservationsList");
+
+      let pending = 0;
+      let accepted = 0;
+      let rejected = 0;
+
+      if (!Array.isArray(reservas)) {
+        reservas = [];
+      }
+
+      reservas.forEach(r => {
+
+        if (r.estado === "pendiente") pending++;
+        if (r.estado === "aceptada") accepted++;
+        if (r.estado === "rechazada") rejected++;
+
+      });
+
+      document.getElementById("pendingCount")
+        .textContent = pending;
+
+      document.getElementById("acceptedCount")
+        .textContent = accepted;
+
+      document.getElementById("rejectedCount")
+        .textContent = rejected;
+
+
+      if (!reservas.length) {
+
+        container.innerHTML =
+          `<p style="color:#777;">
+            No hay reservas todavía.
+          </p>`;
+
+        return;
 
       }
 
 
-      resultado.innerHTML =
-        `
-        ✅ <strong>
-          Reserva recibida correctamente.
-        </strong>
+      reservas.sort((a,b) => {
 
-        <br><br>
+        return new Date(b.fecha + " " + b.hora)
+          - new Date(a.fecha + " " + a.hora);
 
-        Número de reserva:
-        <strong>
-          #${resultadoServidor.id}
-        </strong>
+      });
 
-        <br><br>
 
-        Te esperamos en La Brasa.
-        `;
+      container.innerHTML =
+        reservas.map(reserva => {
 
+          const estado =
+            reserva.estado || "pendiente";
 
-      form.reset();
+          return `
 
-      campoFecha.min =
-        obtenerFechaHoy();
+            <div class="reservation-admin">
 
-      campoHora.removeAttribute(
-        "min"
-      );
+              <div class="reservation-admin-top">
 
+                <strong>
+                  ${escapeHtml(reserva.nombre || "")}
+                </strong>
 
-    }
-
-    catch (error) {
-
-      resultado.innerHTML =
-        `
-        ❌ <strong>
-          No se pudo realizar la reserva.
-        </strong>
-
-        <br><br>
-
-        ${escaparHTML(
-          error.message
-        )}
-        `;
-
-    }
-
-  }
-);
-
-
-// ======================================================
-// ABRIR ADMIN
-// ======================================================
-
-function abrirAdmin() {
-
-  document
-    .getElementById(
-      "adminOverlay"
-    )
-    .style.display =
-      "block";
-
-  document
-    .getElementById(
-      "loginBox"
-    )
-    .style.display =
-      "block";
-
-  document
-    .getElementById(
-      "adminPanel"
-    )
-    .style.display =
-      "none";
-
-  document
-    .getElementById(
-      "adminPassword"
-    )
-    .value =
-      "";
-
-  document
-    .getElementById(
-      "loginError"
-    )
-    .style.display =
-      "none";
-
-}
-
-
-// ======================================================
-// CERRAR ADMIN
-// ======================================================
-
-function cerrarAdmin() {
-
-  document
-    .getElementById(
-      "adminOverlay"
-    )
-    .style.display =
-      "none";
-
-}
-
-
-// ======================================================
-// LOGIN
-// ======================================================
-
-function iniciarSesion() {
-
-  const password =
-    document
-      .getElementById(
-        "adminPassword"
-      )
-      .value;
-
-  if (
-    password === "1234"
-  ) {
-
-    document
-      .getElementById(
-        "loginBox"
-      )
-      .style.display =
-        "none";
-
-    document
-      .getElementById(
-        "adminPanel"
-      )
-      .style.display =
-        "block";
-
-    cargarReservas();
-
-  }
-
-  else {
-
-    document
-      .getElementById(
-        "loginError"
-      )
-      .style.display =
-        "block";
-
-  }
-
-}
-
-
-// ======================================================
-// CAMBIAR APARTADO
-// ======================================================
-
-function mostrarApartado(
-  nombre,
-  boton
-) {
-
-  const apartados =
-    document.querySelectorAll(
-      ".admin-section"
-    );
-
-  apartados.forEach(
-    apartado => {
-
-      apartado.classList.remove(
-        "active"
-      );
-
-    }
-  );
-
-
-  const seccion =
-    document.getElementById(
-      nombre
-    );
-
-
-  if (seccion) {
-
-    seccion.classList.add(
-      "active"
-    );
-
-  }
-
-
-  const botones =
-    document.querySelectorAll(
-      ".admin-nav button"
-    );
-
-
-  botones.forEach(
-    btn => {
-
-      btn.classList.remove(
-        "active"
-      );
-
-    }
-  );
-
-
-  if (boton) {
-
-    boton.classList.add(
-      "active"
-    );
-
-  }
-
-
-  if (
-    nombre ===
-    "reservasAdmin"
-  ) {
-
-    cargarReservas();
-
-  }
-
-}
-
-
-// ======================================================
-// CARGAR RESERVAS
-// ======================================================
-
-async function cargarReservas(
-  silencioso = false
-) {
-
-  if (cargandoReservas) {
-    return;
-  }
-
-  cargandoReservas = true;
-
-
-  const listas = [
-
-    "listaPendientes",
-
-    "listaAceptadas",
-
-    "listaRechazadas"
-
-  ];
-
-
-  if (!silencioso) {
-
-    listas.forEach(
-      id => {
-
-        const lista =
-          document.getElementById(
-            id
-          );
-
-        if (lista) {
-
-          lista.innerHTML =
-            `
-            <div class="vacio">
-              ⏳ Cargando reservas...
-            </div>
-            `;
-
-        }
-
-      }
-    );
-
-  }
-
-
-  try {
-
-    const respuesta =
-      await fetch(
-        "/reservas",
-        {
-          cache: "no-store"
-        }
-      );
-
-
-    if (
-      !respuesta.ok
-    ) {
-
-      throw new Error(
-        "No se pudieron cargar las reservas."
-      );
-
-    }
-
-
-    const reservas =
-      await respuesta.json();
-
-
-    mostrarReservas(
-      reservas
-    );
-
-
-    actualizarContadores(
-      reservas
-    );
-
-
-  }
-
-  catch (error) {
-
-    if (!silencioso) {
-
-      listas.forEach(
-        id => {
-
-          const lista =
-            document.getElementById(
-              id
-            );
-
-          if (lista) {
-
-            lista.innerHTML =
-              `
-              <div class="vacio">
-
-                ❌
-                ${escaparHTML(
-                  error.message
-                )}
+                <span class="status ${estado}">
+                  ${estado}
+                </span>
 
               </div>
-              `;
 
-          }
+              <div style="color:#aaa;font-size:12px;">
 
-        }
-      );
+                📅 ${escapeHtml(reserva.fecha || "")}
 
-    }
+                ·
 
-  }
+                🕐 ${escapeHtml(reserva.hora || "")}
 
-  finally {
+                ·
 
-    cargandoReservas = false;
+                👥 ${escapeHtml(String(reserva.personas || ""))}
 
-  }
+              </div>
 
-}
+              <div style="color:#aaa;font-size:12px;margin-top:6px;">
 
+                📞 ${escapeHtml(reserva.telefono || "")}
 
-// ======================================================
-// ORDENAR RESERVAS
-// ======================================================
+              </div>
 
-function ordenarReservas(
-  reservas
-) {
+              ${
+                reserva.comentarios
+                ? `
+                  <div style="color:#888;font-size:12px;margin-top:7px;">
+                    💬 ${escapeHtml(reserva.comentarios)}
+                  </div>
+                `
+                : ""
+              }
 
-  return [...reservas].sort(
-    (a, b) => {
-
-      const fechaA =
-        new Date(
-          `${a.fecha}T${a.hora}`
-        );
-
-      const fechaB =
-        new Date(
-          `${b.fecha}T${b.hora}`
-        );
-
-      const diferencia =
-        fechaA - fechaB;
-
-
-      if (
-        diferencia !== 0
-      ) {
-
-        return diferencia;
-
-      }
-
-
-      const creadaA =
-        new Date(
-          a.creadaEn || 0
-        );
-
-      const creadaB =
-        new Date(
-          b.creadaEn || 0
-        );
-
-
-      return creadaA - creadaB;
-
-    }
-  );
-
-}
-
-
-// ======================================================
-// MOSTRAR RESERVAS
-// ======================================================
-
-function mostrarReservas(
-  reservas
-) {
-
-  const pendientes =
-    ordenarReservas(
-      reservas.filter(
-        reserva =>
-          reserva.estado ===
-          "pendiente"
-      )
-    );
-
-
-  const aceptadas =
-    ordenarReservas(
-      reservas.filter(
-        reserva =>
-          reserva.estado ===
-          "aceptada"
-      )
-    );
-
-
-  const rechazadas =
-    ordenarReservas(
-      reservas.filter(
-        reserva =>
-          reserva.estado ===
-          "rechazada"
-      )
-    );
-
-
-  mostrarGrupo(
-    pendientes,
-    "listaPendientes",
-    "pendiente"
-  );
-
-
-  mostrarGrupo(
-    aceptadas,
-    "listaAceptadas",
-    "aceptada"
-  );
-
-
-  mostrarGrupo(
-    rechazadas,
-    "listaRechazadas",
-    "rechazada"
-  );
-
-}
-
-
-// ======================================================
-// MOSTRAR GRUPO
-// ======================================================
-
-function mostrarGrupo(
-  reservas,
-  idLista,
-  tipo
-) {
-
-  const lista =
-    document.getElementById(
-      idLista
-    );
-
-
-  if (!lista) {
-    return;
-  }
-
-
-  if (
-    reservas.length === 0
-  ) {
-
-    let mensaje =
-      "No hay reservas pendientes.";
-
-
-    if (
-      tipo === "aceptada"
-    ) {
-
-      mensaje =
-        "No hay reservas aceptadas.";
-
-    }
-
-
-    if (
-      tipo === "rechazada"
-    ) {
-
-      mensaje =
-        "No hay reservas rechazadas.";
-
-    }
-
-
-    lista.innerHTML =
-      `
-      <div class="vacio">
-
-        ${mensaje}
-
-      </div>
-      `;
-
-
-    return;
-
-  }
-
-
-  lista.innerHTML = "";
-
-
-  reservas.forEach(
-    reserva => {
-
-      const tarjeta =
-        document.createElement(
-          "div"
-        );
-
-
-      tarjeta.className =
-        `reserva ${tipo}`;
-
-
-      let textoEstado =
-        "Pendiente";
-
-
-      if (
-        tipo === "aceptada"
-      ) {
-
-        textoEstado =
-          "Aceptada";
-
-      }
-
-
-      if (
-        tipo === "rechazada"
-      ) {
-
-        textoEstado =
-          "Rechazada";
-
-      }
-
-
-      let claseEstado =
-        "";
-
-
-      if (
-        tipo === "aceptada"
-      ) {
-
-        claseEstado =
-          "aceptada";
-
-      }
-
-
-      if (
-        tipo === "rechazada"
-      ) {
-
-        claseEstado =
-          "rechazada";
-
-      }
-
-
-      tarjeta.innerHTML =
-        `
-
-        <span class="estado ${claseEstado}">
-
-          ${textoEstado}
-
-        </span>
-
-
-        <h3>
-
-          Reserva #${reserva.id}
-
-        </h3>
-
-
-        <p>
-
-          👤
-          <strong>
-            Nombre:
-          </strong>
-
-          ${escaparHTML(
-            reserva.nombre
-          )}
-
-        </p>
-
-
-        <p>
-
-          📞
-          <strong>
-            Teléfono:
-          </strong>
-
-          ${escaparHTML(
-            reserva.telefono
-          )}
-
-        </p>
-
-
-        <p>
-
-          📅
-          <strong>
-            Fecha:
-          </strong>
-
-          ${formatearFecha(
-            reserva.fecha
-          )}
-
-        </p>
-
-
-        <p>
-
-          🕐
-          <strong>
-            Hora:
-          </strong>
-
-          ${escaparHTML(
-            reserva.hora
-          )}
-
-        </p>
-
-
-        <p>
-
-          👥
-          <strong>
-            Personas:
-          </strong>
-
-          ${Number(
-            reserva.personas
-          )}
-
-        </p>
-
-
-        <p>
-
-          💬
-          <strong>
-            Comentarios:
-          </strong>
-
-          ${
-            reserva.comentarios
-
-              ? escaparHTML(
-                  reserva.comentarios
-                )
-
-              : "Sin comentarios"
-          }
-
-        </p>
-
-
-        <div class="acciones">
-
-
-          ${
-            tipo === "pendiente"
-
-              ? `
+              <div class="admin-actions">
 
                 <button
-                  class="aceptar"
-                  onclick="
-                    cambiarEstado(
-                      ${reserva.id},
-                      'aceptada'
-                    )
-                  "
-                >
-
-                  ✅ Aceptar
-
+                  class="accept"
+                  onclick="cambiarEstado('${reserva.id}','aceptada')">
+                  Aceptar
                 </button>
-
 
                 <button
-                  class="cancelar"
-                  onclick="
-                    cambiarEstado(
-                      ${reserva.id},
-                      'rechazada'
-                    )
-                  "
-                >
-
-                  ❌ Rechazar
-
+                  class="reject"
+                  onclick="cambiarEstado('${reserva.id}','rechazada')">
+                  Rechazar
                 </button>
 
-              `
+                <button
+                  class="delete"
+                  onclick="eliminarReserva('${reserva.id}')">
+                  Eliminar
+                </button>
 
-              : ""
+              </div>
 
-          }
+            </div>
 
+          `;
 
-          <button
-            class="eliminar"
-            onclick="
-              eliminarReserva(
-                ${reserva.id}
-              )
-            "
-          >
-
-            🗑️ Eliminar
-
-          </button>
-
-
-        </div>
-
-        `;
-
-
-      lista.appendChild(
-        tarjeta
-      );
+        }).join("");
 
     }
-  );
-
-}
 
 
-// ======================================================
-// CAMBIAR ESTADO
-// ======================================================
+    /* =====================================
+       CAMBIAR ESTADO
+    ===================================== */
 
-async function cambiarEstado(
-  id,
-  estado
-) {
+    async function cambiarEstado(id, estado) {
 
-  const texto =
-    estado === "aceptada"
-      ? "aceptar"
-      : "rechazar";
+      try {
 
+        const response =
+          await fetch(`/reservas/${id}`, {
 
-  const confirmar =
-    confirm(
-      `¿Seguro que quieres ${texto} la reserva #${id}?`
-    );
+            method: "PATCH",
 
+            headers: {
+              "Content-Type": "application/json"
+            },
 
-  if (!confirmar) {
-
-    return;
-
-  }
-
-
-  try {
-
-    const respuesta =
-      await fetch(
-        `/reservas/${id}`,
-        {
-
-          method: "PATCH",
-
-          headers: {
-
-            "Content-Type":
-              "application/json"
-
-          },
-
-          body:
-            JSON.stringify({
+            body: JSON.stringify({
               estado: estado
             })
 
+          });
+
+        if (!response.ok) {
+          throw new Error();
         }
-      );
 
+        cargarReservas();
 
-    const resultadoServidor =
-      await respuesta.json();
+      } catch (error) {
 
+        alert("No se ha podido actualizar la reserva.");
 
-    if (
-      !respuesta.ok
-    ) {
-
-      throw new Error(
-        resultadoServidor.error ||
-        "No se pudo modificar la reserva."
-      );
+      }
 
     }
 
 
-    await cargarReservas();
+    /* =====================================
+       ELIMINAR
+    ===================================== */
 
-  }
+    async function eliminarReserva(id) {
 
-  catch (error) {
+      if (!confirm("¿Eliminar esta reserva?")) {
+        return;
+      }
 
-    alert(
-      "❌ " +
-      error.message
-    );
+      try {
 
-  }
+        const response =
+          await fetch(`/reservas/${id}`, {
+            method: "DELETE"
+          });
 
-}
-
-
-// ======================================================
-// ELIMINAR RESERVA
-// ======================================================
-
-async function eliminarReserva(
-  id
-) {
-
-  const confirmar =
-    confirm(
-      `¿Seguro que quieres eliminar la reserva #${id}? Esta acción no se puede deshacer.`
-    );
-
-
-  if (!confirmar) {
-
-    return;
-
-  }
-
-
-  try {
-
-    const respuesta =
-      await fetch(
-        `/reservas/${id}`,
-        {
-
-          method: "DELETE"
-
+        if (!response.ok) {
+          throw new Error();
         }
-      );
 
+        cargarReservas();
 
-    const resultadoServidor =
-      await respuesta.json();
+      } catch (error) {
 
+        alert("No se ha podido eliminar la reserva.");
 
-    if (
-      !respuesta.ok
-    ) {
-
-      throw new Error(
-        resultadoServidor.error ||
-        "No se pudo eliminar la reserva."
-      );
+      }
 
     }
 
 
-    await cargarReservas();
-
-  }
-
-  catch (error) {
-
-    alert(
-      "❌ " +
-      error.message
-    );
-
-  }
-
-}
-
-
-// ======================================================
-// ACTUALIZAR CONTADORES
-// ======================================================
-
-function actualizarContadores(
-  reservas
-) {
-
-  const pendientes =
-    reservas.filter(
-      reserva =>
-        reserva.estado ===
-        "pendiente"
-    ).length;
-
-
-  const aceptadas =
-    reservas.filter(
-      reserva =>
-        reserva.estado ===
-        "aceptada"
-    ).length;
-
-
-  const rechazadas =
-    reservas.filter(
-      reserva =>
-        reserva.estado ===
-        "rechazada"
-    ).length;
-
-
-  const contadorPendientes =
-    document.getElementById(
-      "contadorPendientes"
-    );
-
-
-  const contadorAceptadas =
-    document.getElementById(
-      "contadorAceptadas"
-    );
-
-
-  const contadorCanceladas =
-    document.getElementById(
-      "contadorCanceladas"
-    );
-
-
-  const numeroPendientes =
-    document.getElementById(
-      "numeroPendientes"
-    );
-
-
-  const numeroAceptadas =
-    document.getElementById(
-      "numeroAceptadas"
-    );
-
-
-  const numeroRechazadas =
-    document.getElementById(
-      "numeroRechazadas"
-    );
-
-
-  if (
-    contadorPendientes
-  ) {
-
-    contadorPendientes.textContent =
-      pendientes;
-
-  }
-
-
-  if (
-    contadorAceptadas
-  ) {
-
-    contadorAceptadas.textContent =
-      aceptadas;
-
-  }
-
-
-  if (
-    contadorCanceladas
-  ) {
-
-    contadorCanceladas.textContent =
-      rechazadas;
-
-  }
-
-
-  if (
-    numeroPendientes
-  ) {
-
-    numeroPendientes.textContent =
-      pendientes;
-
-  }
-
-
-  if (
-    numeroAceptadas
-  ) {
-
-    numeroAceptadas.textContent =
-      aceptadas;
-
-  }
-
-
-  if (
-    numeroRechazadas
-  ) {
-
-    numeroRechazadas.textContent =
-      rechazadas;
-
-  }
-
-}
-
-
-// ======================================================
-// FORMATEAR FECHA
-// ======================================================
-
-function formatearFecha(
-  fecha
-) {
-
-  const partes =
-    fecha.split("-");
-
-
-  if (
-    partes.length !== 3
-  ) {
-
-    return fecha;
-
-  }
-
-
-  return (
-
-    partes[2] +
-    "/" +
-    partes[1] +
-    "/" +
-    partes[0]
-
-  );
-
-}
-
-
-// ======================================================
-// PROTEGER HTML
-// ======================================================
-
-function escaparHTML(
-  texto
-) {
-
-  const div =
-    document.createElement(
-      "div"
-    );
-
-
-  div.textContent =
-    texto ?? "";
-
-
-  return div.innerHTML;
-
-}
-
-
-// ======================================================
-// ACTUALIZAR RESERVAS AUTOMÁTICAMENTE
-// ======================================================
-
-setInterval(
-  function() {
-
-    const panel =
-      document.getElementById(
-        "adminPanel"
-      );
-
-    const overlay =
-      document.getElementById(
-        "adminOverlay"
-      );
-
-
-    if (
-      panel &&
-      overlay &&
-      overlay.style.display === "block" &&
-      panel.style.display === "block"
-    ) {
-
-      cargarReservas(true);
+    /* =====================================
+       SEGURIDAD HTML
+    ===================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 
     }
 
-  },
-  5000
-);
 
+    /* =====================================
+       AUTO REFRESH ADMIN
+    ===================================== */
 
-// ======================================================
-// AL CARGAR
-// ======================================================
+    setInterval(() => {
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
+      const overlay =
+        document.getElementById("adminOverlay");
 
-    campoFecha.min =
-      obtenerFechaHoy();
+      const content =
+        document.getElementById("adminContent");
 
-    comprobarHora();
+      if (
+        overlay.classList.contains("active") &&
+        content.style.display === "block"
+      ) {
 
-  }
-);
+        cargarReservas();
 
+      }
 
-</script>
+    }, 5000);
+
+  </script>
 
 </body>
-
 </html>
-
