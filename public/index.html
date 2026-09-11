@@ -2086,8 +2086,7 @@
     </section>
 
   </main>
-
-
+```html
   <!-- =========================
        FOOTER
   ========================= -->
@@ -2139,6 +2138,41 @@
         <p data-i18n="footerDescription">
           Cocina mediterránea, producto de calidad y el auténtico sabor de la brasa en Sevilla.
         </p>
+
+        <!-- REDES SOCIALES -->
+
+        <div style="
+          display:flex;
+          gap:10px;
+          margin-top:18px;
+          flex-wrap:wrap;
+        ">
+
+          <a
+            href="https://www.tiktok.com/@jacoboglm?_r=1&_t=ZN-99brzbo0Ph8"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display:inline-flex;
+              align-items:center;
+              gap:8px;
+              padding:10px 16px;
+              border:1px solid rgba(255,255,255,0.12);
+              border-radius:10px;
+              background:#151515;
+              color:#fff;
+              text-decoration:none;
+              font-size:13px;
+              transition:0.25s;
+            "
+            onmouseover="this.style.borderColor='#e7a23b';this.style.color='#e7a23b'"
+            onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='#fff'"
+          >
+            <span style="font-size:16px;">♪</span>
+            TikTok
+          </a>
+
+        </div>
 
       </div>
 
@@ -2338,14 +2372,135 @@
         </div>
 
 
-        <!-- RESERVAS -->
+        <!-- =========================
+             RESERVAS
+        ========================= -->
 
         <div
           class="admin-section"
           id="admin-reservasAdmin">
 
-          <div id="adminReservationsList">
-            Cargando reservas...
+          <!-- PENDIENTES -->
+
+          <div style="
+            margin-bottom:30px;
+          ">
+
+            <div style="
+              display:flex;
+              align-items:center;
+              justify-content:space-between;
+              gap:10px;
+              margin-bottom:14px;
+              padding-bottom:10px;
+              border-bottom:1px solid rgba(231,162,59,0.25);
+            ">
+
+              <h3 style="
+                margin:0;
+                color:#e7a23b;
+                font-size:18px;
+              ">
+                🟠 Pendientes
+              </h3>
+
+              <span
+                id="pendingBlockCount"
+                style="
+                  color:#999;
+                  font-size:12px;
+                ">
+                0 reservas
+              </span>
+
+            </div>
+
+            <div id="pendingReservations">
+              Cargando reservas...
+            </div>
+
+          </div>
+
+
+          <!-- ACEPTADAS -->
+
+          <div style="
+            margin-bottom:30px;
+          ">
+
+            <div style="
+              display:flex;
+              align-items:center;
+              justify-content:space-between;
+              gap:10px;
+              margin-bottom:14px;
+              padding-bottom:10px;
+              border-bottom:1px solid rgba(37,211,102,0.25);
+            ">
+
+              <h3 style="
+                margin:0;
+                color:#25d366;
+                font-size:18px;
+              ">
+                🟢 Aceptadas
+              </h3>
+
+              <span
+                id="acceptedBlockCount"
+                style="
+                  color:#999;
+                  font-size:12px;
+                ">
+                0 reservas
+              </span>
+
+            </div>
+
+            <div id="acceptedReservations">
+              No hay reservas aceptadas.
+            </div>
+
+          </div>
+
+
+          <!-- RECHAZADAS -->
+
+          <div>
+
+            <div style="
+              display:flex;
+              align-items:center;
+              justify-content:space-between;
+              gap:10px;
+              margin-bottom:14px;
+              padding-bottom:10px;
+              border-bottom:1px solid rgba(255,80,80,0.25);
+            ">
+
+              <h3 style="
+                margin:0;
+                color:#ff7777;
+                font-size:18px;
+              ">
+                🔴 Rechazadas
+              </h3>
+
+              <span
+                id="rejectedBlockCount"
+                style="
+                  color:#999;
+                  font-size:12px;
+                ">
+                0 reservas
+              </span>
+
+            </div>
+
+            <div id="rejectedReservations">
+              No hay reservas rechazadas.
+            </div>
+
           </div>
 
         </div>
@@ -2945,7 +3100,7 @@
 
       } catch (error) {
 
-        document.getElementById("adminReservationsList")
+        document.getElementById("pendingReservations")
           .innerHTML =
           `<p style="color:#777;">
             No se han podido cargar las reservas.
@@ -2956,136 +3111,355 @@
     }
 
 
+    /* =====================================
+       CREAR TARJETA DE RESERVA
+    ===================================== */
+
+    function crearReservaHTML(reserva, estado) {
+
+      let botones = "";
+
+
+      /*
+       * PENDIENTES:
+       * Aceptar / Cancelar / Eliminar
+       */
+
+      if (estado === "pendiente") {
+
+        botones = `
+
+          <button
+            class="accept"
+            onclick="cambiarEstado('${reserva.id}','aceptada')">
+            Aceptar
+          </button>
+
+          <button
+            class="reject"
+            onclick="cambiarEstado('${reserva.id}','rechazada')">
+            Cancelar
+          </button>
+
+          <button
+            class="delete"
+            onclick="eliminarReserva('${reserva.id}')">
+            Eliminar
+          </button>
+
+        `;
+
+      }
+
+
+      /*
+       * ACEPTADAS:
+       * Rechazar / Eliminar
+       */
+
+      if (estado === "aceptada") {
+
+        botones = `
+
+          <button
+            class="reject"
+            onclick="cambiarEstado('${reserva.id}','rechazada')">
+            Cancelar
+          </button>
+
+          <button
+            class="delete"
+            onclick="eliminarReserva('${reserva.id}')">
+            Eliminar
+          </button>
+
+        `;
+
+      }
+
+
+      /*
+       * RECHAZADAS:
+       * Aceptar / Eliminar
+       */
+
+      if (estado === "rechazada") {
+
+        botones = `
+
+          <button
+            class="accept"
+            onclick="cambiarEstado('${reserva.id}','aceptada')">
+            Aceptar
+          </button>
+
+          <button
+            class="delete"
+            onclick="eliminarReserva('${reserva.id}')">
+            Eliminar
+          </button>
+
+        `;
+
+      }
+
+
+      return `
+
+        <div class="reservation-admin">
+
+          <div class="reservation-admin-top">
+
+            <strong>
+              ${escapeHtml(reserva.nombre || "")}
+            </strong>
+
+            <span class="status ${estado}">
+              ${estado}
+            </span>
+
+          </div>
+
+
+          <div style="color:#aaa;font-size:12px;">
+
+            📅 ${escapeHtml(reserva.fecha || "")}
+
+            ·
+
+            🕐 ${escapeHtml(reserva.hora || "")}
+
+            ·
+
+            👥 ${escapeHtml(String(reserva.personas || ""))}
+
+          </div>
+
+
+          <div style="
+            color:#aaa;
+            font-size:12px;
+            margin-top:6px;
+          ">
+
+            📞 ${escapeHtml(reserva.telefono || "")}
+
+          </div>
+
+
+          ${
+            reserva.comentarios
+            ? `
+              <div style="
+                color:#888;
+                font-size:12px;
+                margin-top:7px;
+              ">
+                💬 ${escapeHtml(reserva.comentarios)}
+              </div>
+            `
+            : ""
+          }
+
+
+          <div class="admin-actions">
+
+            ${botones}
+
+          </div>
+
+        </div>
+
+      `;
+
+    }
+
+
+    /* =====================================
+       MOSTRAR RESERVAS POR BLOQUES
+    ===================================== */
+
     function renderReservas(reservas) {
-
-      const container =
-        document.getElementById("adminReservationsList");
-
-      let pending = 0;
-      let accepted = 0;
-      let rejected = 0;
 
       if (!Array.isArray(reservas)) {
         reservas = [];
       }
 
-      reservas.forEach(r => {
 
-        if (r.estado === "pendiente") pending++;
-        if (r.estado === "aceptada") accepted++;
-        if (r.estado === "rechazada") rejected++;
+      /*
+       * Separar las reservas
+       */
 
-      });
+      const pendientes =
+        reservas.filter(r =>
+          (r.estado || "pendiente") === "pendiente"
+        );
 
-      document.getElementById("pendingCount")
-        .textContent = pending;
+      const aceptadas =
+        reservas.filter(r =>
+          r.estado === "aceptada"
+        );
 
-      document.getElementById("acceptedCount")
-        .textContent = accepted;
+      const rechazadas =
+        reservas.filter(r =>
+          r.estado === "rechazada"
+        );
 
-      document.getElementById("rejectedCount")
-        .textContent = rejected;
 
+      /*
+       * Ordenar por fecha y hora
+       */
 
-      if (!reservas.length) {
+      function ordenar(a, b) {
 
-        container.innerHTML =
-          `<p style="color:#777;">
-            No hay reservas todavía.
-          </p>`;
-
-        return;
+        return new Date(
+          `${a.fecha}T${a.hora}`
+        ) - new Date(
+          `${b.fecha}T${b.hora}`
+        );
 
       }
 
 
-      reservas.sort((a,b) => {
-
-        return new Date(b.fecha + " " + b.hora)
-          - new Date(a.fecha + " " + a.hora);
-
-      });
+      pendientes.sort(ordenar);
+      aceptadas.sort(ordenar);
+      rechazadas.sort(ordenar);
 
 
-      container.innerHTML =
-        reservas.map(reserva => {
+      /*
+       * Actualizar contadores del resumen
+       */
 
-          const estado =
-            reserva.estado || "pendiente";
+      document.getElementById("pendingCount")
+        .textContent = pendientes.length;
 
-          return `
+      document.getElementById("acceptedCount")
+        .textContent = aceptadas.length;
 
-            <div class="reservation-admin">
+      document.getElementById("rejectedCount")
+        .textContent = rechazadas.length;
 
-              <div class="reservation-admin-top">
 
-                <strong>
-                  ${escapeHtml(reserva.nombre || "")}
-                </strong>
+      /*
+       * Actualizar contadores de bloques
+       */
 
-                <span class="status ${estado}">
-                  ${estado}
-                </span>
+      document.getElementById("pendingBlockCount")
+        .textContent =
+        `${pendientes.length} ${
+          pendientes.length === 1
+            ? "reserva"
+            : "reservas"
+        }`;
 
-              </div>
+      document.getElementById("acceptedBlockCount")
+        .textContent =
+        `${aceptadas.length} ${
+          aceptadas.length === 1
+            ? "reserva"
+            : "reservas"
+        }`;
 
-              <div style="color:#aaa;font-size:12px;">
+      document.getElementById("rejectedBlockCount")
+        .textContent =
+        `${rechazadas.length} ${
+          rechazadas.length === 1
+            ? "reserva"
+            : "reservas"
+        }`;
 
-                📅 ${escapeHtml(reserva.fecha || "")}
 
-                ·
+      /*
+       * PENDIENTES
+       */
 
-                🕐 ${escapeHtml(reserva.hora || "")}
+      const pendingContainer =
+        document.getElementById("pendingReservations");
 
-                ·
+      if (!pendientes.length) {
 
-                👥 ${escapeHtml(String(reserva.personas || ""))}
+        pendingContainer.innerHTML = `
+          <p style="
+            color:#777;
+            font-size:13px;
+            padding:10px 0;
+          ">
+            No hay reservas pendientes.
+          </p>
+        `;
 
-              </div>
+      } else {
 
-              <div style="color:#aaa;font-size:12px;margin-top:6px;">
+        pendingContainer.innerHTML =
+          pendientes
+            .map(r =>
+              crearReservaHTML(r, "pendiente")
+            )
+            .join("");
 
-                📞 ${escapeHtml(reserva.telefono || "")}
+      }
 
-              </div>
 
-              ${
-                reserva.comentarios
-                ? `
-                  <div style="color:#888;font-size:12px;margin-top:7px;">
-                    💬 ${escapeHtml(reserva.comentarios)}
-                  </div>
-                `
-                : ""
-              }
+      /*
+       * ACEPTADAS
+       */
 
-              <div class="admin-actions">
+      const acceptedContainer =
+        document.getElementById("acceptedReservations");
 
-                <button
-                  class="accept"
-                  onclick="cambiarEstado('${reserva.id}','aceptada')">
-                  Aceptar
-                </button>
+      if (!aceptadas.length) {
 
-                <button
-                  class="reject"
-                  onclick="cambiarEstado('${reserva.id}','rechazada')">
-                  Rechazar
-                </button>
+        acceptedContainer.innerHTML = `
+          <p style="
+            color:#777;
+            font-size:13px;
+            padding:10px 0;
+          ">
+            No hay reservas aceptadas.
+          </p>
+        `;
 
-                <button
-                  class="delete"
-                  onclick="eliminarReserva('${reserva.id}')">
-                  Eliminar
-                </button>
+      } else {
 
-              </div>
+        acceptedContainer.innerHTML =
+          aceptadas
+            .map(r =>
+              crearReservaHTML(r, "aceptada")
+            )
+            .join("");
 
-            </div>
+      }
 
-          `;
 
-        }).join("");
+      /*
+       * RECHAZADAS
+       */
+
+      const rejectedContainer =
+        document.getElementById("rejectedReservations");
+
+      if (!rechazadas.length) {
+
+        rejectedContainer.innerHTML = `
+          <p style="
+            color:#777;
+            font-size:13px;
+            padding:10px 0;
+          ">
+            No hay reservas rechazadas.
+          </p>
+        `;
+
+      } else {
+
+        rejectedContainer.innerHTML =
+          rechazadas
+            .map(r =>
+              crearReservaHTML(r, "rechazada")
+            )
+            .join("");
+
+      }
 
     }
 
@@ -3113,15 +3487,27 @@
 
           });
 
+
         if (!response.ok) {
           throw new Error();
         }
+
+
+        /*
+         * Volvemos a cargar las reservas.
+         *
+         * Esto hace que la reserva desaparezca
+         * inmediatamente del bloque anterior
+         * y aparezca en el nuevo.
+         */
 
         cargarReservas();
 
       } catch (error) {
 
-        alert("No se ha podido actualizar la reserva.");
+        alert(
+          "No se ha podido actualizar la reserva."
+        );
 
       }
 
@@ -3138,6 +3524,7 @@
         return;
       }
 
+
       try {
 
         const response =
@@ -3145,15 +3532,19 @@
             method: "DELETE"
           });
 
+
         if (!response.ok) {
           throw new Error();
         }
+
 
         cargarReservas();
 
       } catch (error) {
 
-        alert("No se ha podido eliminar la reserva.");
+        alert(
+          "No se ha podido eliminar la reserva."
+        );
 
       }
 
@@ -3187,6 +3578,7 @@
 
       const content =
         document.getElementById("adminContent");
+
 
       if (
         overlay.classList.contains("active") &&
